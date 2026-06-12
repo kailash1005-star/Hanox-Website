@@ -1,0 +1,22 @@
+{
+  "name": "Hanox R22",
+  "class": "2,2 t Minibagger",
+  "tagline": "Ernsthafte Grabkraft, kompakter Körper.",
+  "price": 19490,
+  "regularPrice": 23900,
+  "inStock": false,
+  "drive": "diesel",
+  "blurb": "Wenn 1,5 t nicht ausreichen. Ein 2,2-Tonnen-Arbeitstier mit 20 PS und größerer Grabtiefe für Entwässerung, Versorgungsleitungen und kleinen Tiefbau. Auf Anfrage mit zugesagtem Lieferfenster bestellbar.",
+  "specs": {
+    "weight": "2.200 kg",
+    "engine": "Diesel · 3-Zyl. · wassergekühlt",
+    "power": "14,7 kW (20 PS)",
+    "depth": "2.700 mm",
+    "reach": "4.600 mm",
+    "dump": "3.050 mm",
+    "bucket": "0,06 m³",
+    "track": "1.250 – 1.500 mm",
+    "speed": "3,0 km/h",
+    "fuel": "24 L"
+  }
+}

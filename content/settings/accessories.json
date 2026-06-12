@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "id": "buckets", "label": "Löffel-Set — 30 / 50 / 80 cm", "price": 390 },
+    { "id": "thumb", "label": "Hydraulischer Greifer (Daumen)", "price": 520 },
+    { "id": "auger", "label": "Erdbohrer-Antrieb + 250 mm Bohrer", "price": 640 },
+    { "id": "trailer", "label": "Gebremster Transportanhänger (750 kg)", "price": 890 },
+    { "id": "warranty", "label": "Garantieverlängerung — 3 Jahre", "price": 350 }
+  ]
+}

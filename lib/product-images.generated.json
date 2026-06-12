@@ -1,0 +1,24 @@
+{
+  "r10": [
+    "/products/r10/01-front.png",
+    "/products/r10/02-rear.png",
+    "/products/r10/03-side.png",
+    "/products/r10/04-cab.png",
+    "/products/r10/05-seat.png",
+    "/products/r10/06-plate.png"
+  ],
+  "r13": [
+    "/products/r13/01.webp",
+    "/products/r13/02.webp",
+    "/products/r13/03.webp",
+    "/products/r13/04.webp",
+    "/products/r13/05.webp",
+    "/products/r13/06.webp",
+    "/products/r13/07.webp",
+    "/products/r13/08.webp",
+    "/products/r13/09.webp",
+    "/products/r13/10.webp",
+    "/products/r13/11.webp",
+    "/products/r13/12.webp"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Hanox R10",
+  "class": "1,0 t Kompaktbagger",
+  "tagline": "Der Allrounder. Auf Lager, sofort einsatzbereit.",
+  "price": 5625,
+  "regularPrice": 6990,
+  "inStock": true,
+  "drive": "diesel",
+  "blurb": "Unsere beliebteste Maschine und das einzige Modell, das wir physisch auf Lager halten. Leicht genug, um hinter einem Transporter gezogen zu werden, und stark genug für echte Graben-, Fundament- und Landschaftsbauarbeiten. Konfigurieren Sie ihn unten und schließen Sie noch heute ab.",
+  "specs": {
+    "weight": "1.025 kg",
+    "engine": "Diesel · 1-Zyl. · luftgekühlt",
+    "power": "9,6 kW (13 PS)",
+    "depth": "1.500 mm",
+    "reach": "3.180 mm",
+    "dump": "2.250 mm",
+    "bucket": "0,025 m³",
+    "track": "730 – 960 mm",
+    "speed": "2,0 km/h",
+    "fuel": "9 L"
+  }
+}

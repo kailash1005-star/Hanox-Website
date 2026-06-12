@@ -1,0 +1,13 @@
+{
+  "eyebrow": "So funktioniert der Kauf",
+  "heading": "Unkompliziert, mit voller Kontrolle.",
+  "cards": [
+    { "title": "Selbstabholung — kostenlos", "body": "Holen Sie Ihre Maschine kostenlos in unserem europäischen Lager ab, sobald die Zahlung eingegangen ist. Wir vereinbaren einen Termin mit Ihnen." },
+    { "title": "Lieferung — €300 pauschal", "body": "Ein Pauschalpreis liefert überallhin in unserem europäischen Servicegebiet. Keine Entfernungszuschläge, keine Überraschungen." },
+    { "title": "Auf Lager vs. auf Anfrage", "body": "Nur der R10 wird physisch auf Lager gehalten und ist sofort abschließbar. Alle anderen Modelle werden nach Bestellung gefertigt — reservieren Sie auf Anfrage und wir bestätigen ein genaues Lieferfenster, bevor eine Zahlung erfolgt." },
+    { "title": "Teile & Service", "body": "Gängige Verschleiß- und Serviceteile sind in Europa bevorratet, damit Sie nie auf einen Container aus Übersee warten müssen." }
+  ],
+  "ctaHeading": "Fragen vor dem Kauf?",
+  "ctaText": "Wir sind ein kleines Team und sprechen gerne über Maschinen. Erreichbar Montag bis Freitag, 8:00–17:00 Uhr (MEZ).",
+  "ctaLabel": "Maschinen ansehen"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Hanox R13",
+  "class": "1,3 t Minibagger",
+  "tagline": "Mehr Reichweite, wassergekühlter Dreizylinder.",
+  "price": 10490,
+  "regularPrice": 12990,
+  "inStock": false,
+  "drive": "diesel",
+  "blurb": "Ein Schritt nach vorn bei Reichweite und Komfort mit laufruhigem, wassergekühltem Dreizylindermotor und Null-Heckschwenk. Auftragsbezogene Fertigung in unserem Werk — sichern Sie sich Ihren Produktionsplatz auf Anfrage.",
+  "specs": {
+    "weight": "1.300 kg",
+    "engine": "Diesel · 3-Zyl. · wassergekühlt",
+    "power": "10,3 kW (14 PS)",
+    "depth": "2.100 mm",
+    "reach": "3.800 mm",
+    "dump": "2.600 mm",
+    "bucket": "0,04 m³",
+    "track": "990 – 1.300 mm",
+    "speed": "2,5 km/h",
+    "fuel": "16 L"
+  }
+}

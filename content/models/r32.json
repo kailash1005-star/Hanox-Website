@@ -1,0 +1,22 @@
+{
+  "name": "Hanox R32",
+  "class": "3,2 t Midibagger",
+  "tagline": "Der Große. Vierzylinder-Kraft.",
+  "price": 24765,
+  "regularPrice": 29900,
+  "inStock": false,
+  "drive": "diesel",
+  "blurb": "Unsere größte Maschine — ein 3,2-Tonnen-Midibagger mit Vierzylindermotor und über fünf Metern Reichweite für die anspruchsvollsten Aufgaben. Auftragsbezogene Werksfertigung.",
+  "specs": {
+    "weight": "3.200 kg",
+    "engine": "Diesel · 4-Zyl. · wassergekühlt",
+    "power": "21 kW (28,5 PS)",
+    "depth": "3.100 mm",
+    "reach": "5.150 mm",
+    "dump": "3.400 mm",
+    "bucket": "0,10 m³",
+    "track": "1.500 – 1.750 mm",
+    "speed": "4,2 km/h",
+    "fuel": "42 L"
+  }
+}

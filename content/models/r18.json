@@ -1,0 +1,22 @@
+{
+  "name": "Hanox R18",
+  "class": "1,8 t Minibagger",
+  "tagline": "Kabinendach, mehr Leistung, mehr Hubkraft.",
+  "price": 15403,
+  "regularPrice": 18900,
+  "inStock": false,
+  "drive": "diesel",
+  "blurb": "Eine schwerere Maschine der 1,8-Tonnen-Klasse mit Schutzdach und stärkerem Ausleger für dauerhaften Aushub. Nach Ihren Vorgaben konfiguriert und mit zugesagter Lieferzeit geliefert.",
+  "specs": {
+    "weight": "1.840 kg",
+    "engine": "Diesel · 3-Zyl. · wassergekühlt",
+    "power": "11,6 kW (15,8 PS)",
+    "depth": "2.480 mm",
+    "reach": "4.250 mm",
+    "dump": "2.900 mm",
+    "bucket": "0,05 m³",
+    "track": "1.160 – 1.360 mm",
+    "speed": "2,8 km/h",
+    "fuel": "20 L"
+  }
+}

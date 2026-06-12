@@ -1,0 +1,6 @@
+{
+  "groups": [
+    { "id": "kompakt", "title": "Kompaktbagger", "sub": "1,0 – 1,5 t · wendig & leicht zu transportieren", "ids": ["r10", "r13", "r15"] },
+    { "id": "mini", "title": "Minibagger", "sub": "1,8 – 3,2 t · mehr Reichweite & Grabkraft", "ids": ["r18", "r22", "r32"] }
+  ]
+}

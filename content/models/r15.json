@@ -1,0 +1,22 @@
+{
+  "name": "Hanox R15",
+  "class": "1,5 t Minibagger",
+  "tagline": "Der tägliche Begleiter für Profis.",
+  "price": 9999,
+  "regularPrice": 12490,
+  "inStock": false,
+  "drive": "diesel",
+  "blurb": "Der ideale Kompromiss zwischen Stellfläche und Grabkraft. Breit ausfahrbares Laufwerk für Stabilität an Hängen, mit proportionaler Zusatzhydraulik für Anbaugeräte.",
+  "specs": {
+    "weight": "1.500 kg",
+    "engine": "Diesel · 3-Zyl. · wassergekühlt",
+    "power": "10,6 kW (14,4 PS)",
+    "depth": "2.300 mm",
+    "reach": "4.000 mm",
+    "dump": "2.750 mm",
+    "bucket": "0,045 m³",
+    "track": "990 – 1.300 mm",
+    "speed": "2,5 km/h",
+    "fuel": "18 L"
+  }
+}

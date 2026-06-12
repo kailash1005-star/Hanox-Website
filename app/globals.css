@@ -356,6 +356,12 @@ p { line-height: 1.55; color: var(--ink-2); }
 .hero2__media { position: relative; background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 22px 22px 14px; box-shadow: 0 1px 2px rgba(22,24,27,.04), 0 30px 60px -24px rgba(22,24,27,.28); }
 .hero2__media::after { content: ""; position: absolute; left: 22px; bottom: 14px; right: 22px; height: 14px; background: radial-gradient(60% 100% at 50% 0%, rgba(22,24,27,.16), transparent 70%); }
 .hero2__media img { width: 100%; object-fit: contain; position: relative; z-index: 1; }
+/* Video hero: the live clip fades in over the still product shot once it plays.
+   No video file / autoplay blocked / reduced-motion => the still image stays. */
+.hero2__poster { width: 100%; object-fit: contain; position: relative; z-index: 1; display: block; }
+.hero2__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 21px; z-index: 2; opacity: 0; transition: opacity .6s ease; pointer-events: none; }
+.hero2__media--playing .hero2__video { opacity: 1; }
+.hero2__media--playing::after { opacity: 0; }
 .hero2__flag { position: absolute; top: -14px; left: 22px; z-index: 3; background: var(--orange); color: var(--on-brand); font-weight: 800; font-size: 17px; font-family: var(--font-display); padding: 10px 15px; border-radius: 12px; line-height: 1; box-shadow: 0 8px 18px rgba(255,205,17,.45); }
 .hero2__flag small { display: block; font-size: 10px; font-weight: 700; opacity: .68; margin-top: 3px; letter-spacing: .02em; }
 

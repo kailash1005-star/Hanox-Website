@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/Icon";
 import { Btn, Placeholder, Shot, Price, StockBadge } from "@/components/ui";
 import { TrustStrip, Reviews, Newsletter, Footer } from "@/components/sections";
@@ -10,6 +11,24 @@ import { useGo } from "@/lib/nav";
 export function HomeView() {
   const go = useGo();
   const r10 = byId("r10") as Model;
+  const videoRef = useRef<HTMLVideoElement>(null);
+  // Only reveal the video once it is actually playing — until then (or if there
+  // is no video file, or autoplay is blocked) the still product shot stays.
+  const [playing, setPlaying] = useState(false);
+
+  // Respect users who prefer reduced motion — they keep the still image.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      v.removeAttribute("autoplay");
+      v.pause();
+    } else {
+      v.play().catch(() => { /* autoplay blocked; the still image stays */ });
+    }
+  }, []);
+
   return (
     <div className="page">
       {/* Hero */}
@@ -29,9 +48,23 @@ export function HomeView() {
               <div><b>2–3 Tage</b><span>R10 Versand</span></div>
             </div>
           </div>
-          <div className="hero2__media">
+          <div className={"hero2__media" + (playing ? " hero2__media--playing" : "")}>
             <span className="hero2__flag">Ab {euro(r10.price)}<small>zzgl. MwSt.</small></span>
-            <img src={r10.images![0]} alt="Hanox R10 Kompaktbagger" />
+            <img className="hero2__poster" src={r10.images![0]} alt="Hanox R10 Kompaktbagger" />
+            <video
+              ref={videoRef}
+              className="hero2__video"
+              muted
+              loop
+              playsInline
+              autoPlay
+              preload="metadata"
+              aria-label="Hanox R10 Kompaktbagger im Einsatz"
+              onPlaying={() => setPlaying(true)}
+            >
+              <source src="/hero/hanox-hero.webm" type="video/webm" />
+              <source src="/hero/hanox-hero.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>

@@ -105,9 +105,9 @@ export function Footer({ go }: { go: Go }) {
       </div>
       <div className="ftr__bar">
         <div className="ftr__pay">
-          {["Visa", "Mastercard", "PayPal", "Klarna", "Apple Pay"].map((p) => <span key={p} className="paychip">{p}</span>)}
+          {["PayPal", "Überweisung / Vorkasse"].map((p) => <span key={p} className="paychip">{p}</span>)}
         </div>
-        <p className="ftr__legal">© 2026 Hanox. Preise zzgl. MwSt. Konzept-Prototyp.</p>
+        <p className="ftr__legal">© 2026 mpinger GmbH — Marke Hanox. Alle Preise zzgl. MwSt.</p>
       </div>
     </footer>
   );

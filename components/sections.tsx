@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Icon } from "./Icon";
 import { Logo, Btn, Stars } from "./ui";
 import { TRUST, REVIEWS } from "@/lib/data";
+import { CONTACT } from "@/lib/contact";
 import type { Go, View } from "@/lib/nav";
 
 /* ---------- Trust strip (4 pillars) ---------- */
@@ -74,9 +75,8 @@ export function Newsletter() {
 /* ---------- Footer ---------- */
 export function Footer({ go }: { go: Go }) {
   const cols: { h: string; links: [View, string][] }[] = [
-    { h: "Schnellzugriff", links: [["about", "Kontakt"], ["about", "Finanzierung"], ["about", "FAQ"], ["about", "Wer wir sind"]] },
-    { h: "Richtlinien", links: [["about", "Lieferung"], ["about", "Rückgabe"], ["about", "Datenschutz"], ["about", "AGB"]] },
-    { h: "Service", links: [["about", "Garantie-Anmeldung"], ["about", "Ersatzteile"], ["catalog", "Alle Maschinen"], ["electric", "Elektro-Reihe"]] },
+    { h: "Schnellzugriff", links: [["catalog", "Alle Maschinen"], ["electric", "Elektro-Reihe"], ["about", "Über uns"], ["contact", "Kontakt"]] },
+    { h: "Rechtliches", links: [["impressum", "Impressum"], ["datenschutz", "Datenschutz"], ["agb", "AGB"]] },
   ];
   return (
     <footer className="ftr">
@@ -85,8 +85,7 @@ export function Footer({ go }: { go: Go }) {
           <Logo size={26} light onClick={() => go("home")} />
           <p>Bezahlbare Kompakt- und Minibagger — in Europa bevorratet, geliefert und betreut.</p>
           <div className="ftr__social">
-            <a href="#" aria-label="Instagram">{Icon.instagram()}</a>
-            <a href="#" aria-label="Facebook">{Icon.facebook()}</a>
+            <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">{Icon.instagram()}</a>
           </div>
         </div>
         <div className="ftr__links">
@@ -98,9 +97,9 @@ export function Footer({ go }: { go: Go }) {
           ))}
           <div>
             <h4>Kontakt</h4>
-            <a className="ftr__contact" href="tel:+490000000000">+49 (0) 000 000 000</a>
-            <a className="ftr__contact" href="mailto:info@hannox.de">info@hannox.de</a>
-            <p className="ftr__hours">Mo–Fr · 8:00–17:00 Uhr</p>
+            <a className="ftr__contact" href={`tel:${CONTACT.phoneHref}`}>{CONTACT.phoneDisplay}</a>
+            <a className="ftr__contact" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+            <p className="ftr__hours">{CONTACT.hours}</p>
           </div>
         </div>
       </div>

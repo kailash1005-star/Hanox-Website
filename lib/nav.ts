@@ -13,6 +13,10 @@ export type View =
   | "catalog"
   | "electric"
   | "about"
+  | "contact"
+  | "impressum"
+  | "datenschutz"
+  | "agb"
   | "product"
   | "cart"
   | "checkout"
@@ -27,7 +31,15 @@ export function routeFor(view: View, arg?: string | null): string {
     case "electric":
       return "/elektro";
     case "about":
-      return "/service";
+      return "/ueber-uns";
+    case "contact":
+      return "/kontakt";
+    case "impressum":
+      return "/impressum";
+    case "datenschutz":
+      return "/datenschutz";
+    case "agb":
+      return "/agb";
     case "product":
       return "/bagger/" + (arg ?? "");
     case "cart":

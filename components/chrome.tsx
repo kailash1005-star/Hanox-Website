@@ -5,6 +5,7 @@ import { Icon } from "./Icon";
 import { Logo } from "./ui";
 import { useCart } from "@/lib/cart";
 import { useGo, type Go, type View } from "@/lib/nav";
+import { CONTACT } from "@/lib/contact";
 
 /* ---------- Announcement bar ---------- */
 export function TopBar() {
@@ -27,8 +28,8 @@ function Header({ go, cartCount, onMenu }: { go: Go; cartCount: number; onMenu: 
   const nav: [View, string][] = [
     ["catalog", "Bagger"],
     ["electric", "Elektro"],
-    ["about", "Service & Lieferung"],
     ["about", "Über uns"],
+    ["contact", "Kontakt"],
   ];
   return (
     <div className="hdr-wrap">
@@ -43,7 +44,7 @@ function Header({ go, cartCount, onMenu }: { go: Go; cartCount: number; onMenu: 
             ))}
           </nav>
           <div className="hdr__actions">
-            <a className="hdr__call" href="tel:+490000000000">{Icon.phone()}<span>+49 (0) 000 000 000</span></a>
+            <a className="hdr__call" href={`tel:${CONTACT.phoneHref}`}>{Icon.phone()}<span>{CONTACT.phoneDisplay}</span></a>
             <button className="hdr__icon" onClick={() => go("catalog")} aria-label="Suche">{Icon.search()}</button>
             <button className="hdr__icon hdr__cart" onClick={() => go("cart")} aria-label="Warenkorb">
               {Icon.cart()}
@@ -62,8 +63,8 @@ function MenuDrawer({ open, onClose, go }: { open: boolean; onClose: () => void;
     ["home", "Start"],
     ["catalog", "Alle Bagger"],
     ["electric", "Elektro-Reihe"],
-    ["about", "Service & Lieferung"],
     ["about", "Über Hanox"],
+    ["contact", "Kontakt"],
     ["cart", "Warenkorb"],
   ];
   return (
@@ -81,8 +82,8 @@ function MenuDrawer({ open, onClose, go }: { open: boolean; onClose: () => void;
           ))}
         </ul>
         <div className="drawer__foot">
-          <p>Mo–Fr · 8:00–17:00 Uhr (MEZ)</p>
-          <a href="tel:+490000000000">+49 (0) 000 000 000</a>
+          <p>{CONTACT.hours}</p>
+          <a href={`tel:${CONTACT.phoneHref}`}>{CONTACT.phoneDisplay}</a>
         </div>
       </nav>
     </div>

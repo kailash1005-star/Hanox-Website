@@ -47,8 +47,12 @@ Local Keystatic can't write files on Vercel's read-only filesystem. Switch
 Then the team edits at `/keystatic` → changes commit to the repo → auto-redeploy.
 
 ## 7. Before going PUBLIC (legal — required for a German shop)
-- [ ] **Impressum**, **Datenschutzerklärung** (GDPR), **AGB**, **Widerrufsbelehrung**
-- [ ] Real phone + email (replace `+49 (0) 000 000 000` / `info@hanox.de` placeholders)
+- [x] Real phone + email wired everywhere (`lib/contact.ts`: `+49 1577 4328168` / `info@hanox-baumaschinen.de`) + Instagram link
+- [x] **Impressum**, **Datenschutzerklärung** (GDPR), **AGB incl. Widerrufsbelehrung** pages created (`/impressum`, `/datenschutz`, `/agb`) — **DRAFTS**
+- [ ] **Fill the `[Platzhalter]` in the legal pages** — these are legally mandatory and currently missing:
+  - Impressum: full company name + **legal form** (e.g. GmbH / Einzelunternehmen), **street address**, **Geschäftsführer/Inhaber name**, **Handelsregister court + HRB number** (if applicable), **USt-IdNr.**
+  - Same company name/address flows into Datenschutz (Verantwortlicher) and AGB (§1, §7 Widerruf)
+- [ ] Have a lawyer / Datenschutzbeauftragter review the three legal pages before launch
 - [ ] Cookie/consent banner if analytics are added
 - [ ] Replace the "HANNOX" hero photo (brand is now **Hanox**)
 - [ ] Confirm VAT handling with a tax advisor (currently flat 19%)

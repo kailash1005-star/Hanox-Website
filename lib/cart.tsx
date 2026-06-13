@@ -2,7 +2,11 @@
 
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
-import { R10_ADDONS, type Model } from "./data";
+import type { Model } from "./data";
+
+/** Optional add-on hook for future per-model accessories. Empty until we have data. */
+export type Addon = { id: string; label: string; price: number };
+const NO_ADDONS: Addon[] = [];
 
 export type CartItem = {
   key: string;
@@ -23,7 +27,7 @@ type CartContextValue = {
   cartCount: number;
   order: Order | null;
   toast: string;
-  addToCart: (m: Model, addons: AddonState) => void;
+  addToCart: (m: Model, addons: AddonState, qty?: number) => void;
   setQty: (key: string, qty: number) => void;
   removeItem: (key: string) => void;
   placeOrder: (o: Order) => void;
@@ -71,16 +75,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const addToCart = useCallback(
-    (m: Model, addons: AddonState) => {
-      const chosen = R10_ADDONS.filter((a) => addons[a.id]);
+    (m: Model, addons: AddonState, qty: number = 1) => {
+      const add = Math.max(1, Math.floor(qty));
+      const chosen = NO_ADDONS.filter((a) => addons[a.id]);
       const unit = m.price + chosen.reduce((s, a) => s + a.price, 0);
       const key = m.id + ":" + chosen.map((a) => a.id).sort().join(",");
       setCart((c) => {
         const ex = c.find((it) => it.key === key);
-        if (ex) return c.map((it) => (it.key === key ? { ...it, qty: it.qty + 1 } : it));
+        if (ex) return c.map((it) => (it.key === key ? { ...it, qty: it.qty + add } : it));
         return [
           ...c,
-          { key, id: m.id, name: m.name, class: m.class, unit, qty: 1, addonLabels: chosen.map((a) => a.label) },
+          { key, id: m.id, name: m.name, class: m.class, unit, qty: add, addonLabels: chosen.map((a) => a.label) },
         ];
       });
       showToast(m.name + " in den Warenkorb gelegt");

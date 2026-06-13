@@ -16,8 +16,8 @@ export function CartView() {
       <div className="page page--shop">
         <div className="empty">
           <h1 style={{ fontSize: 24 }}>Ihr Warenkorb ist leer</h1>
-          <p>Nur der lagernde R10 kann hier hinzugefügt werden. Andere Modelle werden auf Anfrage reserviert.</p>
-          <Btn onClick={() => go("product", "r10")} icon={Icon.arrow()}>R10 konfigurieren</Btn>
+          <p>Lagernde Maschinen können hier hinzugefügt werden. Andere Modelle werden auf Anfrage reserviert.</p>
+          <Btn onClick={() => go("catalog")} icon={Icon.arrow()}>Maschinen ansehen</Btn>
         </div>
         <Footer go={go} />
       </div>

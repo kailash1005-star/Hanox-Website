@@ -8,7 +8,7 @@
  * VAT: flat 19% German rate for now (configurable). Reverse-charge / OSS comes
  * later with the invoicing layer. */
 
-import { byId, R10_ADDONS } from "./data";
+import { byId } from "./data";
 
 export const VAT_RATE = 0.19;
 export const SHIPPING_NET = 300; // flat delivery fee (net €)
@@ -49,13 +49,11 @@ export function priceOrder(items: CartLineInput[], fulfil: Fulfilment): PricedOr
     if (!model) throw new Error(`Unbekanntes Modell: ${modelId}`);
     if (!model.inStock) throw new Error(`${model.name} ist nicht zum Kauf verfügbar.`);
 
-    const addonsNet = addonIds.reduce((sum, aid) => {
-      const addon = R10_ADDONS.find((a) => a.id === aid);
-      return sum + (addon ? addon.price : 0);
-    }, 0);
-
+    // Addons not implemented for the new catalogue yet; keep the key shape so the
+    // checkout flow keeps working and add-on data can be re-introduced later.
+    void addonIds;
     const qty = Math.max(1, Math.floor(it.qty));
-    return { key: it.key, name: model.name, qty, unitNet: model.price + addonsNet };
+    return { key: it.key, name: model.name, qty, unitNet: model.price };
   });
 
   const itemTotalNet = lines.reduce((s, l) => s + l.unitNet * l.qty, 0);

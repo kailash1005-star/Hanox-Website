@@ -11,7 +11,7 @@ export function ModelCard({ m, go }: { m: Model; go: Go }) {
   return (
     <article className="pcard" onClick={() => go("product", m.id)}>
       <div className="pcard__media">
-        {m.images ? <Shot src={m.images[0]} alt={m.name} ratio="1 / 1" /> : <Silhouette label="" />}
+        {m.images.length ? <Shot src={m.images[0]} alt={m.name} ratio="1 / 1" /> : <Silhouette label="" />}
         {m.inStock
           ? (onSale ? <span className="pcard__tab">Sie sparen {euro(m.regularPrice - m.price)}</span> : <span className="pcard__tab">Auf Lager</span>)
           : <span className="pcard__tab pcard__tab--req">Auf Anfrage</span>}

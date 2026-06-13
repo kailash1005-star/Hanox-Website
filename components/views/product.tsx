@@ -1,10 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { notFound } from "next/navigation";
 import { Icon } from "@/components/Icon";
 import { Btn, Gallery, Silhouette, StockBadge } from "@/components/ui";
-import { byId, R10_ADDONS, SPEC_FIELDS, euro, type Model } from "@/lib/data";
+import {
+  byId,
+  euro,
+  SPEC_SECTION_LABELS,
+  type Model,
+  type SpecRow,
+  type SpecSection,
+  type Variant,
+} from "@/lib/data";
 import { useCart } from "@/lib/cart";
 import { useGo, type Go } from "@/lib/nav";
 
@@ -13,12 +21,8 @@ export function ProductView({ id }: { id: string }) {
   const go = useGo();
   const { addToCart } = useCart();
   const m = byId(id);
-  const [addons, setAddons] = useState<Record<string, boolean>>({});
+  const [qty, setQty] = useState(1);
   if (!m) return notFound();
-
-  const addonTotal = R10_ADDONS.reduce((s, a) => s + (addons[a.id] ? a.price : 0), 0);
-  const total = m.price + addonTotal;
-  const toggle = (aid: string) => setAddons((s) => ({ ...s, [aid]: !s[aid] }));
 
   return (
     <div className="page page--shop page--product">
@@ -26,7 +30,7 @@ export function ProductView({ id }: { id: string }) {
         <div className="pd__left">
           <div className="pd__hero">
             <button className="pd__back" onClick={() => go("catalog")} aria-label="Zurück">{Icon.back()}</button>
-            {m.images ? (
+            {m.images.length ? (
               <Gallery images={m.images} alt={m.name + " — " + m.class} />
             ) : (
               <Silhouette label="Foto auf Anfrage" />
@@ -37,51 +41,46 @@ export function ProductView({ id }: { id: string }) {
         <div className="pd__right">
           <div className="pd__head">
             <StockBadge inStock={m.inStock} />
+            <div className="pd__brand">{m.brand}</div>
             <div className="pd__title">
               <div>
                 <h1>{m.name}</h1>
                 <div className="pd__class">{m.class}</div>
               </div>
-              <div className="pd__price">{euro(m.price)}<small>zzgl. MwSt.</small></div>
+              <div className="pd__price">
+                {euro(m.price)}
+                <small>{m.taxNote}</small>
+              </div>
             </div>
+            {m.tagline ? <p className="pd__tagline">{m.tagline}</p> : null}
           </div>
-          <p className="pd__blurb">{m.blurb}</p>
 
-          {/* Technische Daten */}
-          <div className="specs">
-            <div className="specs__h">Technische Daten</div>
-            {SPEC_FIELDS.map(([k, label]) =>
-              m.specs[k] ? (
-                <div className="specs__row" key={k}>
-                  <span>{label}</span>
-                  <span>{m.specs[k]}</span>
-                </div>
-              ) : null
-            )}
-          </div>
+          {m.variants.length > 0 ? (
+            <div className="pd__variants">
+              {m.variants.map((v) => <VariantPicker key={v.name} v={v} />)}
+            </div>
+          ) : null}
+
+          {m.description ? <p className="pd__blurb">{m.description}</p> : null}
+
+          <SpecsBlock m={m} />
 
           {m.inStock ? (
             <>
-              <div className="config">
-                <h3>Zubehör hinzufügen</h3>
-                {R10_ADDONS.map((a) => {
-                  const on = !!addons[a.id];
-                  return (
-                    <button key={a.id} className={"addon " + (on ? "addon--on" : "")} onClick={() => toggle(a.id)}>
-                      <span className="addon__box">{on ? Icon.check({ width: 15, height: 15 }) : null}</span>
-                      <span className="addon__t">{a.label}</span>
-                      <span className="addon__p">+{euro(a.price)}</span>
-                    </button>
-                  );
-                })}
+              <div className="pd__qty">
+                <div className="variant__label">Menge</div>
+                <div className="qtybox">
+                  <button onClick={() => setQty((q) => Math.max(1, q - 1))} aria-label="Weniger">{Icon.minus()}</button>
+                  <b>{qty}</b>
+                  <button onClick={() => setQty((q) => q + 1)} aria-label="Mehr">{Icon.plus()}</button>
+                </div>
               </div>
-
               <div className="buybar">
                 <div className="buybar__price">
-                  <b>{euro(total)}</b>
-                  <small>{addonTotal ? "inkl. Zubehör" : "zzgl. MwSt."}</small>
+                  <b>{euro(m.price * qty)}</b>
+                  <small>{m.taxNote}</small>
                 </div>
-                <Btn onClick={() => { addToCart(m, addons); go("cart"); }} icon={Icon.cart({ width: 18, height: 18 })}>
+                <Btn onClick={() => { addToCart(m, {}, qty); go("cart"); }} icon={Icon.cart({ width: 18, height: 18 })}>
                   In den Warenkorb
                 </Btn>
               </div>
@@ -91,6 +90,72 @@ export function ProductView({ id }: { id: string }) {
           )}
         </div>
       </div>
+    </div>
+  );
+}
+
+/* ---- Variant chips (display + local selection; not yet wired to pricing) ---- */
+function VariantPicker({ v }: { v: Variant }) {
+  const [sel, setSel] = useState(v.values[0] ?? "");
+  return (
+    <div className="variant">
+      <div className="variant__label">{v.name}</div>
+      <div className="variant__chips">
+        {v.values.map((val) => (
+          <button
+            key={val}
+            type="button"
+            className={"chip " + (sel === val ? "chip--on" : "")}
+            onClick={() => setSel(val)}
+          >
+            {val}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ---- Spec tables (Motor / Abmessungen / Leistung / Hydraulik + Sonstiges) ---- */
+function SpecsBlock({ m }: { m: Model }) {
+  const sections = useMemo(() => {
+    const named: { label: string; rows: SpecRow[] }[] = [
+      { label: SPEC_SECTION_LABELS.engine, rows: m.specs.engine },
+      { label: SPEC_SECTION_LABELS.dimensions, rows: m.specs.dimensions },
+      { label: SPEC_SECTION_LABELS.performance, rows: m.specs.performance },
+      { label: SPEC_SECTION_LABELS.hydraulics, rows: m.specs.hydraulics },
+    ].filter((s) => s.rows.length > 0);
+    const other: SpecSection[] = m.specs.other.filter((s) => s.rows.length > 0);
+    return { named, other };
+  }, [m]);
+
+  if (!sections.named.length && !sections.other.length) return null;
+
+  return (
+    <section className="specs2">
+      <h2 className="specs2__h">Technische Daten</h2>
+      {sections.named.map((s) => (
+        <SpecTable key={s.label} title={s.label} rows={s.rows} />
+      ))}
+      {sections.other.map((s) => (
+        <SpecTable key={s.name} title={s.name} rows={s.rows} />
+      ))}
+    </section>
+  );
+}
+
+function SpecTable({ title, rows }: { title: string; rows: SpecRow[] }) {
+  return (
+    <div className="spec-table">
+      <div className="spec-table__head">{title}</div>
+      <dl className="spec-table__body">
+        {rows.map((r, i) => (
+          <div className="spec-table__row" key={i}>
+            <dt>{r.field}</dt>
+            <dd>{r.eu}</dd>
+          </div>
+        ))}
+      </dl>
     </div>
   );
 }

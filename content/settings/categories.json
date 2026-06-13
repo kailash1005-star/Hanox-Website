@@ -1,6 +1,22 @@
 {
   "groups": [
-    { "id": "kompakt", "title": "Kompaktbagger", "sub": "1,0 – 1,5 t · wendig & leicht zu transportieren", "ids": ["r10", "r13", "r15"] },
-    { "id": "mini", "title": "Minibagger", "sub": "1,8 – 3,2 t · mehr Reichweite & Grabkraft", "ids": ["r18", "r22", "r32"] }
+    {
+      "id": "excavators",
+      "title": "Mini-Bagger",
+      "sub": "Kompakt & wendig — vom 750 kg R06 bis zum 3,2 t R32",
+      "ids": ["r06", "r10-eco", "r13-pro", "r15-eco", "r18-pro", "r22-pro", "r32-pro"]
+    },
+    {
+      "id": "skid-loaders",
+      "title": "Kompaktlader",
+      "sub": "Skid Loader — Material, Erdarbeiten, Reinigung",
+      "ids": ["rs-04", "rs-06", "rs-07"]
+    },
+    {
+      "id": "dumpers",
+      "title": "Raupendumper",
+      "sub": "Kompakte Dumper für unebenes Gelände",
+      "ids": ["rd-06"]
+    }
   ]
 }

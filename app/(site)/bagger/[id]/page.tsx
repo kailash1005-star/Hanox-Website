@@ -15,7 +15,7 @@ export async function generateMetadata({
   const { id } = await params;
   const m = byId(id);
   if (!m) return { title: "Nicht gefunden — Hanox" };
-  return { title: `${m.name} — ${m.class} | Hanox`, description: m.blurb };
+  return { title: `${m.name} — ${m.class} | Hanox`, description: m.description };
 }
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {

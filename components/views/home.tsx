@@ -6,11 +6,12 @@ import { Btn, Placeholder, Shot, Price, StockBadge } from "@/components/ui";
 import { TrustStrip, Reviews, Newsletter, Footer } from "@/components/sections";
 import { ProductRow } from "@/components/product-card";
 import { byId, euro, CATEGORIES, type Model } from "@/lib/data";
+import { FLAGSHIP_ID } from "@/lib/products";
 import { useGo } from "@/lib/nav";
 
 export function HomeView() {
   const go = useGo();
-  const r10 = byId("r10") as Model;
+  const r10 = byId(FLAGSHIP_ID) as Model;
   const videoRef = useRef<HTMLVideoElement>(null);
   // Only reveal the video once it is actually playing — until then (or if there
   // is no video file, or autoplay is blocked) the still product shot stays.
@@ -35,22 +36,24 @@ export function HomeView() {
       <section className="hero2">
         <div className="hero2__inner wrapx">
           <div className="hero2__copy">
-            <span className="badge badge--stock"><i className="dot" /> Hanox R10 — jetzt auf Lager</span>
+            <span className="badge badge--stock"><i className="dot" /> Hanox {r10.name} — jetzt auf Lager</span>
             <h1>Profi-Bagger, die&nbsp;sich&nbsp;rechnen.</h1>
             <p>Robuste Kompakt- und Minibagger von 1,0 bis 3,2 Tonnen — in Europa bevorratet, fair bepreist und schnell geliefert. Der R10 ist sofort versandbereit.</p>
             <div className="hero2__cta">
               <Btn onClick={() => go("catalog")} icon={Icon.arrow()}>Bagger entdecken</Btn>
-              <Btn variant="ghost" onClick={() => go("product", "r10")}>R10 ab {euro(r10.price)}</Btn>
+              <Btn variant="ghost" onClick={() => go("product", r10.id)}>{r10.name} ab {euro(r10.price)}</Btn>
             </div>
             <div className="hero2__stats">
               <div><b>6</b><span>Modelle</span></div>
               <div><b>1,0–3,2 t</b><span>Klassen</span></div>
-              <div><b>2–3 Tage</b><span>R10 Versand</span></div>
+              <div><b>2–3 Tage</b><span>{r10.name} Versand</span></div>
             </div>
           </div>
           <div className={"hero2__media" + (playing ? " hero2__media--playing" : "")}>
             <span className="hero2__flag">Ab {euro(r10.price)}<small>zzgl. MwSt.</small></span>
-            <img className="hero2__poster" src={r10.images![0]} alt="Hanox R10 Kompaktbagger" />
+            {r10.images[0] ? (
+              <img className="hero2__poster" src={r10.images[0]} alt={`Hanox ${r10.name} ${r10.class}`} />
+            ) : null}
             <video
               ref={videoRef}
               className="hero2__video"
@@ -59,7 +62,7 @@ export function HomeView() {
               playsInline
               autoPlay
               preload="metadata"
-              aria-label="Hanox R10 Kompaktbagger im Einsatz"
+              aria-label={`Hanox ${r10.name} im Einsatz`}
               onPlaying={() => setPlaying(true)}
             >
               <source src="/hero/hanox-hero.webm" type="video/webm" />
@@ -110,18 +113,20 @@ export function HomeView() {
       {/* Produktreihen nach Kategorie */}
       {CATEGORIES.map((cat) => <ProductRow key={cat.id} cat={cat} go={go} />)}
 
-      {/* R10 Spotlight */}
+      {/* Flagship Spotlight */}
       <section className="spotlight wrapx">
         <div className="spotlight__media">
-          <Shot src={r10.images![2]} alt="Hanox R10" ratio="4 / 3" className="shot--feat" />
+          {r10.images[2] || r10.images[0] ? (
+            <Shot src={r10.images[2] ?? r10.images[0]} alt={`Hanox ${r10.name}`} ratio="4 / 3" className="shot--feat" />
+          ) : null}
         </div>
         <div className="spotlight__body">
-          <StockBadge inStock />
+          <StockBadge inStock={r10.inStock} />
           <h2>{r10.name}</h2>
           <div className="spotlight__class">{r10.class}</div>
-          <p>{r10.blurb}</p>
+          <p>{r10.description}</p>
           <Price price={r10.price} regular={r10.regularPrice} />
-          <Btn onClick={() => go("product", "r10")} icon={Icon.arrow()}>Konfigurieren & kaufen</Btn>
+          <Btn onClick={() => go("product", r10.id)} icon={Icon.arrow()}>Details & kaufen</Btn>
         </div>
       </section>
 

@@ -51,8 +51,9 @@ export function CartView() {
         <div className="summary__row summary__row--total"><span>Gesamt</span><span>{euro(subtotal)}</span></div>
       </div>
       <div className="wrap">
-        <Btn full onClick={() => go("checkout")} icon={Icon.arrow()}>Zur Kasse</Btn>
-        <button className="sec__link" style={{ display: "block", margin: "14px auto 0" }} onClick={() => go("catalog")}>Weiter stöbern</button>
+        <Btn full variant="dark" onClick={() => go("checkout")} icon={Icon.arrow()}>Zur Kasse</Btn>
+        <div style={{ height: 10 }} />
+        <Btn full variant="primary" onClick={() => go("catalog")}>Weiter stöbern</Btn>
       </div>
       <Footer go={go} />
     </div>

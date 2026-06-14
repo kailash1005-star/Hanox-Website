@@ -132,6 +132,7 @@ p { line-height: 1.55; color: var(--ink-2); }
 .tile__title { font-size: 21px; font-weight: 800; letter-spacing: -.02em; line-height: 1; }
 .tile__go { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 13px; font-weight: 700; }
 .tile__soon { position: absolute; top: 12px; left: 12px; }
+.tile__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 
 /* hero */
 .hero { padding: 26px 18px 8px; }
@@ -569,6 +570,60 @@ p { line-height: 1.55; color: var(--ink-2); }
   .req { margin: 18px 0 0; }
   /* buy bar becomes an inline panel, not a sticky footer, in two-column */
   .buybar { position: static; background: var(--paper); backdrop-filter: none; border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--sh); margin-top: 18px; padding: 16px 18px; }
+}
+
+/* ============================================================
+   HANOX_TASKS additions (engine selector, delivery, checkout,
+   order banner, accessories) + mobile polish
+   ============================================================ */
+
+/* Engine selector + variant deltas (Task 2) */
+.variant--engine { margin: 6px 18px 4px; }
+.variant--engine .chip { display: inline-flex; align-items: center; gap: 6px; }
+.chip__delta { font-weight: 800; opacity: .9; }
+.pd__pricenote { color: var(--muted); font-size: 12.5px; margin: 6px 0 0; padding: 0 18px; }
+
+/* Delivery-time box on product page (Task 4) */
+.pd__delivery { display: flex; gap: 12px; align-items: flex-start; margin: 16px 18px 0; padding: 14px 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; }
+.pd__delivery-ic { color: var(--ink); flex: none; margin-top: 1px; }
+.pd__delivery b { display: block; font-size: 14px; margin-bottom: 2px; }
+.pd__delivery span { display: block; font-size: 13.5px; color: var(--ink-2); }
+
+/* AGB/Datenschutz acceptance checkbox (Task 13) */
+.accept { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--ink-2); line-height: 1.5; cursor: pointer; }
+.accept input { width: 18px; height: 18px; margin-top: 1px; flex: none; accent-color: var(--ink); cursor: pointer; }
+.accept a { color: var(--ink); font-weight: 700; }
+
+/* Post-payment confirmation banner (Task 14) */
+.orderbanner { position: sticky; top: 0; z-index: 45; background: #157a44; color: #fff; }
+.orderbanner__in { max-width: 1320px; margin: 0 auto; display: flex; align-items: center; gap: 12px; padding: 12px 18px; }
+.orderbanner__ic { display: inline-flex; background: rgba(255,255,255,.2); border-radius: 50%; padding: 4px; flex: none; }
+.orderbanner p { color: #fff; font-size: 14px; font-weight: 600; margin: 0; flex: 1; }
+.orderbanner__x { background: none; border: 0; color: #fff; display: inline-flex; padding: 4px; opacity: .85; }
+.orderbanner__x:hover { opacity: 1; }
+
+/* Accessories grid (Task 7) */
+.acc-grid { display: grid; grid-template-columns: 1fr; gap: 12px; padding: 8px 18px; }
+.acc-card { display: flex; gap: 14px; align-items: flex-start; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 16px; box-shadow: var(--sh); }
+.acc-card__media { width: 54px; height: 54px; border-radius: 12px; background: rgba(255,205,17,.16); display: grid; place-items: center; color: var(--ink); flex: none; }
+.acc-card__b b { display: block; font-size: 16px; margin-bottom: 3px; }
+.acc-card__b p { margin: 0 0 6px; font-size: 14px; }
+.acc-card__price { font-size: 13px; font-weight: 800; color: var(--ink); }
+@media (min-width: 760px) { .acc-grid { grid-template-columns: repeat(2, 1fr); max-width: 940px; margin: 0 auto; } }
+@media (min-width: 1000px) { .acc-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---- Mobile polish (Task 11) ---- */
+@media (max-width: 600px) {
+  .hero2__copy h1 { font-size: clamp(32px, 11vw, 46px); }
+  .hero2__stats { gap: 18px; flex-wrap: wrap; }
+  .pd__title { flex-direction: column; gap: 6px; }
+  .pd__price { font-size: 22px; }
+  .variant--engine .chip { width: 100%; justify-content: space-between; }
+  .band { padding: 26px 18px; }
+  .band h2 { font-size: 22px; }
+  .orderbanner__in { padding: 10px 14px; }
+  .orderbanner p { font-size: 13px; }
+  .acc-grid { padding: 8px 14px; }
 }
 
 

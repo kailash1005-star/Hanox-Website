@@ -38,7 +38,7 @@ export function HomeView() {
           <div className="hero2__copy">
             <span className="badge badge--stock"><i className="dot" /> Hanox {r10.name} — jetzt auf Lager</span>
             <h1>Profi-Bagger, die&nbsp;sich&nbsp;rechnen.</h1>
-            <p>Robuste Kompakt- und Minibagger von 1,0 bis 3,2 Tonnen — in Europa bevorratet, fair bepreist und schnell geliefert. Der R10 ist sofort versandbereit.</p>
+            <p>Robuste Kompakt- und Minibagger von 1,0 bis 3,2 Tonnen — in Europa bevorratet, fair bepreist und schnell geliefert. Der {r10.name} ist sofort versandbereit.</p>
             <div className="hero2__cta">
               <Btn onClick={() => go("catalog")} icon={Icon.arrow()}>Bagger entdecken</Btn>
               <Btn variant="ghost" onClick={() => go("product", r10.id)}>{r10.name} ab {euro(r10.price)}</Btn>
@@ -46,7 +46,7 @@ export function HomeView() {
             <div className="hero2__stats">
               <div><b>6</b><span>Modelle</span></div>
               <div><b>1,0–3,2 t</b><span>Klassen</span></div>
-              <div><b>2–3 Tage</b><span>{r10.name} Versand</span></div>
+              <div><b>2–7 Tage</b><span>Lieferung (DE)</span></div>
             </div>
           </div>
           <div className={"hero2__media" + (playing ? " hero2__media--playing" : "")}>
@@ -79,7 +79,8 @@ export function HomeView() {
         <div className="sec sec--center"><div><p className="eyebrow">Zwei Wege, ein Anspruch</p><h2>Wählen Sie Ihren Antrieb</h2></div></div>
         <div className="choose">
           <button className="choose__tile" onClick={() => go("catalog")}>
-            <Placeholder label="" tone="diesel" ratio="4 / 3" />
+            {/* Task 1: diesel banner image */}
+            <img className="tile__img" src="/products/images/Diesel%20engine/f919c971961823.5bd76f839cd7d.jpg" alt="Diesel-Maschinen" />
             <div className="tile__scrim" />
             <div className="tile__body">
               <p className="tile__kicker">Jetzt auf Lager</p>
@@ -88,6 +89,8 @@ export function HomeView() {
             </div>
           </button>
           <button className="choose__tile" onClick={() => go("electric")}>
+            {/* TODO(Task 1): replace with the client-supplied ELECTRIC banner image
+                when available (e.g. /products/images/Electric gen/<file>). */}
             <Placeholder label="" tone="electric" ratio="4 / 3" />
             <div className="tile__scrim" />
             <span className="badge badge--soon badge--sm tile__soon">Demnächst</span>
@@ -127,6 +130,16 @@ export function HomeView() {
           <p>{r10.description}</p>
           <Price price={r10.price} regular={r10.regularPrice} />
           <Btn onClick={() => go("product", r10.id)} icon={Icon.arrow()}>Details & kaufen</Btn>
+        </div>
+      </section>
+
+      {/* Zubehör / Accessories (Task 7) */}
+      <section className="band band--green wrapx">
+        <p className="eyebrow eyebrow--on" style={{ color: "#fff" }}>Zubehör</p>
+        <h2>Das passende Anbaugerät für jede Aufgabe</h2>
+        <p>Löffel, Hydraulikhämmer, Greifer, Erdbohrer und mehr — abgestimmt auf Ihre Maschine.</p>
+        <div className="band__cta">
+          <Btn variant="primary" onClick={() => go("accessories")} icon={Icon.arrow()}>Zubehör ansehen</Btn>
         </div>
       </section>
 

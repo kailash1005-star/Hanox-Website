@@ -75,7 +75,7 @@ export function Newsletter() {
 /* ---------- Footer ---------- */
 export function Footer({ go }: { go: Go }) {
   const cols: { h: string; links: [View, string][] }[] = [
-    { h: "Schnellzugriff", links: [["catalog", "Alle Maschinen"], ["electric", "Elektro-Reihe"], ["about", "Über uns"], ["contact", "Kontakt"]] },
+    { h: "Schnellzugriff", links: [["catalog", "Alle Maschinen"], ["accessories", "Zubehör"], ["electric", "Elektro-Reihe"], ["about", "Über uns"], ["contact", "Kontakt"]] },
     { h: "Rechtliches", links: [["impressum", "Impressum"], ["datenschutz", "Datenschutz"], ["agb", "AGB"]] },
   ];
   return (

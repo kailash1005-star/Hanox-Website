@@ -13,6 +13,9 @@ import {
   type SpecSection,
   type Variant,
 } from "@/lib/data";
+import { copyDe } from "@/lib/product-copy";
+import { engineConfig, engineOption, defaultEngineId, type EngineConfig } from "@/lib/variants";
+import { DELIVERY_TIME } from "@/lib/order-pricing";
 import { useCart } from "@/lib/cart";
 import { useGo, type Go } from "@/lib/nav";
 
@@ -22,7 +25,17 @@ export function ProductView({ id }: { id: string }) {
   const { addToCart } = useCart();
   const m = byId(id);
   const [qty, setQty] = useState(1);
+
+  const engines = engineConfig(id);
+  const [engineId, setEngineId] = useState<string | undefined>(defaultEngineId(id));
   if (!m) return notFound();
+
+  const engine = engineOption(id, engineId);
+  // Live price: base price + selected engine's delta (Task 2).
+  const unit = m.price + (engine?.priceDelta ?? 0);
+  const copy = copyDe(m.id);
+  const description = copy.description ?? m.description;
+  const tagline = copy.tagline ?? m.tagline;
 
   return (
     <div className="page page--shop page--product">
@@ -48,22 +61,38 @@ export function ProductView({ id }: { id: string }) {
                 <div className="pd__class">{m.class}</div>
               </div>
               <div className="pd__price">
-                {euro(m.price)}
+                {euro(unit)}
                 <small>{m.taxNote}</small>
               </div>
             </div>
-            {m.tagline ? <p className="pd__tagline">{m.tagline}</p> : null}
+            {engine?.priceTbd ? (
+              <p className="pd__pricenote">* Aufpreis für diesen Motor wird noch bestätigt.</p>
+            ) : null}
+            {tagline ? <p className="pd__tagline">{tagline}</p> : null}
           </div>
 
-          {m.variants.length > 0 ? (
-            <div className="pd__variants">
-              {m.variants.map((v) => <VariantPicker key={v.name} v={v} />)}
-            </div>
+          {engines ? (
+            <EngineSelector cfg={engines} selected={engineId} onSelect={setEngineId} />
           ) : null}
 
-          {m.description ? <p className="pd__blurb">{m.description}</p> : null}
+          {/* Non-engine multi-option variants (display only) */}
+          {m.variants.filter((v) => v.name.toLowerCase() !== "engine" && v.values.length > 1).map((v) => (
+            <VariantPicker key={v.name} v={v} />
+          ))}
 
-          <SpecsBlock m={m} />
+          {description ? <p className="pd__blurb">{description}</p> : null}
+
+          {/* Delivery time (Task 4) */}
+          <div className="pd__delivery">
+            <span className="pd__delivery-ic">{Icon.truck({ width: 20, height: 20 })}</span>
+            <div>
+              <b>Lieferzeit</b>
+              <span>{DELIVERY_TIME.de}</span>
+              <span>{DELIVERY_TIME.eu}</span>
+            </div>
+          </div>
+
+          <SpecsBlock m={m} engineSpecs={engine?.specs} />
 
           {m.inStock ? (
             <>
@@ -77,10 +106,20 @@ export function ProductView({ id }: { id: string }) {
               </div>
               <div className="buybar">
                 <div className="buybar__price">
-                  <b>{euro(m.price * qty)}</b>
+                  <b>{euro(unit * qty)}</b>
                   <small>{m.taxNote}</small>
                 </div>
-                <Btn onClick={() => { addToCart(m, {}, qty); go("cart"); }} icon={Icon.cart({ width: 18, height: 18 })}>
+                <Btn
+                  onClick={() => {
+                    addToCart(
+                      m,
+                      { variantId: engineId, variantLabel: engine?.label, unit },
+                      qty
+                    );
+                    go("cart");
+                  }}
+                  icon={Icon.cart({ width: 18, height: 18 })}
+                >
                   In den Warenkorb
                 </Btn>
               </div>
@@ -94,7 +133,38 @@ export function ProductView({ id }: { id: string }) {
   );
 }
 
-/* ---- Variant chips (display + local selection; not yet wired to pricing) ---- */
+/* ---- Engine selector: switches price + engine specs live (Task 2) ---- */
+function EngineSelector({
+  cfg,
+  selected,
+  onSelect,
+}: {
+  cfg: EngineConfig;
+  selected?: string;
+  onSelect: (id: string) => void;
+}) {
+  return (
+    <div className="variant variant--engine">
+      <div className="variant__label">{cfg.label}</div>
+      <div className="variant__chips">
+        {cfg.options.map((o) => (
+          <button
+            key={o.id}
+            type="button"
+            className={"chip " + (selected === o.id ? "chip--on" : "")}
+            onClick={() => onSelect(o.id)}
+            aria-pressed={selected === o.id}
+          >
+            {o.label}
+            {o.priceDelta > 0 ? <span className="chip__delta"> +{euro(o.priceDelta)}</span> : null}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ---- Variant chips (display + local selection) ---- */
 function VariantPicker({ v }: { v: Variant }) {
   const [sel, setSel] = useState(v.values[0] ?? "");
   return (
@@ -117,17 +187,19 @@ function VariantPicker({ v }: { v: Variant }) {
 }
 
 /* ---- Spec tables (Motor / Abmessungen / Leistung / Hydraulik + Sonstiges) ---- */
-function SpecsBlock({ m }: { m: Model }) {
+function SpecsBlock({ m, engineSpecs }: { m: Model; engineSpecs?: SpecRow[] }) {
   const sections = useMemo(() => {
+    // When an engine variant is selected, its spec rows replace the base engine table.
+    const engineRows = engineSpecs && engineSpecs.length ? engineSpecs : m.specs.engine;
     const named: { label: string; rows: SpecRow[] }[] = [
-      { label: SPEC_SECTION_LABELS.engine, rows: m.specs.engine },
+      { label: SPEC_SECTION_LABELS.engine, rows: engineRows },
       { label: SPEC_SECTION_LABELS.dimensions, rows: m.specs.dimensions },
       { label: SPEC_SECTION_LABELS.performance, rows: m.specs.performance },
       { label: SPEC_SECTION_LABELS.hydraulics, rows: m.specs.hydraulics },
     ].filter((s) => s.rows.length > 0);
     const other: SpecSection[] = m.specs.other.filter((s) => s.rows.length > 0);
     return { named, other };
-  }, [m]);
+  }, [m, engineSpecs]);
 
   if (!sections.named.length && !sections.other.length) return null;
 

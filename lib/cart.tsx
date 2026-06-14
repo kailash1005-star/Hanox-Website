@@ -4,9 +4,12 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import type { ReactNode } from "react";
 import type { Model } from "./data";
 
-/** Optional add-on hook for future per-model accessories. Empty until we have data. */
-export type Addon = { id: string; label: string; price: number };
-const NO_ADDONS: Addon[] = [];
+/**
+ * A line selection. `variantId` (e.g. the chosen engine option id) is encoded
+ * into the cart key so server-side pricing can recompute the exact unit price.
+ * `unit` is the per-item price to display (base price + variant delta).
+ */
+export type CartSelection = { variantId?: string; variantLabel?: string; unit?: number };
 
 export type CartItem = {
   key: string;
@@ -18,19 +21,18 @@ export type CartItem = {
   addonLabels: string[];
 };
 
-export type Order = { fulfil: string; total: number };
-
-type AddonState = Record<string, boolean>;
+export type Order = { fulfil: string; total: number; email?: string };
 
 type CartContextValue = {
   cart: CartItem[];
   cartCount: number;
   order: Order | null;
   toast: string;
-  addToCart: (m: Model, addons: AddonState, qty?: number) => void;
+  addToCart: (m: Model, sel?: CartSelection, qty?: number) => void;
   setQty: (key: string, qty: number) => void;
   removeItem: (key: string) => void;
   placeOrder: (o: Order) => void;
+  clearOrder: () => void;
   showToast: (msg: string) => void;
 };
 
@@ -75,17 +77,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const addToCart = useCallback(
-    (m: Model, addons: AddonState, qty: number = 1) => {
+    (m: Model, sel: CartSelection = {}, qty: number = 1) => {
       const add = Math.max(1, Math.floor(qty));
-      const chosen = NO_ADDONS.filter((a) => addons[a.id]);
-      const unit = m.price + chosen.reduce((s, a) => s + a.price, 0);
-      const key = m.id + ":" + chosen.map((a) => a.id).sort().join(",");
+      const unit = sel.unit ?? m.price;
+      // key = "<productId>:<variantId>" — variantId lets the server recompute price.
+      const key = m.id + ":" + (sel.variantId ?? "");
+      const addonLabels = sel.variantLabel ? [sel.variantLabel] : [];
       setCart((c) => {
         const ex = c.find((it) => it.key === key);
         if (ex) return c.map((it) => (it.key === key ? { ...it, qty: it.qty + add } : it));
         return [
           ...c,
-          { key, id: m.id, name: m.name, class: m.class, unit, qty: add, addonLabels: chosen.map((a) => a.label) },
+          { key, id: m.id, name: m.name, class: m.class, unit, qty: add, addonLabels },
         ];
       });
       showToast(m.name + " in den Warenkorb gelegt");
@@ -106,11 +109,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCart([]);
   }, []);
 
+  const clearOrder = useCallback(() => setOrder(null), []);
+
   const cartCount = cart.reduce((s, it) => s + it.qty, 0);
 
   return (
     <CartContext.Provider
-      value={{ cart, cartCount, order, toast, addToCart, setQty, removeItem, placeOrder, showToast }}
+      value={{ cart, cartCount, order, toast, addToCart, setQty, removeItem, placeOrder, clearOrder, showToast }}
     >
       {children}
     </CartContext.Provider>

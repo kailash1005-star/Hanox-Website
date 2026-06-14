@@ -19,6 +19,31 @@ export type Accessory = {
 
 export const ACCESSORIES: Accessory[] = raw as Accessory[];
 
+const ACCESSORY_BY_ID: Record<string, Accessory> = Object.fromEntries(
+  ACCESSORIES.map((a) => [a.id, a])
+);
+
+/** Look up an accessory by its id (used for server-authoritative cart pricing). */
+export function getAccessory(id: string): Accessory | undefined {
+  return ACCESSORY_BY_ID[id];
+}
+
+/** Machine (product id) -> accessory group id. Order = chooser display order. */
+export const MACHINE_ACCESSORY_MAP: Record<string, string> = {
+  "r10-eco": "r10",
+  "r13-pro": "r10",
+  "r15-eco": "r10",
+  "r18-pro": "r18",
+  "r22-pro": "r22",
+  "r32-pro": "r32",
+  "rs-04": "rs04",
+  "rs-06": "rs06",
+  "rs-07": "rs07",
+};
+
+/** Machine ids that have an accessories page (for the chooser + static params). */
+export const ACCESSORY_MACHINE_IDS = Object.keys(MACHINE_ACCESSORY_MAP);
+
 export type AccessoryGroup = { id: string; label: string; items: Accessory[] };
 
 /** Accessories grouped by compatible machine, in display order. */
@@ -36,3 +61,10 @@ export const ACCESSORY_GROUPS: AccessoryGroup[] = (() => {
     (x, y) => (x.items[0]?.order ?? 99) - (y.items[0]?.order ?? 99)
   );
 })();
+
+/** Accessory group for a given machine (product) id, if any. */
+export function groupForMachine(machineId: string): AccessoryGroup | undefined {
+  const groupId = MACHINE_ACCESSORY_MAP[machineId];
+  if (!groupId) return undefined;
+  return ACCESSORY_GROUPS.find((g) => g.id === groupId);
+}

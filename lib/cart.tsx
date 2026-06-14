@@ -19,7 +19,11 @@ export type CartItem = {
   unit: number;
   qty: number;
   addonLabels: string[];
+  image?: string;
 };
+
+/** Minimal accessory shape needed to add one to the cart. */
+export type CartAccessory = { id: string; name: string; price: number; image?: string };
 
 export type Order = { fulfil: string; total: number; email?: string };
 
@@ -29,6 +33,7 @@ type CartContextValue = {
   order: Order | null;
   toast: string;
   addToCart: (m: Model, sel?: CartSelection, qty?: number) => void;
+  addAccessory: (acc: CartAccessory, qty?: number) => void;
   setQty: (key: string, qty: number) => void;
   removeItem: (key: string) => void;
   placeOrder: (o: Order) => void;
@@ -88,10 +93,27 @@ export function CartProvider({ children }: { children: ReactNode }) {
         if (ex) return c.map((it) => (it.key === key ? { ...it, qty: it.qty + add } : it));
         return [
           ...c,
-          { key, id: m.id, name: m.name, class: m.class, unit, qty: add, addonLabels },
+          { key, id: m.id, name: m.name, class: m.class, unit, qty: add, addonLabels, image: m.images[0] },
         ];
       });
       showToast(m.name + " in den Warenkorb gelegt");
+    },
+    [showToast]
+  );
+
+  const addAccessory = useCallback(
+    (acc: CartAccessory, qty: number = 1) => {
+      const add = Math.max(1, Math.floor(qty));
+      const key = "acc:" + acc.id; // matches the server-side pricing key shape
+      setCart((c) => {
+        const ex = c.find((it) => it.key === key);
+        if (ex) return c.map((it) => (it.key === key ? { ...it, qty: it.qty + add } : it));
+        return [
+          ...c,
+          { key, id: acc.id, name: acc.name, class: "Zubehör", unit: acc.price, qty: add, addonLabels: [], image: acc.image },
+        ];
+      });
+      showToast(acc.name + " in den Warenkorb gelegt");
     },
     [showToast]
   );
@@ -115,7 +137,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   return (
     <CartContext.Provider
-      value={{ cart, cartCount, order, toast, addToCart, setQty, removeItem, placeOrder, clearOrder, showToast }}
+      value={{ cart, cartCount, order, toast, addToCart, addAccessory, setQty, removeItem, placeOrder, clearOrder, showToast }}
     >
       {children}
     </CartContext.Provider>

@@ -79,6 +79,18 @@ function parsePrice(s: string): number {
   return Number.isFinite(n) ? Math.round(n) : 0;
 }
 
+/**
+ * Availability override. The scraped feed marks everything "In stock", but only
+ * selected machines are actually purchasable online; the rest are "auf Anfrage".
+ * `true`/`false` here overrides the feed for that slug.
+ *
+ * DEMO: only rs-04 is forced to auf-Anfrage for review. After sign-off this will
+ * become the full rule (only rd-06 and r10-eco available, everything else false).
+ */
+const AVAILABILITY_OVERRIDE: Record<string, boolean> = {
+  "rs-04": false,
+};
+
 function categoryFor(slug: string): ProductCategory {
   if (slug.startsWith("rs-")) return "skid-loader";
   if (slug.startsWith("rd-")) return "dumper";
@@ -127,7 +139,7 @@ function adapt(r: RawProduct): Product {
     regularPrice: price,
     currency: s.currency || "EUR",
     taxNote: s.tax_note || "excl. MwSt",
-    inStock: /in\s*stock/i.test(s.availability),
+    inStock: AVAILABILITY_OVERRIDE[slug] ?? /in\s*stock/i.test(s.availability),
     variants: (s.variants ?? []).map((v) => ({ name: v.option_name, values: v.values })),
     specs: {
       engine: s.specifications?.engine ?? [],

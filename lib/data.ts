@@ -32,7 +32,9 @@ export const byId = (id: string): Model | undefined => getProduct(id);
 export const CATEGORIES: Category[] = categoriesData.groups;
 
 export function euro(n: number): string {
-  return "€" + n.toLocaleString("de-DE");
+  // Whole euros print without decimals (€5.625); amounts with cents show them (€423,40).
+  const opts = Number.isInteger(n) ? {} : { minimumFractionDigits: 2, maximumFractionDigits: 2 };
+  return "€" + n.toLocaleString("de-DE", opts);
 }
 
 /** Localised section headers for the product detail page. */

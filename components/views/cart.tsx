@@ -30,7 +30,7 @@ export function CartView() {
       <div className="lead"><h1>Ihr Warenkorb</h1></div>
       {items.map((it) => (
         <div className="line" key={it.key}>
-          <Shot src={(byId(it.id)?.images || [])[0]} alt={it.name} ratio="78 / 64" />
+          <Shot src={it.image ?? (byId(it.id)?.images || [])[0]} alt={it.name} ratio="78 / 64" />
           <div className="line__t">
             <b>{it.name}</b>
             <span>{it.addonLabels.length ? it.addonLabels.join(" · ") : it.class}</span>

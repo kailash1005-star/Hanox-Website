@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { notFound } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import { Icon } from "@/components/Icon";
 import { Btn, Gallery, Silhouette, StockBadge } from "@/components/ui";
 import {
@@ -15,6 +15,7 @@ import {
 } from "@/lib/data";
 import { copyDe } from "@/lib/product-copy";
 import { engineConfig, engineOption, defaultEngineId, type EngineConfig } from "@/lib/variants";
+import { groupForMachine } from "@/lib/accessories";
 import { DELIVERY_TIME } from "@/lib/order-pricing";
 import { useCart } from "@/lib/cart";
 import { useGo, type Go } from "@/lib/nav";
@@ -22,9 +23,11 @@ import { useGo, type Go } from "@/lib/nav";
 /* ============ PRODUKTDETAIL ============ */
 export function ProductView({ id }: { id: string }) {
   const go = useGo();
+  const router = useRouter();
   const { addToCart } = useCart();
   const m = byId(id);
   const [qty, setQty] = useState(1);
+  const hasAccessories = !!groupForMachine(id);
 
   const engines = engineConfig(id);
   const [engineId, setEngineId] = useState<string | undefined>(defaultEngineId(id));
@@ -41,7 +44,7 @@ export function ProductView({ id }: { id: string }) {
     <div className="page page--shop page--product">
       <div className="pd">
         <div className="pd__left">
-          <div className="pd__hero">
+          <div className={"pd__hero" + (m.inStock ? "" : " pd__hero--req")}>
             <button className="pd__back" onClick={() => go("catalog")} aria-label="Zurück">{Icon.back()}</button>
             {m.images.length ? (
               <Gallery images={m.images} alt={m.name + " — " + m.class} />
@@ -91,6 +94,21 @@ export function ProductView({ id }: { id: string }) {
               <span>{DELIVERY_TIME.eu}</span>
             </div>
           </div>
+
+          {/* Cross-sell: jump to this machine's accessories (added to the same cart) */}
+          {hasAccessories ? (
+            <button
+              className="pd__acc-link"
+              onClick={() => { router.push(`/zubehoer/${id}`); window.scrollTo(0, 0); }}
+            >
+              <span className="pd__acc-ic">{Icon.wrench({ width: 20, height: 20 })}</span>
+              <span className="pd__acc-t">
+                <b>Passendes Zubehör für {m.name}</b>
+                <span>Anbaugeräte ansehen und zum Warenkorb hinzufügen</span>
+              </span>
+              {Icon.arrow()}
+            </button>
+          ) : null}
 
           <SpecsBlock m={m} engineSpecs={engine?.specs} />
 

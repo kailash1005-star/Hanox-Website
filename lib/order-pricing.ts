@@ -10,6 +10,7 @@
 
 import { byId } from "./data";
 import { engineDelta } from "./variants";
+import { getAccessory } from "./accessories";
 
 export const VAT_RATE = 0.19;
 
@@ -65,6 +66,15 @@ function parseKey(key: string): { modelId: string; addonIds: string[] } {
 export function priceOrder(items: CartLineInput[], fulfil: Fulfilment): PricedOrder {
   const lines: PricedLine[] = items.map((it) => {
     const { modelId, addonIds } = parseKey(it.key);
+    const qty = Math.max(1, Math.floor(it.qty));
+
+    // Accessory line: key shape "acc:<accessoryId>".
+    if (modelId === "acc") {
+      const acc = getAccessory(addonIds[0]);
+      if (!acc) throw new Error(`Unbekanntes Zubehör: ${addonIds[0]}`);
+      return { key: it.key, name: acc.name, qty, unitNet: acc.price };
+    }
+
     const model = byId(modelId);
     if (!model) throw new Error(`Unbekanntes Modell: ${modelId}`);
     if (!model.inStock) throw new Error(`${model.name} ist nicht zum Kauf verfügbar.`);
@@ -72,7 +82,6 @@ export function priceOrder(items: CartLineInput[], fulfil: Fulfilment): PricedOr
     // The first key token (if any) is the chosen engine-variant id; recompute the
     // unit price from the base price + the variant's confirmed price delta.
     const variantId = addonIds[0];
-    const qty = Math.max(1, Math.floor(it.qty));
     const unitNet = model.price + engineDelta(modelId, variantId);
     return { key: it.key, name: model.name, qty, unitNet };
   });

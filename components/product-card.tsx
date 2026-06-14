@@ -9,7 +9,7 @@ import type { Go } from "@/lib/nav";
 export function ModelCard({ m, go }: { m: Model; go: Go }) {
   const onSale = m.regularPrice && m.regularPrice > m.price;
   return (
-    <article className="pcard" onClick={() => go("product", m.id)}>
+    <article className={"pcard" + (m.inStock ? "" : " pcard--req")} onClick={() => go("product", m.id)}>
       <div className="pcard__media">
         {m.images.length ? <Shot src={m.images[0]} alt={m.name} ratio="1 / 1" /> : <Silhouette label="" />}
         {m.inStock

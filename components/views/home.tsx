@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon } from "@/components/Icon";
 import { Btn, Placeholder, Shot, Price, StockBadge } from "@/components/ui";
 import { TrustStrip, Reviews, Newsletter, Footer } from "@/components/sections";
@@ -12,23 +12,16 @@ import { useGo } from "@/lib/nav";
 export function HomeView() {
   const go = useGo();
   const r10 = byId(FLAGSHIP_ID) as Model;
-  const videoRef = useRef<HTMLVideoElement>(null);
-  // Only reveal the video once it is actually playing — until then (or if there
-  // is no video file, or autoplay is blocked) the still product shot stays.
-  const [playing, setPlaying] = useState(false);
-
-  // Respect users who prefer reduced motion — they keep the still image.
+  // Hero carousel: the currently-available machines. Auto-slides; click → ordering page.
+  const slides = (["r10-eco", "rd-06"].map(byId).filter(Boolean) as Model[]);
+  const [slide, setSlide] = useState(0);
   useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      v.removeAttribute("autoplay");
-      v.pause();
-    } else {
-      v.play().catch(() => { /* autoplay blocked; the still image stays */ });
-    }
-  }, []);
+    if (slides.length < 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const t = setInterval(() => setSlide((s) => (s + 1) % slides.length), 4500);
+    return () => clearInterval(t);
+  }, [slides.length]);
+  const current = slides[slide] ?? r10;
 
   return (
     <div className="page">
@@ -49,25 +42,34 @@ export function HomeView() {
               <div><b>2–7 Tage</b><span>Lieferung (DE)</span></div>
             </div>
           </div>
-          <div className={"hero2__media" + (playing ? " hero2__media--playing" : "")}>
-            <span className="hero2__flag">Ab {euro(r10.price)}<small>zzgl. MwSt.</small></span>
-            {r10.images[0] ? (
-              <img className="hero2__poster" src={r10.images[0]} alt={`Hanox ${r10.name} ${r10.class}`} />
-            ) : null}
-            <video
-              ref={videoRef}
-              className="hero2__video"
-              muted
-              loop
-              playsInline
-              autoPlay
-              preload="metadata"
-              aria-label={`Hanox ${r10.name} im Einsatz`}
-              onPlaying={() => setPlaying(true)}
-            >
-              <source src="/hero/hanox-hero.webm" type="video/webm" />
-              <source src="/hero/hanox-hero.mp4" type="video/mp4" />
-            </video>
+          <div className="hero2__media">
+            <span className="hero2__flag">Ab {euro(current.price)}<small>zzgl. MwSt.</small></span>
+            <div className="hero2__slider">
+              <div className="hero2__track" style={{ transform: `translateX(-${slide * 100}%)` }}>
+                {slides.map((p) => (
+                  <button
+                    key={p.id}
+                    className="hero2__slide"
+                    onClick={() => go("product", p.id)}
+                    aria-label={`${p.name} ansehen und bestellen`}
+                  >
+                    {p.images[0] ? <img src={p.images[0]} alt={`Hanox ${p.name} ${p.class}`} /> : null}
+                  </button>
+                ))}
+              </div>
+              {slides.length > 1 ? (
+                <div className="hero2__dots">
+                  {slides.map((p, n) => (
+                    <button
+                      key={p.id}
+                      className={"hero2__dot" + (n === slide ? " hero2__dot--on" : "")}
+                      onClick={() => setSlide(n)}
+                      aria-label={`Bild ${n + 1}: ${p.name}`}
+                    />
+                  ))}
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
       </section>
@@ -130,16 +132,6 @@ export function HomeView() {
           <p>{r10.description}</p>
           <Price price={r10.price} regular={r10.regularPrice} />
           <Btn onClick={() => go("product", r10.id)} icon={Icon.arrow()}>Details & kaufen</Btn>
-        </div>
-      </section>
-
-      {/* Zubehör / Accessories (Task 7) */}
-      <section className="band band--green wrapx">
-        <p className="eyebrow eyebrow--on" style={{ color: "#fff" }}>Zubehör</p>
-        <h2>Das passende Anbaugerät für jede Aufgabe</h2>
-        <p>Löffel, Hydraulikhämmer, Greifer, Erdbohrer und mehr — abgestimmt auf Ihre Maschine.</p>
-        <div className="band__cta">
-          <Btn variant="primary" onClick={() => go("accessories")} icon={Icon.arrow()}>Zubehör ansehen</Btn>
         </div>
       </section>
 

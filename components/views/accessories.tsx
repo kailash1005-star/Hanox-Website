@@ -1,48 +1,49 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Icon } from "@/components/Icon";
 import { Btn } from "@/components/ui";
 import { Footer } from "@/components/sections";
 import { useGo } from "@/lib/nav";
-import { ACCESSORY_GROUPS } from "@/lib/accessories";
+import { byId } from "@/lib/data";
+import { ACCESSORY_MACHINE_IDS } from "@/lib/accessories";
 
-/* Zubehör / Accessories (Task 7) — real data imported from rippa-europe. */
-
-function euroAcc(n: number): string {
-  return "€" + n.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-}
+/* Zubehör / Accessories (Task 7) — machine chooser.
+ * Clicking a machine opens its own accessories page (/zubehoer/<id>). */
 
 export function AccessoriesView() {
   const go = useGo();
+  const router = useRouter();
+
   return (
     <div className="page">
       <section className="lead lead--hero wrapx">
         <p className="eyebrow">Zubehör</p>
         <h1>Anbaugeräte & Zubehör</h1>
         <p className="lead__sub">
-          Das passende Werkzeug für jede Aufgabe — abgestimmt auf Ihre Hanox-Maschine.
+          Wählen Sie Ihre Maschine — anschließend sehen Sie das passende Zubehör.
           Alle Preise verstehen sich zzgl. MwSt.
         </p>
       </section>
 
-      {ACCESSORY_GROUPS.map((g) => (
-        <section className="acc-sec wrapx" key={g.id}>
-          <h2 className="acc-sec__h">{g.label}</h2>
-          <div className="acc-grid">
-            {g.items.map((a) => (
-              <article className="acc-card" key={a.id}>
-                <div className="acc-card__media">
-                  <img src={a.image} alt={a.name} loading="lazy" />
-                </div>
-                <div className="acc-card__b">
-                  <b>{a.name}</b>
-                  <span className="acc-card__price">ab {euroAcc(a.price)}</span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      ))}
+      <div className="mach-grid wrapx">
+        {ACCESSORY_MACHINE_IDS.map((id) => {
+          const p = byId(id);
+          if (!p) return null;
+          return (
+            <button
+              key={id}
+              className="mach-card"
+              onClick={() => { router.push(`/zubehoer/${id}`); window.scrollTo(0, 0); }}
+            >
+              <div className="mach-card__media">
+                {p.images[0] ? <img src={p.images[0]} alt={p.name} loading="lazy" /> : null}
+              </div>
+              <span className="mach-card__name">{p.name} {Icon.arrow()}</span>
+            </button>
+          );
+        })}
+      </div>
 
       <section className="band wrapx">
         <h2>Zubehör bestellen oder anfragen</h2>

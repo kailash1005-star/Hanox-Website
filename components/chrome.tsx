@@ -26,8 +26,10 @@ export function TopBar() {
 /* ---------- Header (announcement + nav) ---------- */
 function Header({ go, cartCount, onMenu }: { go: Go; cartCount: number; onMenu: () => void }) {
   const nav: [View, string][] = [
+    ["home", "Start"],
     ["catalog", "Bagger"],
     ["electric", "Elektro"],
+    ["accessories", "Zubehör"],
     ["about", "Über uns"],
     ["contact", "Kontakt"],
   ];

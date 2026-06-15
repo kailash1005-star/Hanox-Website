@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { priceOrder, FULFILMENT_LABEL, type CartLineInput, type Fulfilment } from "@/lib/order-pricing";
 import { byId, euro } from "@/lib/data";
+import { getAccessory } from "@/lib/accessories";
 import { sendEmail, siteUrl } from "@/lib/email";
 
 export const runtime = "nodejs";
@@ -35,9 +36,18 @@ export async function POST(req: Request) {
   const base = siteUrl();
   const rows = priced.lines
     .map((l) => {
-      const p = byId(l.key.split(":")[0]);
-      const img = p?.images?.[0] ? base + p.images[0] : "";
-      const link = p ? `${base}/bagger/${p.id}` : base;
+      // Accessory lines use the "acc:<id>" key shape; machines use "<productId>:<variantId>".
+      let img = "";
+      let link = base;
+      if (l.key.startsWith("acc:")) {
+        const a = getAccessory(l.key.slice(4));
+        img = a?.image ? base + encodeURI(a.image) : "";
+        link = `${base}/zubehoer`;
+      } else {
+        const p = byId(l.key.split(":")[0]);
+        img = p?.images?.[0] ? base + encodeURI(p.images[0]) : "";
+        link = p ? `${base}/bagger/${p.id}` : base;
+      }
       return `
         <tr>
           <td style="padding:10px;border-bottom:1px solid #eee;width:84px">

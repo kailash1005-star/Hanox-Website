@@ -141,7 +141,7 @@ export function CheckoutView() {
                       body: JSON.stringify({ email, items: lineItems, fulfil, orderId: data.orderID }),
                     }).catch(() => {});
                   }
-                  placeOrder({ fulfil, total, email });
+                  placeOrder({ fulfil, total, email, reference: data.orderID });
                   // Redirect to homepage with a confirmation banner (Task 14).
                   go("home");
                 }}

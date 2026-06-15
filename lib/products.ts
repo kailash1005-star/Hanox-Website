@@ -1,10 +1,11 @@
 /* Product data loader.
  *
- * Reads public/products/products.json — scraped from rippa-europe and committed
- * into the repo. Designed to be the only place product content originates;
- * later swap this file for a CDN/Odoo fetch without touching call sites. */
+ * Reads public/products/products_de.json — scraped from rippa-europe.com/de/
+ * and committed into the repo. Designed to be the only place product content
+ * originates; later swap this file for a CDN/Odoo fetch without touching
+ * call sites. */
 
-import raw from "../public/products/products.json";
+import raw from "../public/products/products_de.json";
 
 export type SpecRow = { field: string; eu: string; us?: string };
 export type Variant = { name: string; values: string[] };

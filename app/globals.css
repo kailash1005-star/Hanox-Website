@@ -668,4 +668,144 @@ p { line-height: 1.55; color: var(--ink-2); }
   .acc-grid { padding: 8px 14px; }
 }
 
+/* ==================== CUSTOM MARKDOWN STYLES ==================== */
+.pd__description-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pd__description-p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+.pd__description-p a {
+  color: #1a56db;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.pd__description-p a:hover {
+  color: #2563eb;
+}
+
+.pd__description-h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e3a8a; /* Deep blue header for sections */
+  margin-top: 14px;
+  margin-bottom: 2px;
+  letter-spacing: -0.015em;
+  font-family: var(--font-display);
+}
+
+.pd__description-list {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pd__description-li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.pd__description-bullet {
+  color: #2563eb; /* Royal blue checkmark bullet matching the layout */
+  font-weight: bold;
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.pd__description-li-content {
+  flex: 1;
+}
+
+/* Spotlight view on Home page formatting override */
+.spotlight__description .pd__description-content {
+  margin-top: 4px;
+  gap: 8px;
+}
+
+.spotlight__description .pd__description-p {
+  font-size: 14.5px;
+  color: var(--ink-2);
+}
+
+.spotlight__description .pd__description-h3 {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.spotlight__description .pd__description-list {
+  gap: 4px;
+}
+
+.spotlight__description .pd__description-li {
+  font-size: 14px;
+}
+
+/* ==================== MARKDOWN TABLE STYLES ==================== */
+.pd__md-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 16px 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  box-shadow: var(--sh);
+}
+
+.pd__md-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.pd__md-table th,
+.pd__md-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.pd__md-table th {
+  font-weight: 800;
+  color: var(--ink);
+  background: linear-gradient(180deg, #faf8f3, #f3f1ea);
+  font-family: var(--font-display);
+}
+
+.pd__md-table tr:last-child td {
+  border-bottom: none;
+}
+
+.pd__md-table tr:nth-child(even) td {
+  background: rgba(22, 24, 27, 0.012);
+}
+
+.pd__md-table td:first-child {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.pd__md-table td:last-child {
+  font-weight: 700;
+  text-align: right;
+  color: var(--ink);
+}
+
+
+
 

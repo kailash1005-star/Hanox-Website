@@ -20,8 +20,8 @@ export function CatalogView() {
     <div className="page">
       <section className="lead lead--hero wrapx">
         <p className="eyebrow">Alle Maschinen</p>
-        <h1>Sofort lieferbar oder auf Anfrage gefertigt.</h1>
-        <p>Jeder Hanox teilt denselben zuverlässigen Diesel-Antriebsstrang und EU-Teileversorgung. <strong>R10 ECO</strong> und <strong>RD-06</strong> sind sofort lieferbar; alle übrigen Modelle fertigen wir auf Bestellung — jetzt unverbindlich anfragen.</p>
+        <h1>Unsere Antriebstechnik.</h1>
+        <p>JeJedes unserer Modelle setzt auf bewährte, leistungsstarke Motoren namhafter Hersteller und eine gesicherte, europaweite Teileversorgung. Profitieren Sie von maximaler Betriebssicherheit und zuverlässiger Power für jede Herausforderung.</p>
       </section>
       <TrustStrip />
       <div className="grid wrapx">

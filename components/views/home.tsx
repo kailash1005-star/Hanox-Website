@@ -8,6 +8,7 @@ import { ProductRow } from "@/components/product-card";
 import { byId, euro, CATEGORIES, type Model } from "@/lib/data";
 import { FLAGSHIP_ID } from "@/lib/products";
 import { useGo } from "@/lib/nav";
+import { Markdown } from "@/components/Markdown";
 
 export function HomeView() {
   const go = useGo();
@@ -57,23 +58,19 @@ export function HomeView() {
         <div className="sec sec--center"><div><p className="eyebrow">Zwei Wege, ein Anspruch</p><h2>Wählen Sie Ihren Antrieb</h2></div></div>
         <div className="choose">
           <button className="choose__tile" onClick={() => go("catalog")}>
-            {/* Task 1: diesel banner image */}
-            <img className="tile__img" src="/products/images/Diesel%20engine/f919c971961823.5bd76f839cd7d.jpg" alt="Diesel-Maschinen" />
-            <div className="tile__scrim" />
-            <div className="tile__body">
-              <p className="tile__kicker">Jetzt auf Lager</p>
-              <div className="tile__title">Diesel-Maschinen</div>
-              <span className="tile__go">Reihe ansehen {Icon.arrow()}</span>
+            <Shot src="/diesel-bg.jpg" alt="Diesel Bagger" ratio="16 / 9" />
+            <div className="choose__overlay" />
+            <div className="choose__content">
+              <h3>Diesel-Bagger</h3>
+              <span>Konventionelle Kraftpakete für jede Baustelle</span>
             </div>
           </button>
           <button className="choose__tile" onClick={() => go("electric")}>
-            <img className="tile__img" src="/products/images/Electric%20gen/Electric%20gen%20motor.jpeg" alt="Elektro-Maschinen" />
-            <div className="tile__scrim" />
-            <span className="badge badge--soon badge--sm tile__soon">Demnächst</span>
-            <div className="tile__body">
-              <p className="tile__kicker">Zukunftsweisend</p>
-              <div className="tile__title">Elektro-Maschinen</div>
-              <span className="tile__go">Benachrichtigen {Icon.arrow()}</span>
+            <Shot src="/electric-bg.jpg" alt="Elektro Bagger" ratio="16 / 9" />
+            <div className="choose__overlay" />
+            <div className="choose__content">
+              <h3>Elektro-Bagger</h3>
+              <span>Emissionsfrei & leise für sensible Umgebungen</span>
             </div>
           </button>
         </div>
@@ -103,7 +100,9 @@ export function HomeView() {
           <StockBadge inStock={r10.inStock} />
           <h2>{r10.name}</h2>
           <div className="spotlight__class">{r10.class}</div>
-          <p>{r10.description}</p>
+          <div className="spotlight__description">
+            <Markdown text={r10.description} />
+          </div>
           <Price price={r10.price} regular={r10.regularPrice} />
           <Btn onClick={() => go("product", r10.id)} icon={Icon.arrow()}>Details & kaufen</Btn>
         </div>

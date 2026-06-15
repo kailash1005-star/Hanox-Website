@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { notFound, useRouter } from "next/navigation";
 import { Icon } from "@/components/Icon";
 import { Btn, Gallery, Silhouette, StockBadge } from "@/components/ui";
+import { Markdown } from "@/components/Markdown";
 import {
   byId,
   euro,
@@ -13,7 +14,6 @@ import {
   type SpecSection,
   type Variant,
 } from "@/lib/data";
-import { copyDe } from "@/lib/product-copy";
 import { engineConfig, engineOption, defaultEngineId, type EngineConfig } from "@/lib/variants";
 import { groupForMachine } from "@/lib/accessories";
 import { DELIVERY_TIME } from "@/lib/order-pricing";
@@ -36,9 +36,8 @@ export function ProductView({ id }: { id: string }) {
   const engine = engineOption(id, engineId);
   // Live price: base price + selected engine's delta (Task 2).
   const unit = m.price + (engine?.priceDelta ?? 0);
-  const copy = copyDe(m.id);
-  const description = copy.description ?? m.description;
-  const tagline = copy.tagline ?? m.tagline;
+  const description = m.description;
+  const tagline = m.tagline;
 
   return (
     <div className="page page--shop page--product">
@@ -87,7 +86,11 @@ export function ProductView({ id }: { id: string }) {
             ? m.variants.filter((v) => v.values.length > 1).map((v) => <VariantPicker key={v.name} v={v} />)
             : null}
 
-          {description ? <p className="pd__blurb">{description}</p> : null}
+          {description ? (
+            <div className="pd__blurb">
+              <Markdown text={description} />
+            </div>
+          ) : null}
 
           {/* Delivery time (Task 4) */}
           <div className="pd__delivery">

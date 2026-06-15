@@ -1,0 +1,3144 @@
+[
+  {
+    "product_name_input": "RD 06",
+    "url": "https://rippa-europe.com/de/products/rd-06",
+    "url_en": "https://rippa-europe.com/products/rd-06",
+    "slug": "rd-06",
+    "structured": {
+      "product_name": "RD 06",
+      "brand": "Rippa",
+      "price": "5.000,00 EUR",
+      "currency": "EUR",
+      "tax_note": "excl. MwSt",
+      "availability": "Auf Lager",
+      "short_tagline": "Kompakt, leistungsstark, vielseitig!",
+      "description": "**Tracked Dumper RD06** ist die ideale Lösung für Bauarbeiten, Erdbewegungsaufgaben und Materialtransport in unwegsamem Gelände. Dank seiner kompakten Abmessungen, hohen Stabilität und einfachen Bedienung bietet er auch in engen Räumen hohe Effizienz. Ob beim Transport von Schüttgütern, beim Entladen oder beim Arbeiten auf unebenem Grund – der RD06 ist einfach zu bedienen und wartungsarm.\n\n## RD06 – Technische Spezifikationen\n\n| Grundlegende Leistungsdaten | EU / US |\n| --- | --- |\n| Betriebsgewicht | 518 kg / 1139.6 lb |\n| Schaufelvolumen | 0.03 m³ / 1.06 ft³ |\n| Ladefläche | 0.27 m³ / 9.5 ft³ |\n| Nennlast | 350 kg / 770 lb |\n| Fahrgeschwindigkeit (niedrig / hoch) | 0–4 km/h / 0–2.48 mph |\n| Steigfähigkeit | 30 % / 30 % |\n| Bodendruck | 19.55 kPa / 408.4 psf |\n| Maximale Ausschütthöhe | 356 mm / 14 in |\n| Maximale Ausschüttreichweite | 272 mm / 10.7 in |\n| Minimale Bodenfreiheit | 70 mm / 2.8 in |\n\n| Motor | EU / US |\n| --- | --- |\n| Hersteller | Briggs & Stratton |\n| Modell | XR2100 |\n| Maximale Leistung | 13.6 PS (10 kW) / 13.4 hp |\n| Maximale Drehzahl | 3600 rpm / 3600 rpm |\n| Hubraum | 0.42 L / 0.11 gal |\n| Zylinderanzahl | 1 / 1 |\n| Kühlung | Wassergekühlt |\n| Motorölkapazität (wechseln) | 1.2 L / 0.32 gal |\n| Kraftstoffart | Benzin |\n| Kraftstoffqualität | 92# |\n| Theoretischer Kraftstoffverbrauch | 0.8–1.2 L/h |\n\n| Abmessungen | EU / US |\n| --- | --- |\n| Transportlänge | 1670 mm / 65.7 in |\n| Transportbreite | 780 mm / 30.7 in |\n| Transporthöhe | 1200 mm / 47.2 in |\n| Schaufelbreite | 700 mm / 27.6 in |\n\n| Hydrauliksystem | EU / US |\n| --- | --- |\n| Hauptpumpe – Typ / Modell | Zahnradpumpe GP51044SLP |\n| Hauptpumpe – Hersteller | Tianjin Walking |\n| Max. Fördermenge Hauptpumpe | 14.4 + 14.4 L/min |\n| Mehrwegeventil – Hersteller | Tengfei |\n| Einstelldruck (nenn) | 16 MPa |\n| Maximaler Einstelldruck | 18 MPa |\n| Fahrhydraulikmotor – Typ | Deston BM5-200 |\n| Fahrhydraulikmotor – Hersteller | Deston |\n| Hubraum Fahrhydraulikmotor | 200 |",
+      "variants": [
+        {
+          "option_name": "Hydraulikfunktion",
+          "values": [
+            "Rise and Fall",
+            "No Rise and Fall"
+          ]
+        }
+      ],
+      "specifications": {
+        "engine": [
+          {
+            "field": "Hersteller",
+            "eu": "Briggs & Stratton",
+            "us": ""
+          },
+          {
+            "field": "Modell",
+            "eu": "XR2100",
+            "us": ""
+          },
+          {
+            "field": "Maximale Leistung",
+            "eu": "13.6 PS (10 kW)",
+            "us": "13.4 hp"
+          },
+          {
+            "field": "Maximale Drehzahl",
+            "eu": "3600 rpm",
+            "us": "3600 rpm"
+          },
+          {
+            "field": "Hubraum",
+            "eu": "0.42 L",
+            "us": "0.11 gal"
+          },
+          {
+            "field": "Zylinderanzahl",
+            "eu": "1",
+            "us": "1"
+          },
+          {
+            "field": "Kühlung",
+            "eu": "Wassergekühlt",
+            "us": ""
+          },
+          {
+            "field": "Motorölkapazität (wechseln)",
+            "eu": "1.2 L",
+            "us": "0.32 gal"
+          },
+          {
+            "field": "Kraftstoffart",
+            "eu": "Benzin",
+            "us": ""
+          },
+          {
+            "field": "Kraftstoffqualität",
+            "eu": "92#",
+            "us": ""
+          },
+          {
+            "field": "Theoretischer Kraftstoffverbrauch",
+            "eu": "0.8–1.2 L/h",
+            "us": ""
+          }
+        ],
+        "dimensions_and_weight": [
+          {
+            "field": "Transportlänge",
+            "eu": "1670 mm",
+            "us": "65.7 in"
+          },
+          {
+            "field": "Transportbreite",
+            "eu": "780 mm",
+            "us": "30.7 in"
+          },
+          {
+            "field": "Transporthöhe",
+            "eu": "1200 mm",
+            "us": "47.2 in"
+          },
+          {
+            "field": "Schaufelbreite",
+            "eu": "700 mm",
+            "us": "27.6 in"
+          }
+        ],
+        "performance_and_load": [
+          {
+            "field": "Betriebsgewicht",
+            "eu": "518 kg",
+            "us": "1139.6 lb"
+          },
+          {
+            "field": "Schaufelvolumen",
+            "eu": "0.03 m³",
+            "us": "1.06 ft³"
+          },
+          {
+            "field": "Ladefläche",
+            "eu": "0.27 m³",
+            "us": "9.5 ft³"
+          },
+          {
+            "field": "Nennlast",
+            "eu": "350 kg",
+            "us": "770 lb"
+          },
+          {
+            "field": "Fahrgeschwindigkeit (niedrig / hoch)",
+            "eu": "0–4 km/h",
+            "us": "0–2.48 mph"
+          },
+          {
+            "field": "Steigfähigkeit",
+            "eu": "30 %",
+            "us": "30 %"
+          },
+          {
+            "field": "Bodendruck",
+            "eu": "19.55 kPa",
+            "us": "408.4 psf"
+          },
+          {
+            "field": "Maximale Ausschütthöhe",
+            "eu": "356 mm",
+            "us": "14 in"
+          },
+          {
+            "field": "Maximale Ausschüttreichweite",
+            "eu": "272 mm",
+            "us": "10.7 in"
+          },
+          {
+            "field": "Minimale Bodenfreiheit",
+            "eu": "70 mm",
+            "us": "2.8 in"
+          }
+        ],
+        "hydraulic_system": [
+          {
+            "field": "Hauptpumpe – Typ / Modell",
+            "eu": "Zahnradpumpe GP51044SLP",
+            "us": ""
+          },
+          {
+            "field": "Hauptpumpe – Hersteller",
+            "eu": "Tianjin Walking",
+            "us": ""
+          },
+          {
+            "field": "Max. Fördermenge Hauptpumpe",
+            "eu": "14.4 + 14.4 L/min",
+            "us": ""
+          },
+          {
+            "field": "Mehrwegeventil – Hersteller",
+            "eu": "Tengfei",
+            "us": ""
+          },
+          {
+            "field": "Einstelldruck (nenn)",
+            "eu": "16 MPa",
+            "us": ""
+          },
+          {
+            "field": "Maximaler Einstelldruck",
+            "eu": "18 MPa",
+            "us": ""
+          },
+          {
+            "field": "Fahrhydraulikmotor – Typ",
+            "eu": "Deston BM5-200",
+            "us": ""
+          },
+          {
+            "field": "Fahrhydraulikmotor – Hersteller",
+            "eu": "Deston",
+            "us": ""
+          },
+          {
+            "field": "Hubraum Fahrhydraulikmotor",
+            "eu": "200",
+            "us": ""
+          }
+        ],
+        "other_sections": []
+      },
+      "image_urls": [
+        "https://rippa-europe.com/cdn/shop/files/1_eddfff86-ae18-429a-afe5-41b2244547aa.jpg?v=1768901151",
+        "https://rippa-europe.com/cdn/shop/files/2_4187f7c7-7623-4aa6-94ca-43d14f4e144b.jpg?v=1768901150",
+        "https://rippa-europe.com/cdn/shop/files/3_dcdd1c62-fb00-49a4-9a4b-349b52398f91.jpg?v=1768901150"
+      ]
+    },
+    "image_urls": [
+      "https://judgeme.imgix.net/rippa-europe/1780413687__1000028895__original.jpg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg?auto=format&w=1024"
+    ],
+    "image_files": [
+      "images\\rd-06\\1780413687__1000028895__original.jpg",
+      "images\\rd-06\\1776314546__1776314541067-img_3990__original.jpeg",
+      "images\\rd-06\\1776314547__1776314542379-img_3988__original.jpeg",
+      "images\\rd-06\\1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp",
+      "images\\rd-06\\1773028401__1773028391446-img_3547__original.jpeg",
+      "images\\rd-06\\1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg",
+      "images\\rd-06\\1776314550__1776314543541-img_3992__original.jpeg",
+      "images\\rd-06\\1776314548__1776314542869-img_3991__original.jpeg",
+      "images\\rd-06\\3_dcdd1c62-fb00-49a4-9a4b-349b52398f91.jpg",
+      "images\\rd-06\\rd-06.html",
+      "images\\rd-06\\1_eddfff86-ae18-429a-afe5-41b2244547aa.jpg",
+      "images\\rd-06\\2_4187f7c7-7623-4aa6-94ca-43d14f4e144b.jpg"
+    ]
+  },
+  {
+    "product_name_input": "RS 04",
+    "url": "https://rippa-europe.com/de/products/rs-04",
+    "url_en": "https://rippa-europe.com/products/rs-04",
+    "slug": "rs-04",
+    "structured": {
+      "product_name": "RS 04",
+      "brand": "Rippa",
+      "price": "5.490,00 EUR",
+      "currency": "EUR",
+      "tax_note": "excl. MwSt",
+      "availability": "Auf Lager",
+      "short_tagline": "Kompakt, leistungsstark, vielseitig!",
+      "description": "Der Skid Loader RS 04 ist die ideale Lösung für Bauprojekte, Landwirtschaft und Landschaftsbau. Mit seinem leistungsstarken Kubota-Dieselmotor, hoher Tragfähigkeit und kompakten Abmessungen bietet er maximale Effizienz in engen Räumen.\n\nOb Materialtransport, Erdarbeiten oder Reinigung – dank zahlreicher Anbaugeräte passt sich der RS 04 flexibel an Ihre Anforderungen an.\n\n## RS04 – Spezifikationen\n\n| Motor | EU / US |\n| --- | --- |\n| Hersteller | Kubota / Kubota |\n| Modell | Z482 / Z482 |\n| Zylinder | 2 / 2 |\n| Hubraum | 0.479 L / 0.126 gal |\n| Kühlung | Wassergekühlt / Wassergekühlt |\n| Kraftstoff | Diesel / Diesel |\n| Kraftstoffverbrauch | 0.8–1.2 L/h / 0.21–0.32 gal/h |\n| Ölkapazität | 2.5 L / 0.66 gal |\n| Max. Drehzahl | 3600 rpm / 3600 rpm |\n| Max. Leistung | 8.3 kW / 11.1 hp |\n\n| Abmessungen & Gewicht | EU / US |\n| --- | --- |\n| Transportlänge mit Schaufel | 1970 mm / 77.6 in |\n| Transportlänge ohne Schaufel | 1520 mm / 59.8 in |\n| Transportbreite | 1150 mm / 45.3 in |\n| Transporthöhe | 1300 mm / 51.2 in |\n| Schaufelbreite | 1150 mm / 45.3 in |\n| Betriebsgewicht | 890 kg / 1958 lb |\n| Bodenfreiheit | 108 mm / 4.3 in |\n\n| Leistung & Last | EU / US |\n| --- | --- |\n| Nennlast | 175 kg / 385 lb |\n| Max. Last | 400 kg / 880 lb |\n| Max. Ausschütthöhe | 1553 mm / 61.1 in |\n| Max. Ladehöhe | 2080 mm / 81.9 in |\n| Max. Ausschütthöhe | 550 mm / 21.7 in |\n| Steigfähigkeit | 25 % / 25 % |\n| Bodendruck | 25.1 kPa / 3.7 psi |\n\n| Hydrauliksystem | EU / US |\n| --- | --- |\n| Hauptpumpe | Tianjin Walk / Tianjin Walk |\n| Mehrwegeventil | Tengfei / Tengfei |\n| Fahrmotor | Deston / Deston |",
+      "variants": [
+        {
+          "option_name": "Antrieb",
+          "values": [
+            "Kette",
+            "Reifen"
+          ]
+        }
+      ],
+      "specifications": {
+        "engine": [
+          {
+            "field": "Hersteller",
+            "eu": "Kubota",
+            "us": "Kubota"
+          },
+          {
+            "field": "Modell",
+            "eu": "Z482",
+            "us": "Z482"
+          },
+          {
+            "field": "Zylinder",
+            "eu": "2",
+            "us": "2"
+          },
+          {
+            "field": "Hubraum",
+            "eu": "0.479 L",
+            "us": "0.126 gal"
+          },
+          {
+            "field": "Kühlung",
+            "eu": "Wassergekühlt",
+            "us": "Wassergekühlt"
+          },
+          {
+            "field": "Kraftstoff",
+            "eu": "Diesel",
+            "us": "Diesel"
+          },
+          {
+            "field": "Kraftstoffverbrauch",
+            "eu": "0.8–1.2 L/h",
+            "us": "0.21–0.32 gal/h"
+          },
+          {
+            "field": "Ölkapazität",
+            "eu": "2.5 L",
+            "us": "0.66 gal"
+          },
+          {
+            "field": "Max. Drehzahl",
+            "eu": "3600 rpm",
+            "us": "3600 rpm"
+          },
+          {
+            "field": "Max. Leistung",
+            "eu": "8.3 kW",
+            "us": "11.1 hp"
+          }
+        ],
+        "dimensions_and_weight": [
+          {
+            "field": "Transportlänge mit Schaufel",
+            "eu": "1970 mm",
+            "us": "77.6 in"
+          },
+          {
+            "field": "Transportlänge ohne Schaufel",
+            "eu": "1520 mm",
+            "us": "59.8 in"
+          },
+          {
+            "field": "Transportbreite",
+            "eu": "1150 mm",
+            "us": "45.3 in"
+          },
+          {
+            "field": "Transporthöhe",
+            "eu": "1300 mm",
+            "us": "51.2 in"
+          },
+          {
+            "field": "Schaufelbreite",
+            "eu": "1150 mm",
+            "us": "45.3 in"
+          },
+          {
+            "field": "Betriebsgewicht",
+            "eu": "890 kg",
+            "us": "1958 lb"
+          },
+          {
+            "field": "Bodenfreiheit",
+            "eu": "108 mm",
+            "us": "4.3 in"
+          }
+        ],
+        "performance_and_load": [
+          {
+            "field": "Nennlast",
+            "eu": "175 kg",
+            "us": "385 lb"
+          },
+          {
+            "field": "Max. Last",
+            "eu": "400 kg",
+            "us": "880 lb"
+          },
+          {
+            "field": "Max. Ausschütthöhe",
+            "eu": "1553 mm",
+            "us": "61.1 in"
+          },
+          {
+            "field": "Max. Ladehöhe",
+            "eu": "2080 mm",
+            "us": "81.9 in"
+          },
+          {
+            "field": "Max. Ausschütthöhe",
+            "eu": "550 mm",
+            "us": "21.7 in"
+          },
+          {
+            "field": "Steigfähigkeit",
+            "eu": "25 %",
+            "us": "25 %"
+          },
+          {
+            "field": "Bodendruck",
+            "eu": "25.1 kPa",
+            "us": "3.7 psi"
+          }
+        ],
+        "hydraulic_system": [
+          {
+            "field": "Hauptpumpe",
+            "eu": "Tianjin Walk",
+            "us": "Tianjin Walk"
+          },
+          {
+            "field": "Mehrwegeventil",
+            "eu": "Tengfei",
+            "us": "Tengfei"
+          },
+          {
+            "field": "Fahrmotor",
+            "eu": "Deston",
+            "us": "Deston"
+          }
+        ],
+        "other_sections": []
+      },
+      "image_urls": [
+        "https://rippa-europe.com/cdn/shop/files/3_2d7f43d9-9009-48ab-bb79-c87aea6aa5bd.png?v=1762768823",
+        "https://rippa-europe.com/cdn/shop/files/4.png?v=1762768719",
+        "https://rippa-europe.com/cdn/shop/files/7.png?v=1762768719",
+        "https://rippa-europe.com/cdn/shop/files/6.png?v=1762768719",
+        "https://rippa-europe.com/cdn/shop/files/8.png?v=1762768719",
+        "https://rippa-europe.com/cdn/shop/files/5.png?v=1762768719",
+        "https://rippa-europe.com/cdn/shop/files/1.png?v=1762768719",
+        "https://rippa-europe.com/cdn/shop/files/2.png?v=1762768719",
+        "https://rippa-europe.com/cdn/shop/files/09_19c440c4-60b4-44f6-be5c-4f86b13fbc4d.png?v=1762768719",
+        "https://rippa-europe.com/cdn/shop/files/10_f8be8699-6658-4481-bc05-e277e43d929e.png?v=1762768719",
+        "https://rippa-europe.com/cdn/shop/files/11_afddc162-93cc-4103-bc17-121fcaa3ac39.png?v=1762768719",
+        "https://rippa-europe.com/cdn/shop/files/12_458688e7-8a96-4764-b221-b27cb3624b62.png?v=1762768719",
+        "https://rippa-europe.com/cdn/shop/files/13_786e736a-ede2-4876-bd47-bca8298b994f.png?v=1762768719"
+      ]
+    },
+    "image_urls": [
+      "https://judgeme.imgix.net/rippa-europe/1780413687__1000028895__original.jpg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314546__1776314541067-img_3990__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314547__1776314542379-img_3988__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314548__1776314542869-img_3991__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314550__1776314543541-img_3992__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773028401__1773028391446-img_3547__original.jpeg?auto=format&w=1024"
+    ],
+    "image_files": [
+      "images\\rs-04\\4.png",
+      "images\\rs-04\\11_afddc162-93cc-4103-bc17-121fcaa3ac39.png",
+      "images\\rs-04\\8.png",
+      "images\\rs-04\\3_2d7f43d9-9009-48ab-bb79-c87aea6aa5bd.png",
+      "images\\rs-04\\rs-04.html",
+      "images\\rs-04\\1776314546__1776314541067-img_3990__original.jpeg",
+      "images\\rs-04\\1773028401__1773028391446-img_3547__original.jpeg",
+      "images\\rs-04\\2.png",
+      "images\\rs-04\\1.png",
+      "images\\rs-04\\1776314548__1776314542869-img_3991__original.jpeg",
+      "images\\rs-04\\1780413687__1000028895__original.jpg",
+      "images\\rs-04\\5.png",
+      "images\\rs-04\\1776314550__1776314543541-img_3992__original.jpeg",
+      "images\\rs-04\\10_f8be8699-6658-4481-bc05-e277e43d929e.png",
+      "images\\rs-04\\7.png",
+      "images\\rs-04\\1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg",
+      "images\\rs-04\\1776314547__1776314542379-img_3988__original.jpeg",
+      "images\\rs-04\\1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp",
+      "images\\rs-04\\12_458688e7-8a96-4764-b221-b27cb3624b62.png",
+      "images\\rs-04\\13_786e736a-ede2-4876-bd47-bca8298b994f.png",
+      "images\\rs-04\\09_19c440c4-60b4-44f6-be5c-4f86b13fbc4d.png",
+      "images\\rs-04\\6.png"
+    ]
+  },
+  {
+    "product_name_input": "RS 06",
+    "url": "https://rippa-europe.com/de/products/rs-06",
+    "url_en": "https://rippa-europe.com/products/rs-06",
+    "slug": "rs-06",
+    "structured": {
+      "product_name": "RS 06",
+      "brand": "Rippa",
+      "price": "9.490,00 EUR",
+      "currency": "EUR",
+      "tax_note": "excl. MwSt",
+      "availability": "Auf Lager",
+      "short_tagline": "Kompakt, leistungsstark, vielseitig!",
+      "description": "Der RS 06 Kompaktlader ist die ideale Lösung für Bauprojekte, Landwirtschaft und Landschaftsbau. Mit seinem leistungsstarken Kubota-Dieselmotor, hoher Tragfähigkeit und kompakten Abmessungen bietet er maximale Effizienz auf engstem Raum.\n\nOb für Materialtransport, Erdbewegung oder Reinigung – dank einer Vielzahl von Anbaugeräten passt sich der RS 06 flexibel an Ihre Anforderungen an.\n\n## RS06 – Spezifikationen\n\n| Grundlegende Leistungsdaten | EU / US |\n| --- | --- |\n| Betriebsgewicht | 1450 kg / 3197 lb |\n| Schaufelvolumen | 0.16 m³ / 5.65 ft³ |\n| Nennlast | 300 kg / 661 lb |\n| Max. Last | 600 kg / 1323 lb |\n| Fahrgeschwindigkeit | 0–3 km/h (0–1.9 mph) / 0–6.5 km/h (0–4.0 mph) |\n| Steigfähigkeit | 28 % / 28 % |\n| Bodendruck | 32.5 kPa / 4.71 psi |\n| Max. Ausschütthöhe | 1550 mm / 61.0 in |\n| Max. Ladehöhe | 2530 mm / 99.6 in |\n| Max. Ausschütthöhe | 645 mm / 25.4 in |\n| Min. Bodenfreiheit | 163 mm / 6.42 in |\n\n| Motor | EU / US |\n| --- | --- |\n| Hersteller / Modell | Kubota D1105 |\n| Max. PS | 25 PS / 24.6 hp |\n| Max. Leistung | 18.2 kW / 24.4 hp |\n| Max. Drehzahl | 3000 rpm |\n| Hubraum | 1.123 L / 68.5 in³ |\n| Zylinder | 3 |\n| Kühlmethode | Wassergekühlt |\n| Motorölkapazität | 4 L / 4.23 qt |\n| Kraftstofftyp / -grad | Diesel (No. 0 / -10) |\n| Theoretischer Verbrauch | 1.3–1.5 L/h / 0.34–0.40 US gal/h |\n\n| Abmessungen | EU / US |\n| --- | --- |\n| Transportlänge mit Schaufel | 2710 mm / 106.7 in |\n| Transportlänge ohne Schaufel | 2220 mm / 87.4 in |\n| Transportbreite | 1150 mm / 45.3 in |\n| Transporthöhe | 1522 mm / 59.9 in |\n| Schaufelbreite | 1150 mm / 45.3 in |\n\n| Tanks | EU / US |\n| --- | --- |\n| Kraftstofftank | 20 L / 5.28 US gal |\n| Hydrauliköltank | 28 L / 7.39 US gal |\n\n| Ketten | EU / US |\n| --- | --- |\n| Abmessungen | 230 mm × 72 mm × 45 links / 9.06 in × 2.83 in × 45 links |\n\n| Hydrauliksystem | EU / US |\n| --- | --- |\n| Hauptpumpentyp / Modell | Kolbenpumpe (HYTEK) |\n| Max. Durchfluss Hauptpumpe | 112.5 L/min / 29.7 US gal/min |\n| Steuerung | Lastsensing-Steuerung |\n| Einstelldruck | 22.5 MPa / 3263 psi |\n| Fahrmotor | Zweistufiger Fahrmotor (Paiyi) – 390 ml/r / 23.8 in³/r |",
+      "variants": [
+        {
+          "option_name": "Antrieb",
+          "values": [
+            "Diesel"
+          ]
+        },
+        {
+          "option_name": "Fahrwerk",
+          "values": [
+            "Gummikette"
+          ]
+        }
+      ],
+      "specifications": {
+        "engine": [
+          {
+            "field": "Hersteller / Modell",
+            "eu": "Kubota D1105",
+            "us": ""
+          },
+          {
+            "field": "Max. PS",
+            "eu": "25 PS",
+            "us": "24.6 hp"
+          },
+          {
+            "field": "Max. Leistung",
+            "eu": "18.2 kW",
+            "us": "24.4 hp"
+          },
+          {
+            "field": "Max. Drehzahl",
+            "eu": "3000 rpm",
+            "us": ""
+          },
+          {
+            "field": "Hubraum",
+            "eu": "1.123 L",
+            "us": "68.5 in³"
+          },
+          {
+            "field": "Zylinder",
+            "eu": "3",
+            "us": ""
+          },
+          {
+            "field": "Kühlmethode",
+            "eu": "Wassergekühlt",
+            "us": ""
+          },
+          {
+            "field": "Motorölkapazität",
+            "eu": "4 L",
+            "us": "4.23 qt"
+          },
+          {
+            "field": "Kraftstofftyp / -grad",
+            "eu": "Diesel (No. 0 / -10)",
+            "us": ""
+          },
+          {
+            "field": "Theoretischer Verbrauch",
+            "eu": "1.3–1.5 L/h",
+            "us": "0.34–0.40 US gal/h"
+          }
+        ],
+        "dimensions_and_weight": [
+          {
+            "field": "Transportlänge mit Schaufel",
+            "eu": "2710 mm",
+            "us": "106.7 in"
+          },
+          {
+            "field": "Transportlänge ohne Schaufel",
+            "eu": "2220 mm",
+            "us": "87.4 in"
+          },
+          {
+            "field": "Transportbreite",
+            "eu": "1150 mm",
+            "us": "45.3 in"
+          },
+          {
+            "field": "Transporthöhe",
+            "eu": "1522 mm",
+            "us": "59.9 in"
+          },
+          {
+            "field": "Schaufelbreite",
+            "eu": "1150 mm",
+            "us": "45.3 in"
+          }
+        ],
+        "performance_and_load": [
+          {
+            "field": "Betriebsgewicht",
+            "eu": "1450 kg",
+            "us": "3197 lb"
+          },
+          {
+            "field": "Schaufelvolumen",
+            "eu": "0.16 m³",
+            "us": "5.65 ft³"
+          },
+          {
+            "field": "Nennlast",
+            "eu": "300 kg",
+            "us": "661 lb"
+          },
+          {
+            "field": "Max. Last",
+            "eu": "600 kg",
+            "us": "1323 lb"
+          },
+          {
+            "field": "Fahrgeschwindigkeit",
+            "eu": "0–3 km/h (0–1.9 mph)",
+            "us": "0–6.5 km/h (0–4.0 mph)"
+          },
+          {
+            "field": "Steigfähigkeit",
+            "eu": "28 %",
+            "us": "28 %"
+          },
+          {
+            "field": "Bodendruck",
+            "eu": "32.5 kPa",
+            "us": "4.71 psi"
+          },
+          {
+            "field": "Max. Ausschütthöhe",
+            "eu": "1550 mm",
+            "us": "61.0 in"
+          },
+          {
+            "field": "Max. Ladehöhe",
+            "eu": "2530 mm",
+            "us": "99.6 in"
+          },
+          {
+            "field": "Max. Ausschütthöhe",
+            "eu": "645 mm",
+            "us": "25.4 in"
+          },
+          {
+            "field": "Min. Bodenfreiheit",
+            "eu": "163 mm",
+            "us": "6.42 in"
+          }
+        ],
+        "hydraulic_system": [
+          {
+            "field": "Hauptpumpentyp / Modell",
+            "eu": "Kolbenpumpe (HYTEK)",
+            "us": ""
+          },
+          {
+            "field": "Max. Durchfluss Hauptpumpe",
+            "eu": "112.5 L/min",
+            "us": "29.7 US gal/min"
+          },
+          {
+            "field": "Steuerung",
+            "eu": "Lastsensing-Steuerung",
+            "us": ""
+          },
+          {
+            "field": "Einstelldruck",
+            "eu": "22.5 MPa",
+            "us": "3263 psi"
+          },
+          {
+            "field": "Fahrmotor",
+            "eu": "Zweistufiger Fahrmotor (Paiyi) – 390 ml/r",
+            "us": "23.8 in³/r"
+          }
+        ],
+        "other_sections": [
+          {
+            "section_name": "Tanks",
+            "rows": [
+              {
+                "field": "Kraftstofftank",
+                "eu": "20 L",
+                "us": "5.28 US gal"
+              },
+              {
+                "field": "Hydrauliköltank",
+                "eu": "28 L",
+                "us": "7.39 US gal"
+              }
+            ]
+          },
+          {
+            "section_name": "Ketten",
+            "rows": [
+              {
+                "field": "Abmessungen",
+                "eu": "230 mm × 72 mm × 45 links",
+                "us": "9.06 in × 2.83 in × 45 links"
+              }
+            ]
+          }
+        ]
+      },
+      "image_urls": [
+        "https://rippa-europe.com/cdn/shop/files/RS06_3bffea6a-d0d7-4ecf-9da0-a6ad1ac9d15a.png?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/02_14c95f68-a2b6-43b8-9204-3f2959e8bd87.jpg?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/03_9ab194ea-67dc-4ee8-bf5a-7429768765ad.jpg?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/04_120da2e0-99bd-4cd5-b13b-f527ffc179ad.jpg?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/09_46282151-e09d-4242-bc71-bb97a4776b76.jpg?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/07_fe6e4b14-633d-4fca-9847-98b8c7509b8b.jpg?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/06_46f04326-8306-4364-9583-4f3fcf9307db.jpg?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/08_bb88ab7e-2b41-4b02-a61c-59cc35ef634f.jpg?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/05_ec50ccd8-688e-418f-9867-5c17c98a296a.jpg?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/10_143e7755-b572-4384-be2e-7010ab853ccc.jpg?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/11_0a946cbf-1319-453c-90c2-34a211552bf0.jpg?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/12_e587e7ea-5e00-4194-89fe-97423d319a42.jpg?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/14_2455f682-e28f-42d1-b4ba-e1724fe9166c.jpg?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/15_56d444fa-873d-4fec-b4cc-ecc9b78a1c94.jpg?v=1762768960",
+        "https://rippa-europe.com/cdn/shop/files/13_c36a1e38-7bd9-4458-a525-43afcb673ea0.jpg?v=1762768960"
+      ]
+    },
+    "image_urls": [
+      "https://judgeme.imgix.net/rippa-europe/1776314546__1776314541067-img_3990__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314547__1776314542379-img_3988__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314548__1776314542869-img_3991__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314550__1776314543541-img_3992__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1780413687__1000028895__original.jpg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773028401__1773028391446-img_3547__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg?auto=format&w=1024"
+    ],
+    "image_files": [
+      "images\\rs-06\\12_e587e7ea-5e00-4194-89fe-97423d319a42.jpg",
+      "images\\rs-06\\06_46f04326-8306-4364-9583-4f3fcf9307db.jpg",
+      "images\\rs-06\\1780413687__1000028895__original.jpg",
+      "images\\rs-06\\09_46282151-e09d-4242-bc71-bb97a4776b76.jpg",
+      "images\\rs-06\\04_120da2e0-99bd-4cd5-b13b-f527ffc179ad.jpg",
+      "images\\rs-06\\08_bb88ab7e-2b41-4b02-a61c-59cc35ef634f.jpg",
+      "images\\rs-06\\02_14c95f68-a2b6-43b8-9204-3f2959e8bd87.jpg",
+      "images\\rs-06\\1776314548__1776314542869-img_3991__original.jpeg",
+      "images\\rs-06\\03_9ab194ea-67dc-4ee8-bf5a-7429768765ad.jpg",
+      "images\\rs-06\\1776314546__1776314541067-img_3990__original.jpeg",
+      "images\\rs-06\\1773028401__1773028391446-img_3547__original.jpeg",
+      "images\\rs-06\\1776314547__1776314542379-img_3988__original.jpeg",
+      "images\\rs-06\\13_c36a1e38-7bd9-4458-a525-43afcb673ea0.jpg",
+      "images\\rs-06\\14_2455f682-e28f-42d1-b4ba-e1724fe9166c.jpg",
+      "images\\rs-06\\RS06_3bffea6a-d0d7-4ecf-9da0-a6ad1ac9d15a.png",
+      "images\\rs-06\\15_56d444fa-873d-4fec-b4cc-ecc9b78a1c94.jpg",
+      "images\\rs-06\\10_143e7755-b572-4384-be2e-7010ab853ccc.jpg",
+      "images\\rs-06\\11_0a946cbf-1319-453c-90c2-34a211552bf0.jpg",
+      "images\\rs-06\\05_ec50ccd8-688e-418f-9867-5c17c98a296a.jpg",
+      "images\\rs-06\\1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg",
+      "images\\rs-06\\1776314550__1776314543541-img_3992__original.jpeg",
+      "images\\rs-06\\1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp",
+      "images\\rs-06\\07_fe6e4b14-633d-4fca-9847-98b8c7509b8b.jpg",
+      "images\\rs-06\\rs-06.html"
+    ]
+  },
+  {
+    "product_name_input": "RS 07",
+    "url": "https://rippa-europe.com/de/products/rs-07",
+    "url_en": "https://rippa-europe.com/products/rs-07",
+    "slug": "rs-07",
+    "structured": {
+      "product_name": "RS 07",
+      "brand": "Rippa",
+      "price": "12.490,00 EUR",
+      "currency": "EUR",
+      "tax_note": "excl. MwSt",
+      "availability": "Auf Lager",
+      "short_tagline": "Kompakt, leistungsstark, vielseitig!",
+      "description": "Der RS 07 Kompaktlader ist die ideale Lösung für Bauprojekte, Landwirtschaft und Landschaftsbau. Mit seinem leistungsstarken Kubota-Dieselmotor, hoher Tragfähigkeit und kompakten Abmessungen bietet er maximale Effizienz auf engstem Raum.\n\nOb für Materialtransport, Erdbau oder Reinigung – dank einer Vielzahl von Anbaugeräten passt sich der RS 07 flexibel an Ihre Anforderungen an.\n\n## RS07 – Spezifikationen\n\n| Grundlegende Leistungsdaten | EU / US |\n| --- | --- |\n| Betriebsgewicht | 1230 kg / 2712 lb |\n| Schaufelvolumen | 0.16 m³ / 5.65 ft³ |\n| Nennlast | 300 kg / 661 lb |\n| Max. Last | 670 kg / 1477 lb |\n| Fahrgeschwindigkeit | 0–8 km/h / 0–5.0 mph |\n| Steigfähigkeit | 30 % / 30 % |\n| Bodendruck | 95.87 kPa / 13.91 psi |\n| Max. Ausschütthöhe | 1725 mm / 67.9 in |\n| Max. Ladehöhe | 2260 mm / 89.0 in |\n| Max. Ausschütthöhe | 508 mm / 20.0 in |\n| Min. Bodenfreiheit | 176 mm / 6.93 in |\n\n| Motor | EU / US |\n| --- | --- |\n| Hersteller | Kubota / Kubota |\n| Modell | D1105 / D1105 |\n| Max. PS | 24.8 PS / 24.5 hp |\n| Max. Leistung | 18.2 kW / 24.5 hp |\n| Max. Drehzahl | 3000 rpm / 3000 rpm |\n| Hubraum | 1.123 L / 68.5 in³ |\n| Zylinder | 3 / 3 |\n| Kühlung | Wassergekühlt / Wassergekühlt |\n| Motorölkapazität | 4 L / 4.23 qt |\n| Kraftstoffart | Diesel / Diesel |\n| Kraftstoffgrad | No. 0 / -10 / No. 0 / -10 |\n| Theoretischer Verbrauch | 1.3–1.5 L/h / 0.34–0.40 US gal/h |\n\n| Abmessungen | EU / US |\n| --- | --- |\n| Transportlänge mit Schaufel | 2655 mm / 104.5 in |\n| Transportlänge ohne Schaufel | 1985 mm / 78.1 in |\n| Transportbreite | 1000 mm / 39.4 in |\n| Transporthöhe | 1810 mm / 71.3 in |\n| Schaufelbreite | 1000 mm / 39.4 in |\n\n| Tankkapazitäten | EU / US |\n| --- | --- |\n| Kraftstofftank | 32 L / 8.45 US gal |\n| Hydrauliköltank | 32 L / 8.45 US gal |\n\n| Reifen | EU / US |\n| --- | --- |\n| Räder | 570 mm × 160 mm / 22.44 in × 6.30 in |\n| Kette | 230 mm × 72 mm × 45 Glieder / 9,06 in × 2,83 in × 45 Glieder |\n\n| Hydrauliksystem | EU / US |\n| --- | --- |\n| Hauptpumpentyp / Modell | Axialkolbenpumpe / Axialkolbenpumpe |\n| Hauptpumpenmarke | Hengli / Hengli |\n| Hauptpumpenfördermenge | 48 L/min / 12.7 US gal/min |\n| Zahnradpumpenmodell | 316 / 316 |\n| Zahnradpumpenmarke | Tianjin Walking / Tianjin Walking |\n| Zahnradpumpenfördermenge | 48 L/min / 12.7 US gal/min |\n| Steuerung | Pilotgesteuerte Mehrwegeventile / Pilotgesteuerte Mehrwegeventile |\n| Einstelldruck | 16 MPa / 2320 psi |\n| Fahrmotor Typ | Hengli BMER-600 / Hengli BMER-600 |\n| Fahrmotor Marke | Hengli / Hengli |\n| Motorhubraum | 600 ml/r / 36.6 in³/r |",
+      "variants": [
+        {
+          "option_name": "Fahrwerk",
+          "values": [
+            "Kettenfahrwerk",
+            "Radfahrwerk"
+          ]
+        }
+      ],
+      "specifications": {
+        "engine": [
+          {
+            "field": "Hersteller",
+            "eu": "Kubota",
+            "us": "Kubota"
+          },
+          {
+            "field": "Modell",
+            "eu": "D1105",
+            "us": "D1105"
+          },
+          {
+            "field": "Max. PS",
+            "eu": "24.8 PS",
+            "us": "24.5 hp"
+          },
+          {
+            "field": "Max. Leistung",
+            "eu": "18.2 kW",
+            "us": "24.5 hp"
+          },
+          {
+            "field": "Max. Drehzahl",
+            "eu": "3000 rpm",
+            "us": "3000 rpm"
+          },
+          {
+            "field": "Hubraum",
+            "eu": "1.123 L",
+            "us": "68.5 in³"
+          },
+          {
+            "field": "Zylinder",
+            "eu": "3",
+            "us": "3"
+          },
+          {
+            "field": "Kühlung",
+            "eu": "Wassergekühlt",
+            "us": "Wassergekühlt"
+          },
+          {
+            "field": "Motorölkapazität",
+            "eu": "4 L",
+            "us": "4.23 qt"
+          },
+          {
+            "field": "Kraftstoffart",
+            "eu": "Diesel",
+            "us": "Diesel"
+          },
+          {
+            "field": "Kraftstoffgrad",
+            "eu": "No. 0 / -10",
+            "us": ""
+          },
+          {
+            "field": "Theoretischer Verbrauch",
+            "eu": "1.3–1.5 L/h",
+            "us": "0.34–0.40 US gal/h"
+          }
+        ],
+        "dimensions_and_weight": [
+          {
+            "field": "Transportlänge mit Schaufel",
+            "eu": "2655 mm",
+            "us": "104.5 in"
+          },
+          {
+            "field": "Transportlänge ohne Schaufel",
+            "eu": "1985 mm",
+            "us": "78.1 in"
+          },
+          {
+            "field": "Transportbreite",
+            "eu": "1000 mm",
+            "us": "39.4 in"
+          },
+          {
+            "field": "Transporthöhe",
+            "eu": "1810 mm",
+            "us": "71.3 in"
+          },
+          {
+            "field": "Schaufelbreite",
+            "eu": "1000 mm",
+            "us": "39.4 in"
+          }
+        ],
+        "performance_and_load": [
+          {
+            "field": "Betriebsgewicht",
+            "eu": "1230 kg",
+            "us": "2712 lb"
+          },
+          {
+            "field": "Schaufelvolumen",
+            "eu": "0.16 m³",
+            "us": "5.65 ft³"
+          },
+          {
+            "field": "Nennlast",
+            "eu": "300 kg",
+            "us": "661 lb"
+          },
+          {
+            "field": "Max. Last",
+            "eu": "670 kg",
+            "us": "1477 lb"
+          },
+          {
+            "field": "Fahrgeschwindigkeit",
+            "eu": "0–8 km/h",
+            "us": "0–5.0 mph"
+          },
+          {
+            "field": "Steigfähigkeit",
+            "eu": "30 %",
+            "us": "30 %"
+          },
+          {
+            "field": "Bodendruck",
+            "eu": "95.87 kPa",
+            "us": "13.91 psi"
+          },
+          {
+            "field": "Max. Ausschütthöhe",
+            "eu": "1725 mm",
+            "us": "67.9 in"
+          },
+          {
+            "field": "Max. Ladehöhe",
+            "eu": "2260 mm",
+            "us": "89.0 in"
+          },
+          {
+            "field": "Max. Ausschütthöhe",
+            "eu": "508 mm",
+            "us": "20.0 in"
+          },
+          {
+            "field": "Min. Bodenfreiheit",
+            "eu": "176 mm",
+            "us": "6.93 in"
+          }
+        ],
+        "hydraulic_system": [
+          {
+            "field": "Hauptpumpentyp / Modell",
+            "eu": "Axialkolbenpumpe",
+            "us": "Axialkolbenpumpe"
+          },
+          {
+            "field": "Hauptpumpenmarke",
+            "eu": "Hengli",
+            "us": "Hengli"
+          },
+          {
+            "field": "Hauptpumpenfördermenge",
+            "eu": "48 L/min",
+            "us": "12.7 US gal/min"
+          },
+          {
+            "field": "Zahnradpumpenmodell",
+            "eu": "316",
+            "us": "316"
+          },
+          {
+            "field": "Zahnradpumpenmarke",
+            "eu": "Tianjin Walking",
+            "us": "Tianjin Walking"
+          },
+          {
+            "field": "Zahnradpumpenfördermenge",
+            "eu": "48 L/min",
+            "us": "12.7 US gal/min"
+          },
+          {
+            "field": "Steuerung",
+            "eu": "Pilotgesteuerte Mehrwegeventile",
+            "us": "Pilotgesteuerte Mehrwegeventile"
+          },
+          {
+            "field": "Einstelldruck",
+            "eu": "16 MPa",
+            "us": "2320 psi"
+          },
+          {
+            "field": "Fahrmotor Typ",
+            "eu": "Hengli BMER-600",
+            "us": "Hengli BMER-600"
+          },
+          {
+            "field": "Fahrmotor Marke",
+            "eu": "Hengli",
+            "us": "Hengli"
+          },
+          {
+            "field": "Motorhubraum",
+            "eu": "600 ml/r",
+            "us": "36.6 in³/r"
+          }
+        ],
+        "other_sections": [
+          {
+            "section_name": "Tankkapazitäten",
+            "rows": [
+              {
+                "field": "Kraftstofftank",
+                "eu": "32 L",
+                "us": "8.45 US gal"
+              },
+              {
+                "field": "Hydrauliköltank",
+                "eu": "32 L",
+                "us": "8.45 US gal"
+              }
+            ]
+          },
+          {
+            "section_name": "Reifen",
+            "rows": [
+              {
+                "field": "Räder",
+                "eu": "570 mm × 160 mm",
+                "us": "22.44 in × 6.30 in"
+              },
+              {
+                "field": "Kette",
+                "eu": "230 mm × 72 mm × 45 Glieder",
+                "us": "9,06 in × 2,83 in × 45 Glieder"
+              }
+            ]
+          }
+        ]
+      },
+      "image_urls": [
+        "https://rippa-europe.com/cdn/shop/files/RS07.png?v=1762769023",
+        "https://rippa-europe.com/cdn/shop/files/07.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/06.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/05.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/02.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/01.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/03.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/04.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/09.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/10.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/11.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/12.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/15.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/1.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/2.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/3_1588dcd0-8aa8-4800-9b03-d90aad2d4ba2.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/4_5a3637f4-a5a5-409a-ad6d-bb9a864c6a8d.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/5_8bbdd773-235c-48bb-bdec-10d91ae62bac.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/6.jpg?v=1762768631",
+        "https://rippa-europe.com/cdn/shop/files/With_Wheels.png?v=1762768631"
+      ]
+    },
+    "image_urls": [
+      "https://judgeme.imgix.net/rippa-europe/1776314546__1776314541067-img_3990__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314547__1776314542379-img_3988__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314548__1776314542869-img_3991__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314550__1776314543541-img_3992__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1780413687__1000028895__original.jpg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773028401__1773028391446-img_3547__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg?auto=format&w=1024"
+    ],
+    "image_files": [
+      "images\\rs-07\\05.jpg",
+      "images\\rs-07\\1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg",
+      "images\\rs-07\\6.jpg",
+      "images\\rs-07\\1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp",
+      "images\\rs-07\\07.jpg",
+      "images\\rs-07\\01.jpg",
+      "images\\rs-07\\2.jpg",
+      "images\\rs-07\\04.jpg",
+      "images\\rs-07\\3_1588dcd0-8aa8-4800-9b03-d90aad2d4ba2.jpg",
+      "images\\rs-07\\1.jpg",
+      "images\\rs-07\\With_Wheels.png",
+      "images\\rs-07\\09.jpg",
+      "images\\rs-07\\12.jpg",
+      "images\\rs-07\\15.jpg",
+      "images\\rs-07\\1776314548__1776314542869-img_3991__original.jpeg",
+      "images\\rs-07\\11.jpg",
+      "images\\rs-07\\03.jpg",
+      "images\\rs-07\\02.jpg",
+      "images\\rs-07\\1776314550__1776314543541-img_3992__original.jpeg",
+      "images\\rs-07\\1773028401__1773028391446-img_3547__original.jpeg",
+      "images\\rs-07\\5_8bbdd773-235c-48bb-bdec-10d91ae62bac.jpg",
+      "images\\rs-07\\4_5a3637f4-a5a5-409a-ad6d-bb9a864c6a8d.jpg",
+      "images\\rs-07\\rs-07.html",
+      "images\\rs-07\\06.jpg",
+      "images\\rs-07\\1780413687__1000028895__original.jpg",
+      "images\\rs-07\\1776314546__1776314541067-img_3990__original.jpeg",
+      "images\\rs-07\\RS07.png",
+      "images\\rs-07\\1776314547__1776314542379-img_3988__original.jpeg",
+      "images\\rs-07\\10.jpg"
+    ]
+  },
+  {
+    "product_name_input": "R06",
+    "url": "https://rippa-europe.com/de/products/r06",
+    "url_en": "https://rippa-europe.com/products/r06",
+    "slug": "r06",
+    "structured": {
+      "product_name": "R06",
+      "brand": "Rippa",
+      "price": "5.499,00 EUR",
+      "currency": "EUR",
+      "tax_note": "excl. MwSt",
+      "availability": "Auf Lager",
+      "short_tagline": "Der ultra-kompakte Mini-Bagger für enge Baustellen.",
+      "description": "Der **Rippa R06 ECO** ist ein ultra-kompakter **Mini-Bagger**, ideal für enge Baustellen, Landschaftsgestaltung, Innenarbeiten und präzise Einsätze in beengten Verhältnissen. Trotz seiner kompakten Bauweise bietet er hervorragende Stabilität, Zugänglichkeit und zuverlässige Leistung für den täglichen Einsatz.\n\nAngetrieben von einem zuverlässigen **Kubota-Dieselmotor** bietet der **R06 ECO** einen sanften Betrieb, niedrigen Kraftstoffverbrauch und eine lange Lebensdauer. Mit einer **Grabetiefe von 1001 mm** und einem **Betriebsgewicht von 747 kg** ist er perfekt für enge Durchgänge, Gärten und empfindliche Umgebungen.\n\n### Standardmerkmale:\n✔ 30 cm Schaufel für präzises Graben\n✔ Kubota-Dieselmotor (Euro 5 / Stufe V konform)\n✔ Ultra-kompakte Bauweise (nur 747 mm Breite)\n✔ LED-Arbeitslicht für bessere Sichtbarkeit\n✔ Geschütztes Hydrauliksystem für sicheren Betrieb\n✔ Ergonomischer Sitz und praktischer Stauraum\n\nZusätzliche Anbaugeräte wie Schaufeln oder andere Zubehörteile finden Sie in der **„[Zubehör](https://rippa-europe.com/collections/r06 \"Zubehör\")“**-Sektion auf unserer Website.",
+      "variants": [
+        {
+          "option_name": "Antrieb",
+          "values": [
+            "Diesel"
+          ]
+        },
+        {
+          "option_name": "Fahrwerk",
+          "values": [
+            "Gummiketten"
+          ]
+        }
+      ],
+      "specifications": {
+        "engine": [
+          {
+            "field": "Hersteller",
+            "eu": "Kubota",
+            "us": "Kubota"
+          },
+          {
+            "field": "Modell",
+            "eu": "Z482",
+            "us": "Z482"
+          },
+          {
+            "field": "Leistung (hp)",
+            "eu": "11.2 hp",
+            "us": "11 hp"
+          },
+          {
+            "field": "Leistung (kW)",
+            "eu": "8.2 kW",
+            "us": "8.2 kW"
+          },
+          {
+            "field": "Nenn-Drehzahl",
+            "eu": "3000 rpm",
+            "us": "3000 rpm"
+          },
+          {
+            "field": "Hubraum",
+            "eu": "0.479 L",
+            "us": "0.13 gal"
+          },
+          {
+            "field": "Zylinder",
+            "eu": "2",
+            "us": "2"
+          },
+          {
+            "field": "Kühlung",
+            "eu": "Wassergekühlt",
+            "us": "Wassergekühlt"
+          },
+          {
+            "field": "Motorölkapazität",
+            "eu": "1.5 L",
+            "us": "0.396 gal"
+          },
+          {
+            "field": "Kraftstoffart",
+            "eu": "Diesel",
+            "us": "Diesel"
+          },
+          {
+            "field": "Kraftstoffgrad",
+            "eu": "0 / -10",
+            "us": "0 / -10"
+          },
+          {
+            "field": "Kraftstoffverbrauch",
+            "eu": "0.8–1.2 L/h",
+            "us": "0.8–1.2 L/h"
+          }
+        ],
+        "dimensions_and_weight": [
+          {
+            "field": "Transportbreite",
+            "eu": "747 mm",
+            "us": "29.4 in"
+          },
+          {
+            "field": "Transporthöhe",
+            "eu": "1594 mm",
+            "us": "62.8 in"
+          },
+          {
+            "field": "Bodenfreiheit (hinteres Gewicht)",
+            "eu": "401 mm",
+            "us": "15.8 in"
+          },
+          {
+            "field": "Schaufelbreite",
+            "eu": "300 mm",
+            "us": "11.8 in"
+          },
+          {
+            "field": "Auslegerlänge",
+            "eu": "1800 mm",
+            "us": "70.9 in"
+          }
+        ],
+        "performance_and_load": [
+          {
+            "field": "Betriebsgewicht",
+            "eu": "747 kg",
+            "us": "1647 lb"
+          },
+          {
+            "field": "Schaufelvolumen",
+            "eu": "0.014 m³",
+            "us": "0.494 ft³"
+          },
+          {
+            "field": "Fahrgeschwindigkeit",
+            "eu": "0–1.5 km/h",
+            "us": "0–0.93 mph"
+          },
+          {
+            "field": "Steigfähigkeit",
+            "eu": "30%",
+            "us": "30%"
+          },
+          {
+            "field": "Max. Grabkraft",
+            "eu": "9.2 kN",
+            "us": "2068 lbf"
+          },
+          {
+            "field": "Max. Grabreichweite",
+            "eu": "2565 mm",
+            "us": "101.1 in"
+          },
+          {
+            "field": "Max. Grabtiefe",
+            "eu": "1001 mm",
+            "us": "39.4 in"
+          },
+          {
+            "field": "Max. Grabhöhe",
+            "eu": "2236 mm",
+            "us": "88.1 in"
+          },
+          {
+            "field": "Max. Ausschutthöhe",
+            "eu": "1569 mm",
+            "us": "61.8 in"
+          },
+          {
+            "field": "Schwenkwinkel",
+            "eu": "70°",
+            "us": "70°"
+          }
+        ],
+        "hydraulic_system": [
+          {
+            "field": "Max. Fördermenge",
+            "eu": "18 L/min",
+            "us": "18 L/min"
+          },
+          {
+            "field": "Steuerventil",
+            "eu": "8-Wege manuelles Mehrfachventil",
+            "us": ""
+          },
+          {
+            "field": "Ventilhersteller",
+            "eu": "Taifeng",
+            "us": ""
+          },
+          {
+            "field": "Systemdruck",
+            "eu": "17 MPa",
+            "us": ""
+          },
+          {
+            "field": "Max. Systemdruck",
+            "eu": "18 MPa",
+            "us": ""
+          }
+        ],
+        "other_sections": [
+          {
+            "section_name": "Tanks",
+            "rows": [
+              {
+                "field": "Kraftstofftank",
+                "eu": "-",
+                "us": ""
+              },
+              {
+                "field": "Öltank",
+                "eu": "-",
+                "us": ""
+              }
+            ]
+          }
+        ]
+      },
+      "image_urls": [
+        "https://rippa-europe.com/cdn/shop/files/06_30f2a80d-b5d8-493a-a26b-da4642a0b0e9.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/07_657afabb-ad06-41b8-b5ad-621a66bacb7e.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/08_41a21430-a74e-46cf-a069-f2e4692b81c6.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/04_b96e0621-49f6-4c4e-b268-a6fde98b3697.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/02_9ec7f0c2-650f-4efc-aa8e-e9a24183865a.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/03_c063bcc4-cb24-4478-9d87-fd42aa928c7a.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/01_28ed8299-aabb-4ca2-84cb-bd2b2746dc91.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/05_bcccba04-5446-4a8a-b143-d1736b6e1c10.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/10_6110dc56-3e9c-49ed-baea-ba9e9a09fcd4.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/11_b4f3f756-0415-4240-ad79-955fec6bf93f.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/13_3f4f417f-d247-4352-9aeb-93b11c628ba0.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/12_5a117ddd-ed02-4c6d-8a39-01e3ff566478.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/15_53bd1e09-1311-48cc-9f67-a6cbd4f4387d.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/16_dad290d5-030a-4464-8206-aa10620e45ce.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/17_c05bcff5-5a3b-4148-b6fc-93cb20e1faea.png?v=1776072040",
+        "https://rippa-europe.com/cdn/shop/files/09_5129bc26-4186-4a45-b20a-e63ff24a646f.png?v=1776072040"
+      ]
+    },
+    "image_urls": [
+      "https://judgeme.imgix.net/rippa-europe/1780413687__1000028895__original.jpg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314546__1776314541067-img_3990__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314547__1776314542379-img_3988__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314548__1776314542869-img_3991__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314550__1776314543541-img_3992__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773028401__1773028391446-img_3547__original.jpeg?auto=format&w=1024"
+    ],
+    "image_files": [
+      "images\\r06\\12_5a117ddd-ed02-4c6d-8a39-01e3ff566478.png",
+      "images\\r06\\08_41a21430-a74e-46cf-a069-f2e4692b81c6.png",
+      "images\\r06\\07_657afabb-ad06-41b8-b5ad-621a66bacb7e.png",
+      "images\\r06\\03_c063bcc4-cb24-4478-9d87-fd42aa928c7a.png",
+      "images\\r06\\15_53bd1e09-1311-48cc-9f67-a6cbd4f4387d.png",
+      "images\\r06\\1780413687__1000028895__original.jpg",
+      "images\\r06\\01_28ed8299-aabb-4ca2-84cb-bd2b2746dc91.png",
+      "images\\r06\\11_b4f3f756-0415-4240-ad79-955fec6bf93f.png",
+      "images\\r06\\1776314547__1776314542379-img_3988__original.jpeg",
+      "images\\r06\\1776314546__1776314541067-img_3990__original.jpeg",
+      "images\\r06\\1776314548__1776314542869-img_3991__original.jpeg",
+      "images\\r06\\16_dad290d5-030a-4464-8206-aa10620e45ce.png",
+      "images\\r06\\17_c05bcff5-5a3b-4148-b6fc-93cb20e1faea.png",
+      "images\\r06\\13_3f4f417f-d247-4352-9aeb-93b11c628ba0.png",
+      "images\\r06\\02_9ec7f0c2-650f-4efc-aa8e-e9a24183865a.png",
+      "images\\r06\\1773028401__1773028391446-img_3547__original.jpeg",
+      "images\\r06\\1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp",
+      "images\\r06\\04_b96e0621-49f6-4c4e-b268-a6fde98b3697.png",
+      "images\\r06\\09_5129bc26-4186-4a45-b20a-e63ff24a646f.png",
+      "images\\r06\\1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg",
+      "images\\r06\\10_6110dc56-3e9c-49ed-baea-ba9e9a09fcd4.png",
+      "images\\r06\\1776314550__1776314543541-img_3992__original.jpeg",
+      "images\\r06\\05_bcccba04-5446-4a8a-b143-d1736b6e1c10.png",
+      "images\\r06\\06_30f2a80d-b5d8-493a-a26b-da4642a0b0e9.png",
+      "images\\r06\\r06.html"
+    ]
+  },
+  {
+    "product_name_input": "R10 ECO",
+    "url": "https://rippa-europe.com/de/products/r10-eco-1",
+    "url_en": "https://rippa-europe.com/products/r10-eco-1",
+    "slug": "r10-eco",
+    "structured": {
+      "product_name": "R10 ECO",
+      "brand": "Rippa",
+      "price": "5.625,00 EUR",
+      "currency": "EUR",
+      "tax_note": "excl. MwSt",
+      "availability": "Auf Lager",
+      "short_tagline": "Der R10 ECO ist ein leistungsstarker und vielseitiger Mini-Bagger.",
+      "description": "Der **R10 ECO** ist ein leistungsstarker und vielseitiger Mini-Bagger, perfekt für Bau-, Landschafts- und Privatprojekte. Dank seiner flexiblen Konfigurationsmöglichkeiten kann er an Ihre spezifischen Bedürfnisse angepasst werden.\n\n## Vier Upgrades zum Basismodell zur Auswahl:\n\n✔ **R10 ECO mit Kubota-Motor** – Zuverlässige Kubota-Leistung für maximale Langlebigkeit\n\n✔ **R10 ECO mit verstellbarem Fahrwerk** – Verstellbare Spurbreite und erhöhte Flexibilität\n\n✔ **R10 ECO mit Joystick-Seitensteuerung** – Präzise Bedienung für anspruchsvolle Aufgaben\n\n✔ **R10 ECO mit gelenkigem Ausleger** – Mehr Bewegung für schwer erreichbare Bereiche\n\n**Vollständig anpassbar:**\n\nAlle Modelle sind serienmäßig mit einer **30 cm gezahnten Schaufel**, **1-Zylinder Koop-Motor**, **festem Ausleger** und **Frontsteuerung** ausgestattet.\n\nSie können Ihre gewünschten Upgrades direkt auf der Produktseite auswählen.\n\n**Zusätzliche Zubehörteile**, wie zusätzliche Schaufeln, Greifer oder Schnellwechsler, finden Sie im **„[Zubehör](https://rippa-europe.com/collections/r10 \"Accessoires\")“**-Bereich auf unserer Website.",
+      "variants": [
+        {
+          "option_name": "Motor",
+          "values": [
+            "Einzylinder Yoop Diesel Motor mit Kabine",
+            "Zweizylinder Kubota Diesel Motor mit Kabine"
+          ]
+        },
+        {
+          "option_name": "Steuerung",
+          "values": [
+            "Joystick und gelenkiger Ausleger"
+          ]
+        },
+        {
+          "option_name": "Fahrwerk",
+          "values": [
+            "Verstellbares Fahrwerk"
+          ]
+        }
+      ],
+      "specifications": {
+        "engine": [
+          {
+            "field": "Modell / Hersteller",
+            "eu": "Yoop 192F",
+            "us": ""
+          },
+          {
+            "field": "Maximale Leistung",
+            "eu": "10.4 HP",
+            "us": "10.2 hp"
+          },
+          {
+            "field": "Maximale Leistung",
+            "eu": "7.5 kW",
+            "us": ""
+          },
+          {
+            "field": "Maximale Motordrehzahl",
+            "eu": "3,000 rpm",
+            "us": ""
+          },
+          {
+            "field": "Hubraum",
+            "eu": "0.499 L",
+            "us": "0.133 gal"
+          },
+          {
+            "field": "Anzahl der Zylinder",
+            "eu": "1",
+            "us": ""
+          },
+          {
+            "field": "Kühlsystem",
+            "eu": "Luftgekühlt",
+            "us": ""
+          },
+          {
+            "field": "Motoröl",
+            "eu": "1.325 L",
+            "us": "0.35 gal"
+          },
+          {
+            "field": "Kraftstoffart",
+            "eu": "Diesel (No. 0 / -10)",
+            "us": ""
+          },
+          {
+            "field": "Kraftstoffverbrauch (theoretisch)",
+            "eu": "0.8–1.2 L/h",
+            "us": "0.21–0.32 gal/h"
+          }
+        ],
+        "dimensions_and_weight": [
+          {
+            "field": "Transportlänge",
+            "eu": "2,430 mm",
+            "us": "95.7 in"
+          },
+          {
+            "field": "Transportbreite",
+            "eu": "912 mm",
+            "us": "35.9 in"
+          },
+          {
+            "field": "Transporthöhe",
+            "eu": "2,201 mm",
+            "us": "86.7 in"
+          },
+          {
+            "field": "Bodenfreiheit des Gegengewichts",
+            "eu": "361 mm",
+            "us": "14.2 in"
+          },
+          {
+            "field": "Schaufelbreite",
+            "eu": "300 mm",
+            "us": "11.8 in"
+          },
+          {
+            "field": "Auslegerlänge",
+            "eu": "1,477 mm",
+            "us": "58.1 in"
+          },
+          {
+            "field": "Armlänge",
+            "eu": "800 mm",
+            "us": "31.5 in"
+          },
+          {
+            "field": "Dozerblattbreite",
+            "eu": "912–1,212 mm",
+            "us": "35.9–47.7 in"
+          }
+        ],
+        "performance_and_load": [
+          {
+            "field": "Betriebsgewicht",
+            "eu": "978 kg",
+            "us": "2,156 lb"
+          },
+          {
+            "field": "Schaufelvolumen",
+            "eu": "0.014 m³",
+            "us": "0.49 ft³"
+          },
+          {
+            "field": "Fahrgeschwindigkeit",
+            "eu": "0–1.5 km/h",
+            "us": "0–0.93 mph"
+          },
+          {
+            "field": "Steigfähigkeit",
+            "eu": "30 %",
+            "us": ""
+          },
+          {
+            "field": "Bodendruck",
+            "eu": "25.53 kPa",
+            "us": "25.53 psi"
+          },
+          {
+            "field": "Maximale Reißkraft",
+            "eu": "9.2 kN",
+            "us": ""
+          },
+          {
+            "field": "Maximale Reichweite",
+            "eu": "3,233 mm",
+            "us": "127.3 in"
+          },
+          {
+            "field": "Maximale Grabtiefe",
+            "eu": "1,833 mm",
+            "us": "72.2 in"
+          },
+          {
+            "field": "Maximale Grabhöhe",
+            "eu": "3,021 mm",
+            "us": "118.9 in"
+          },
+          {
+            "field": "Maximale Ausschutthöhe",
+            "eu": "2,247 mm",
+            "us": "88.5 in"
+          },
+          {
+            "field": "Maximaler Schwenkwinkel",
+            "eu": "121°",
+            "us": ""
+          },
+          {
+            "field": "Spurbreitenverstellung",
+            "eu": "912–1,212 mm",
+            "us": "35.9–47.7 in"
+          }
+        ],
+        "hydraulic_system": [
+          {
+            "field": "Pumpentyp / Modell",
+            "eu": "306 (Tianjin Walking / Shengjie)",
+            "us": ""
+          },
+          {
+            "field": "Maximaler Durchfluss",
+            "eu": "18 L/min",
+            "us": ""
+          },
+          {
+            "field": "Steuerventil",
+            "eu": "2-2+5 Anschlüsse (Tengfei)",
+            "us": ""
+          },
+          {
+            "field": "Nenn-Druck",
+            "eu": "18 MPa",
+            "us": ""
+          },
+          {
+            "field": "Maximaler Druck",
+            "eu": "20 MPa",
+            "us": ""
+          },
+          {
+            "field": "Antriebsmotor",
+            "eu": "BM6-315 (Paiyi/Zhenjiang Dali) – 315",
+            "us": ""
+          },
+          {
+            "field": "Schwenkmotor",
+            "eu": "BM2-315 – 315",
+            "us": ""
+          }
+        ],
+        "other_sections": [
+          {
+            "section_name": "Tanks",
+            "rows": [
+              {
+                "field": "Kraftstofftank",
+                "eu": "-",
+                "us": ""
+              },
+              {
+                "field": "Öltank",
+                "eu": "-",
+                "us": ""
+              }
+            ]
+          }
+        ]
+      },
+      "image_urls": [
+        "https://rippa-europe.com/cdn/shop/files/r10-eco-1.jpg",
+        "https://rippa-europe.com/cdn/shop/files/r10-eco-2.jpg",
+        "https://rippa-europe.com/cdn/shop/files/r10-eco-3.jpg",
+        "https://rippa-europe.com/cdn/shop/files/r10-eco-4.jpg"
+      ]
+    },
+    "image_urls": [
+      "https://rippa-europe.com/cdn/shop/files/r10-eco-1.jpg",
+      "https://rippa-europe.com/cdn/shop/files/r10-eco-2.jpg",
+      "https://rippa-europe.com/cdn/shop/files/r10-eco-3.jpg",
+      "https://rippa-europe.com/cdn/shop/files/r10-eco-4.jpg"
+    ],
+    "image_files": [
+      "images\\r10-eco\\r10-eco-1.jpg",
+      "images\\r10-eco\\r10-eco-2.jpg",
+      "images\\r10-eco\\r10-eco-3.jpg",
+      "images\\r10-eco\\r10-eco-4.jpg"
+    ]
+    },
+  {
+    "product_name_input": "R13 PRO",
+    "url": "https://rippa-europe.com/de/products/r13-pro-1",
+    "url_en": "https://rippa-europe.com/products/r13-pro-1",
+    "slug": "r13-pro",
+    "structured": {
+      "product_name": "R13 PRO",
+      "brand": "Rippa",
+      "price": "10.490,00 EUR",
+      "currency": "EUR",
+      "tax_note": "excl. MwSt",
+      "availability": "Auf Lager",
+      "short_tagline": "Der Rippa R13 PRO ist ein leistungsstarker und kompakter Minibagger.",
+      "description": "Der **Rippa R13 PRO** ist ein leistungsstarker und kompakter Minibagger, ideal für Bauprojekte, Landschaftsgestaltung und präzise Arbeiten in engen Räumen. Mit seiner Kombination aus Leistung, Effizienz und Wendigkeit ist er der perfekte Allrounder für vielseitige Anwendungen.\n\nAusgestattet mit einem zuverlässigen **Kubota-Dieselmotor** beeindruckt der R13 PRO durch einen ruhigen Betrieb, geringen Kraftstoffverbrauch und lange Lebensdauer. Mit einer Grabtiefe von **2,10 Metern** und einem Betriebsgewicht von **1.300 kg** meistert er mühelos anspruchsvolle Aufgaben.\n\n### Standardmerkmale:\n\n✔ 40 cm Zahnschaufel für präzises Graben\n\n✔ Leistungsstarker Kubota-Dieselmotor (Euro 5 zertifiziert)\n\n✔ Kompakte Bauweise für enge Arbeitsbereiche\n\n✔ Stabile Konstruktion für professionelle Ergebnisse\n\nZusätzliche Zubehörteile, wie verschiedene Schaufeln, Greifer oder Schnellwechsler, finden Sie in der **„[Zubehör](https://rippa-europe.com/collections/r13 \"Accessoires\")“**-Sektion auf unserer Website.",
+      "variants": [
+        {
+          "option_name": "Farbe",
+          "values": [
+            "Rot",
+            "Blau"
+          ]
+        }
+      ],
+      "specifications": {
+        "engine": [
+          {
+            "field": "Hersteller",
+            "eu": "Kubota",
+            "us": "Kubota"
+          },
+          {
+            "field": "Modell",
+            "eu": "D722",
+            "us": "D722"
+          },
+          {
+            "field": "Max. Leistung",
+            "eu": "13,9 PS",
+            "us": "13.9 hp"
+          },
+          {
+            "field": "Nennleistung",
+            "eu": "10,3 kW",
+            "us": ""
+          },
+          {
+            "field": "Max. Drehzahl",
+            "eu": "2500 rpm",
+            "us": ""
+          },
+          {
+            "field": "Hubraum",
+            "eu": "0.719 L",
+            "us": "0.19 gal"
+          },
+          {
+            "field": "Zylinderanzahl",
+            "eu": "3",
+            "us": "3"
+          },
+          {
+            "field": "Kühlmethode",
+            "eu": "Wassergekühlt",
+            "us": "Wassergekühlt"
+          },
+          {
+            "field": "Motorölkapazität",
+            "eu": "3,5 L",
+            "us": "0,92 gal"
+          },
+          {
+            "field": "Kraftstoffart",
+            "eu": "Diesel",
+            "us": "Diesel"
+          },
+          {
+            "field": "Kraftstoffqualität",
+            "eu": "Nr. 0 / -10",
+            "us": "Nr. 0 / -10"
+          },
+          {
+            "field": "Theoretischer Verbrauch",
+            "eu": "1.2–1.5 L/h",
+            "us": "0.32–0.40 gal/h"
+          }
+        ],
+        "dimensions_and_weight": [
+          {
+            "field": "Transportlänge",
+            "eu": "2550 mm",
+            "us": "100.4 in"
+          },
+          {
+            "field": "Transportbreite",
+            "eu": "1100 mm",
+            "us": "43.3 in"
+          },
+          {
+            "field": "Transporthöhe",
+            "eu": "2300 mm",
+            "us": "90.6 in"
+          },
+          {
+            "field": "Bodenfreiheit",
+            "eu": "380 mm",
+            "us": "15.0 in"
+          },
+          {
+            "field": "Schaufelbreite",
+            "eu": "400 mm",
+            "us": "15.7 in"
+          },
+          {
+            "field": "Auslegerlänge",
+            "eu": "1600 mm",
+            "us": "63.0 in"
+          },
+          {
+            "field": "Armlänge",
+            "eu": "900 mm",
+            "us": "35.4 in"
+          },
+          {
+            "field": "Klingenbreite",
+            "eu": "1100 mm",
+            "us": "43.3 in"
+          }
+        ],
+        "performance_and_load": [
+          {
+            "field": "Betriebsgewicht",
+            "eu": "1300 kg",
+            "us": "2866 lb"
+          },
+          {
+            "field": "Schaufelvolumen",
+            "eu": "0.025 m³",
+            "us": "0.88 ft³"
+          },
+          {
+            "field": "Fahrgeschwindigkeit",
+            "eu": "0–2.5 km/h",
+            "us": "0–1.55 mph"
+          },
+          {
+            "field": "Max. Steigfähigkeit",
+            "eu": "30 %",
+            "us": "30 %"
+          },
+          {
+            "field": "Bodendruck",
+            "eu": "28 kPa",
+            "us": "4.06 psi"
+          },
+          {
+            "field": "Max. Reißkraft",
+            "eu": "13.5 kN",
+            "us": "13.5 kN"
+          },
+          {
+            "field": "Max. Grabreichweite",
+            "eu": "3600 mm",
+            "us": "141.7 in"
+          },
+          {
+            "field": "Max. Grabtiefe",
+            "eu": "2100 mm",
+            "us": "82.7 in"
+          },
+          {
+            "field": "Max. Grabhöhe",
+            "eu": "3200 mm",
+            "us": "126.0 in"
+          },
+          {
+            "field": "Max. Ausschutthöhe",
+            "eu": "2300 mm",
+            "us": "90.6 in"
+          },
+          {
+            "field": "Max. Schwenkwinkel",
+            "eu": "120°",
+            "us": "120°"
+          },
+          {
+            "field": "Kettengröße (Breite×Pitch×Links)",
+            "eu": "230 mm×96 mm×38",
+            "us": "9.06 in×3.78 in×38"
+          }
+        ],
+        "hydraulic_system": [
+          {
+            "field": "Hauptpumpentyp / Modell",
+            "eu": "CBGJ2063",
+            "us": ""
+          },
+          {
+            "field": "Hauptpumpenmarke",
+            "eu": "Tianjin Walking",
+            "us": ""
+          },
+          {
+            "field": "Max. Pumpenfördermenge",
+            "eu": "23 L/min",
+            "us": ""
+          },
+          {
+            "field": "Steuerventil",
+            "eu": "2–3 Gelenke",
+            "us": ""
+          },
+          {
+            "field": "Steuerventilmarke",
+            "eu": "Tengfei",
+            "us": ""
+          },
+          {
+            "field": "Nenn Druck",
+            "eu": "18 MPa",
+            "us": ""
+          },
+          {
+            "field": "Max. Druck",
+            "eu": "20 MPa",
+            "us": ""
+          },
+          {
+            "field": "Fahrmotor",
+            "eu": "BM5-200",
+            "us": ""
+          },
+          {
+            "field": "Fahrmotor Marke",
+            "eu": "Paiyi",
+            "us": ""
+          },
+          {
+            "field": "Fahrmotor Hubraum",
+            "eu": "200",
+            "us": ""
+          },
+          {
+            "field": "Schwenkmotor",
+            "eu": "BM2-315",
+            "us": ""
+          },
+          {
+            "field": "Schwenkmotor Hubraum",
+            "eu": "200",
+            "us": ""
+          }
+        ],
+        "other_sections": [
+          {
+            "section_name": "Tanks",
+            "rows": [
+              {
+                "field": "Kraftstofftank",
+                "eu": "10 L",
+                "us": ""
+              },
+              {
+                "field": "Öltank",
+                "eu": "3 L",
+                "us": ""
+              }
+            ]
+          }
+        ]
+      },
+      "image_urls": [
+        "https://rippa-europe.com/cdn/shop/files/74963_16.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74933_01.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74915_03.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74921_02.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74927_17.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74897_04.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74891_06.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74903_05.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74983_09.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74982_08.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74970_11.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74976_10.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74909_07.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74945_15.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74951_14.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74957_13.png?v=1744549761",
+        "https://rippa-europe.com/cdn/shop/files/74964_12.png?v=1744549761"
+      ]
+    },
+    "image_urls": [
+      "https://judgeme.imgix.net/rippa-europe/1776314546__1776314541067-img_3990__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314547__1776314542379-img_3988__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314548__1776314542869-img_3991__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314550__1776314543541-img_3992__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1771430411__1771430385839-img_20250919_154736_182__original.jpg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1771430413__1771430414621-screenshot-from-2025-09-25__original.jpg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1780413687__1000028895__original.jpg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773028401__1773028391446-img_3547__original.jpeg?auto=format&w=1024"
+    ],
+    "image_files": [
+      "images\\r13-pro\\74903_05.png",
+      "images\\r13-pro\\1773028401__1773028391446-img_3547__original.jpeg",
+      "images\\r13-pro\\74945_15.png",
+      "images\\r13-pro\\1776314546__1776314541067-img_3990__original.jpeg",
+      "images\\r13-pro\\74964_12.png",
+      "images\\r13-pro\\74970_11.png",
+      "images\\r13-pro\\74891_06.png",
+      "images\\r13-pro\\74921_02.png",
+      "images\\r13-pro\\74933_01.png",
+      "images\\r13-pro\\74909_07.png",
+      "images\\r13-pro\\1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg",
+      "images\\r13-pro\\74957_13.png",
+      "images\\r13-pro\\1776314548__1776314542869-img_3991__original.jpeg",
+      "images\\r13-pro\\1771430411__1771430385839-img_20250919_154736_182__original.jpg",
+      "images\\r13-pro\\74982_08.png",
+      "images\\r13-pro\\1780413687__1000028895__original.jpg",
+      "images\\r13-pro\\74951_14.png",
+      "images\\r13-pro\\74927_17.png",
+      "images\\r13-pro\\1776314547__1776314542379-img_3988__original.jpeg",
+      "images\\r13-pro\\74983_09.png",
+      "images\\r13-pro\\1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp",
+      "images\\r13-pro\\1771430413__1771430414621-screenshot-from-2025-09-25__original.jpg",
+      "images\\r13-pro\\1776314550__1776314543541-img_3992__original.jpeg",
+      "images\\r13-pro\\74915_03.png",
+      "images\\r13-pro\\74897_04.png",
+      "images\\r13-pro\\74963_16.png",
+      "images\\r13-pro\\74976_10.png"
+    ]
+  },
+  {
+    "product_name_input": "R15 ECO",
+    "url": "https://rippa-europe.com/de/products/r15-eco-1",
+    "url_en": "https://rippa-europe.com/products/r15-eco-1",
+    "slug": "r15-eco",
+    "structured": {
+      "product_name": "R15 ECO",
+      "brand": "Rippa",
+      "price": "9.999,00 EUR",
+      "currency": "EUR",
+      "tax_note": "excl. MwSt",
+      "availability": "Auf Lager",
+      "short_tagline": "Der Rippa R15 ECO ist ein leistungsstarker und vielseitiger Minibagger.",
+      "description": "Der **Rippa R15 ECO** ist ein leistungsstarker und vielseitiger Minibagger, ideal für Bauprojekte, Landschaftsgestaltung und präzise Arbeiten in engen Räumen. Mit seinem robusten Design und dem effizienten **Kubota-Dieselmotor** bietet er die perfekte Kombination aus Leistung, Zuverlässigkeit und Effizienz.\n\nMit einem **Betriebsgewicht von 1.500 kg** und einer **Graben Tiefe von 1,87 Metern** ist der R15 ECO perfekt für anspruchsvolle Aufgaben ausgestattet und zeichnet sich durch hohe Stabilität und Bedienkomfort aus.\n\n### Standardmerkmale:\n\n✔ 40 cm gezahnte Schaufel für präzises Graben\n\n✔ Kraftstoffeffizienter Kubota-Dieselmotor (Euro 5 zertifiziert)\n\n✔ Robuste Bauweise für maximale Langlebigkeit\n\n✔ Kompaktes Design für vielseitige Anwendungen\n\nZusätzliche Zubehörteile, wie verschiedene Schaufeln, Greifer oder Schnellwechsler, finden Sie in der **„[Zubehör](https://rippa-europe.com/collections/r15 \"Accessoires\")“**-Sektion auf unserer Website.",
+      "variants": [
+        {
+          "option_name": "Kabine",
+          "values": [
+            "Ohne Kabine",
+            "Mit Kabine"
+          ]
+        }
+      ],
+      "specifications": {
+        "engine": [
+          {
+            "field": "Hersteller",
+            "eu": "Kubota",
+            "us": "Kubota"
+          },
+          {
+            "field": "Modell",
+            "eu": "D722",
+            "us": "D722"
+          },
+          {
+            "field": "Max. PS",
+            "eu": "13.7 PS",
+            "us": "13.7 hp"
+          },
+          {
+            "field": "Max. Leistung",
+            "eu": "10.2 kW",
+            "us": "10.2 kW"
+          },
+          {
+            "field": "Max. Drehzahl",
+            "eu": "2500 rpm",
+            "us": "2500 rpm"
+          },
+          {
+            "field": "Hubraum",
+            "eu": "0.898 L",
+            "us": "0.24 gal"
+          },
+          {
+            "field": "Zylinderanzahl",
+            "eu": "3",
+            "us": "3"
+          },
+          {
+            "field": "Kühlung",
+            "eu": "Wassergekühlt",
+            "us": "Wassergekühlt"
+          },
+          {
+            "field": "Motoröl",
+            "eu": "3.1 L",
+            "us": "0.82 gal"
+          },
+          {
+            "field": "Kraftstoff",
+            "eu": "Diesel",
+            "us": "Diesel"
+          },
+          {
+            "field": "Kraftstoffgrad",
+            "eu": "No. 0 / -10",
+            "us": ""
+          },
+          {
+            "field": "Theoretischer Verbrauch",
+            "eu": "1.4–1.6 L/h",
+            "us": "0.37–0.42 gal/h"
+          }
+        ],
+        "dimensions_and_weight": [
+          {
+            "field": "Transportlänge",
+            "eu": "2700 mm",
+            "us": "106.3 in"
+          },
+          {
+            "field": "Transportbreite",
+            "eu": "1200 mm",
+            "us": "47.2 in"
+          },
+          {
+            "field": "Transporthöhe",
+            "eu": "2350 mm",
+            "us": "92.5 in"
+          },
+          {
+            "field": "Bodenfreiheit (Gegengewicht)",
+            "eu": "400 mm",
+            "us": "15.7 in"
+          },
+          {
+            "field": "Schaufelbreite",
+            "eu": "450 mm",
+            "us": "17.7 in"
+          },
+          {
+            "field": "Auslegerlänge",
+            "eu": "1700 mm",
+            "us": "66.9 in"
+          },
+          {
+            "field": "Arm Länge",
+            "eu": "950 mm",
+            "us": "37.4 in"
+          },
+          {
+            "field": "Klingenbreite",
+            "eu": "1200 mm",
+            "us": "47.2 in"
+          }
+        ],
+        "performance_and_load": [
+          {
+            "field": "Betriebsgewicht",
+            "eu": "1500 kg",
+            "us": "3307 lb"
+          },
+          {
+            "field": "Schaufelvolumen",
+            "eu": "0.018 m³",
+            "us": "0.64 ft³"
+          },
+          {
+            "field": "Fahrgeschwindigkeit",
+            "eu": "0–2.5 km/h",
+            "us": "0–1.55 mph"
+          },
+          {
+            "field": "Steigfähigkeit",
+            "eu": "30 %",
+            "us": "30 %"
+          },
+          {
+            "field": "Bodendruck",
+            "eu": "30 kPa",
+            "us": "4.35 psi"
+          },
+          {
+            "field": "Max. Reißkraft",
+            "eu": "15.0 kN",
+            "us": "15.0 kN"
+          },
+          {
+            "field": "Max. Grabreichweite",
+            "eu": "3900 mm",
+            "us": "153.5 in"
+          },
+          {
+            "field": "Max. Grabtiefe",
+            "eu": "2300 mm",
+            "us": "90.6 in"
+          },
+          {
+            "field": "Max. Grabhöhe",
+            "eu": "3400 mm",
+            "us": "133.9 in"
+          },
+          {
+            "field": "Max. Ausschutthöhe",
+            "eu": "2400 mm",
+            "us": "94.5 in"
+          },
+          {
+            "field": "Max. Schwenkwinkel",
+            "eu": "120°",
+            "us": "120°"
+          },
+          {
+            "field": "Kette (Breite×Pitch×Links)",
+            "eu": "230 mm×96 mm×40",
+            "us": "9.06 in×3.78 in×40"
+          }
+        ],
+        "hydraulic_system": [
+          {
+            "field": "Hauptpumpentyp/-modell",
+            "eu": "CBGJ2080",
+            "us": "CBGJ2080"
+          },
+          {
+            "field": "Hauptpumpenmarke",
+            "eu": "Tianjin Walking",
+            "us": "Tianjin Walking"
+          },
+          {
+            "field": "Max. Durchfluss",
+            "eu": "26 L/min",
+            "us": "26 L/min"
+          },
+          {
+            "field": "Steuerventil",
+            "eu": "2–3 Gelenke",
+            "us": "2–3 Gelenke"
+          },
+          {
+            "field": "Steuerventilmarke",
+            "eu": "Tengfei",
+            "us": "Tengfei"
+          },
+          {
+            "field": "Nenn Druck",
+            "eu": "18 MPa",
+            "us": "18 MPa"
+          },
+          {
+            "field": "Max. Druck",
+            "eu": "20 MPa",
+            "us": "20 MPa"
+          },
+          {
+            "field": "Fahrmotor",
+            "eu": "BM5-250",
+            "us": "BM5-250"
+          },
+          {
+            "field": "Fahrmotor Marke",
+            "eu": "Paiyi",
+            "us": "Paiyi"
+          },
+          {
+            "field": "Fahrmotor Hubraum",
+            "eu": "250",
+            "us": "250"
+          },
+          {
+            "field": "Schwenkmotor",
+            "eu": "BM2-250",
+            "us": "BM2-250"
+          },
+          {
+            "field": "Schwenkmotor Hubraum",
+            "eu": "250",
+            "us": "250"
+          }
+        ],
+        "other_sections": []
+      },
+      "image_urls": [
+        "https://rippa-europe.com/cdn/shop/files/75504_11.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75500_03.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75498_01.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75499_02.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75501_05.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75448_07.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75503_10.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75463_06.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75453_08.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75473_04.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75423_15.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75424_13.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75434_12.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75502_09.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/75418_14.png?v=1744549896",
+        "https://rippa-europe.com/cdn/shop/files/1_37c35e44-91aa-4684-840a-02f81a5abebb.jpg?v=1762870924"
+      ]
+    },
+    "image_urls": [
+      "https://judgeme.imgix.net/rippa-europe/1780413687__1000028895__original.jpg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1770046973__1770046957658-img_2758__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314546__1776314541067-img_3990__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314547__1776314542379-img_3988__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314548__1776314542869-img_3991__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314550__1776314543541-img_3992__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773028401__1773028391446-img_3547__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg?auto=format&w=1024"
+    ],
+    "image_files": [
+      "images\\r15-eco\\1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg",
+      "images\\r15-eco\\75448_07.png",
+      "images\\r15-eco\\75434_12.png",
+      "images\\r15-eco\\75499_02.png",
+      "images\\r15-eco\\1780413687__1000028895__original.jpg",
+      "images\\r15-eco\\r15-eco-1.html",
+      "images\\r15-eco\\75501_05.png",
+      "images\\r15-eco\\75503_10.png",
+      "images\\r15-eco\\75453_08.png",
+      "images\\r15-eco\\75418_14.png",
+      "images\\r15-eco\\75502_09.png",
+      "images\\r15-eco\\1_37c35e44-91aa-4684-840a-02f81a5abebb.jpg",
+      "images\\r15-eco\\75500_03.png",
+      "images\\r15-eco\\75463_06.png",
+      "images\\r15-eco\\75504_11.png",
+      "images\\r15-eco\\1776314546__1776314541067-img_3990__original.jpeg",
+      "images\\r15-eco\\1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp",
+      "images\\r15-eco\\75498_01.png",
+      "images\\r15-eco\\75473_04.png",
+      "images\\r15-eco\\1773028401__1773028391446-img_3547__original.jpeg",
+      "images\\r15-eco\\75424_13.png",
+      "images\\r15-eco\\1770046973__1770046957658-img_2758__original.jpeg",
+      "images\\r15-eco\\75423_15.png"
+    ]
+  },
+  {
+    "product_name_input": "R18 PRO",
+    "url": "https://rippa-europe.com/de/products/r18-pro",
+    "url_en": "https://rippa-europe.com/products/r18-pro",
+    "slug": "r18-pro",
+    "structured": {
+      "product_name": "R18 PRO",
+      "brand": "Rippa",
+      "price": "17.903,00 EUR",
+      "currency": "EUR",
+      "tax_note": "excl. MwSt",
+      "availability": "Auf Lager",
+      "short_tagline": "Der leistungsstarke und vielseitige Mini-Bagger für anspruchsvolle Bauprojekte.",
+      "description": "Der **Rippa R18 PRO** ist ein leistungsstarker und vielseitiger Mini-Bagger, ideal für anspruchsvolle Bauprojekte, Landschaftsgestaltung und präzise Erdarbeiten. Mit seinem robusten Design und dem leistungsstarken **Kubota-Dieselmotor** vereint er Effizienz, Präzision und professionelle Zuverlässigkeit.\n\nMit einem **Betriebsgewicht von 1.806 kg** und einer **Grabetiefe von 2,42 Metern** ist der R18 PRO perfekt für den intensiven Einsatz ausgestattet und liefert auch unter schweren Lasten eine konstante Leistung.\n\n### Standardmerkmale:\n\n✔ 40 cm gezahnte Schaufel für präzises Graben\n\n✔ Leistungsstarker Kubota-Dieselmotor (Euro 5 zertifiziert)\n\n✔ Robuste Bauweise für maximale Stabilität\n\n✔ Hohe Grabetiefe für professionelle Anwendungen\n\nZusätzliche Zubehörteile, wie verschiedene Schaufeln, Greifer oder Schnellwechsler, finden Sie in der **„[Zubehör](https://rippa-europe.com/collections/r18 \"Accessoires\")“**-Sektion auf unserer Website.",
+      "variants": [
+        {
+          "option_name": "Kabine",
+          "values": [
+            "Mit Kabine",
+            "Ohne Kabine"
+          ]
+        }
+      ],
+      "specifications": {
+        "engine": [
+          {
+            "field": "Hersteller",
+            "eu": "Kubota",
+            "us": "Kubota"
+          },
+          {
+            "field": "Modell",
+            "eu": "D902",
+            "us": "D902"
+          },
+          {
+            "field": "Max. PS",
+            "eu": "20 PS",
+            "us": "20 hp"
+          },
+          {
+            "field": "Max. Leistung",
+            "eu": "15 kW",
+            "us": "15 kW"
+          },
+          {
+            "field": "Max. Drehzahl",
+            "eu": "2200 rpm",
+            "us": "2200 rpm"
+          },
+          {
+            "field": "Hubraum",
+            "eu": "1.813 L",
+            "us": "0.48 gal"
+          },
+          {
+            "field": "Zylinderanzahl",
+            "eu": "3",
+            "us": "3"
+          },
+          {
+            "field": "Kühlung",
+            "eu": "Wasserkühlung + Hydrauliköl",
+            "us": ""
+          },
+          {
+            "field": "Ölwechselmenge",
+            "eu": "3.5 L",
+            "us": "0.92 gal"
+          },
+          {
+            "field": "Kraftstoff",
+            "eu": "Diesel",
+            "us": "Diesel"
+          },
+          {
+            "field": "Kraftstoffgrad",
+            "eu": "No. 0",
+            "us": "-10"
+          },
+          {
+            "field": "Theoretischer Verbrauch",
+            "eu": "1.5–1.8 L/h",
+            "us": "0.40–0.48 gal/h"
+          }
+        ],
+        "dimensions_and_weight": [
+          {
+            "field": "Transportlänge",
+            "eu": "2527 mm",
+            "us": "99.5 in"
+          },
+          {
+            "field": "Transportbreite",
+            "eu": "1092 mm",
+            "us": "43.0 in"
+          },
+          {
+            "field": "Transporthöhe",
+            "eu": "2349 mm",
+            "us": "92.5 in"
+          },
+          {
+            "field": "Bodenfreiheit (Gegengewicht)",
+            "eu": "450 mm",
+            "us": "17.7 in"
+          },
+          {
+            "field": "Schaufelbreite",
+            "eu": "400 mm",
+            "us": "15.7 in"
+          },
+          {
+            "field": "Auslegerlänge",
+            "eu": "1825 mm",
+            "us": "71.9 in"
+          },
+          {
+            "field": "Arm Länge",
+            "eu": "1185 mm",
+            "us": "46.7 in"
+          },
+          {
+            "field": "Klingenbreite",
+            "eu": "990 mm",
+            "us": "39.0 in"
+          }
+        ],
+        "performance_and_load": [
+          {
+            "field": "Betriebsgewicht",
+            "eu": "1806 kg",
+            "us": "3982 lb"
+          },
+          {
+            "field": "Schaufelvolumen",
+            "eu": "0.07 m³",
+            "us": "2.47 ft³"
+          },
+          {
+            "field": "Fahrgeschwindigkeit (niedrig/hoch)",
+            "eu": "0–1.8 / 3.0 km/h",
+            "us": "0–1.12 / 1.86 mph"
+          },
+          {
+            "field": "Steigfähigkeit",
+            "eu": "30 %",
+            "us": ""
+          },
+          {
+            "field": "Bodendruck",
+            "eu": "27.88 kPa",
+            "us": "4.04 psi"
+          },
+          {
+            "field": "Griffkräfte (Schaufel/Arm)",
+            "eu": "≈8.2 / 12.2 kN",
+            "us": ""
+          },
+          {
+            "field": "Max. Grabradius",
+            "eu": "3970 mm",
+            "us": "156.3 in"
+          },
+          {
+            "field": "Max. Grabtiefe",
+            "eu": "2420 mm",
+            "us": "95.3 in"
+          },
+          {
+            "field": "Max. Grabhöhe",
+            "eu": "3400 mm",
+            "us": "133.9 in"
+          },
+          {
+            "field": "Max. Ausschutthöhe",
+            "eu": "2180 mm",
+            "us": "85.8 in"
+          }
+        ],
+        "hydraulic_system": [
+          {
+            "field": "Nenn Druck",
+            "eu": "23 MPa",
+            "us": ""
+          },
+          {
+            "field": "Max. Einstell Druck",
+            "eu": "18 MPa",
+            "us": ""
+          },
+          {
+            "field": "Max. Fördermenge Hauptpumpe",
+            "eu": "28 L/min",
+            "us": ""
+          },
+          {
+            "field": "Steuerventil",
+            "eu": "9-Wege-Multiventil (hydraulische Steuerung)",
+            "us": ""
+          },
+          {
+            "field": "Steuerventil Hersteller",
+            "eu": "Taifeng Hydraulic",
+            "us": ""
+          },
+          {
+            "field": "Fahrmotor Typ",
+            "eu": "LTM03C",
+            "us": ""
+          },
+          {
+            "field": "Fahrmotor Hersteller",
+            "eu": "LIKECHUAN",
+            "us": ""
+          }
+        ],
+        "other_sections": []
+      },
+      "image_urls": [
+        "https://rippa-europe.com/cdn/shop/files/06_53b8c5c9-1a61-429b-b36e-85ed3abc93bb.png?v=1747741754",
+        "https://rippa-europe.com/cdn/shop/files/07_d89e4672-778a-4ac5-a013-869aae1bf967.png?v=1747741754",
+        "https://rippa-europe.com/cdn/shop/files/05_f525db65-b0cb-4430-bda7-1a0c54a13af5.png?v=1747741754",
+        "https://rippa-europe.com/cdn/shop/files/09_33b96626-093b-465d-92d3-20e0def63cbe.png?v=1747741754",
+        "https://rippa-europe.com/cdn/shop/files/01_0b3d2767-5cf0-423f-be89-5256852b6ef7.png?v=1747741754",
+        "https://rippa-europe.com/cdn/shop/files/03_2e18ef5a-35f0-435a-8942-b603ecd0befd.png?v=1747741754",
+        "https://rippa-europe.com/cdn/shop/files/02_ceb224d3-ea5b-4b86-9339-a90a743f916f.png?v=1747741751",
+        "https://rippa-europe.com/cdn/shop/files/04_8d6b0156-557c-40ef-8ac6-3899af18503d.png?v=1747741747",
+        "https://rippa-europe.com/cdn/shop/files/08_b9f71bde-c0bf-491f-9e0b-f5065bc7a1fa.png?v=1747741747",
+        "https://rippa-europe.com/cdn/shop/files/10_e0789cf1-dbcc-4330-b573-2142bb2204a9.png?v=1747741710",
+        "https://rippa-europe.com/cdn/shop/files/11_bb7dd83f-56a5-4d69-9cd0-63f41a10e814.png?v=1747741710",
+        "https://rippa-europe.com/cdn/shop/files/12_e836ecdb-8cdd-4e38-a4ff-916f015e8e1e.png?v=1747741711",
+        "https://rippa-europe.com/cdn/shop/files/13_42020138-4c32-4702-94e0-9a214ec2dbbc.png?v=1747741712",
+        "https://rippa-europe.com/cdn/shop/files/14_18f5727b-f283-40b6-bcc8-a65cb0e4c27c.png?v=1747741711",
+        "https://rippa-europe.com/cdn/shop/files/15_a318f9a4-c0f4-427b-aef7-a3b9e4647a41.png?v=1747741711"
+      ]
+    },
+    "image_urls": [
+      "https://judgeme.imgix.net/rippa-europe/1780413687__1000028895__original.jpg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314546__1776314541067-img_3990__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314547__1776314542379-img_3988__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314548__1776314542869-img_3991__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314550__1776314543541-img_3992__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773028401__1773028391446-img_3547__original.jpeg?auto=format&w=1024"
+    ],
+    "image_files": [
+      "images\\r18-pro\\1776314546__1776314541067-img_3990__original.jpeg",
+      "images\\r18-pro\\1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg",
+      "images\\r18-pro\\09_33b96626-093b-465d-92d3-20e0def63cbe.png",
+      "images\\r18-pro\\04_8d6b0156-557c-40ef-8ac6-3899af18503d.png",
+      "images\\r18-pro\\07_d89e4672-778a-4ac5-a013-869aae1bf967.png",
+      "images\\r18-pro\\12_e836ecdb-8cdd-4e38-a4ff-916f015e8e1e.png",
+      "images\\r18-pro\\1776314548__1776314542869-img_3991__original.jpeg",
+      "images\\r18-pro\\08_b9f71bde-c0bf-491f-9e0b-f5065bc7a1fa.png",
+      "images\\r18-pro\\1776314550__1776314543541-img_3992__original.jpeg",
+      "images\\r18-pro\\15_a318f9a4-c0f4-427b-aef7-a3b9e4647a41.png",
+      "images\\r18-pro\\13_42020138-4c32-4702-94e0-9a214ec2dbbc.png",
+      "images\\r18-pro\\10_e0789cf1-dbcc-4330-b573-2142bb2204a9.png",
+      "images\\r18-pro\\r18-pro.html",
+      "images\\r18-pro\\02_ceb224d3-ea5b-4b86-9339-a90a743f916f.png",
+      "images\\r18-pro\\1776314547__1776314542379-img_3988__original.jpeg",
+      "images\\r18-pro\\1780413687__1000028895__original.jpg",
+      "images\\r18-pro\\11_bb7dd83f-56a5-4d69-9cd0-63f41a10e814.png",
+      "images\\r18-pro\\05_f525db65-b0cb-4430-bda7-1a0c54a13af5.png",
+      "images\\r18-pro\\1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp",
+      "images\\r18-pro\\1773028401__1773028391446-img_3547__original.jpeg",
+      "images\\r18-pro\\01_0b3d2767-5cf0-423f-be89-5256852b6ef7.png",
+      "images\\r18-pro\\06_53b8c5c9-1a61-429b-b36e-85ed3abc93bb.png",
+      "images\\r18-pro\\03_2e18ef5a-35f0-435a-8942-b603ecd0befd.png",
+      "images\\r18-pro\\14_18f5727b-f283-40b6-bcc8-a65cb0e4c27c.png"
+    ]
+  },
+  {
+    "product_name_input": "R22 PRO",
+    "url": "https://rippa-europe.com/de/products/r22-pro-1",
+    "url_en": "https://rippa-europe.com/products/r22-pro-1",
+    "slug": "r22-pro",
+    "structured": {
+      "product_name": "R22 PRO",
+      "brand": "Rippa",
+      "price": "19.490,00 EUR",
+      "currency": "EUR",
+      "tax_note": "excl. MwSt",
+      "availability": "Auf Lager",
+      "short_tagline": "Der Rippa R22 PRO ist ein leistungsstarker und vielseitiger Minibagger.",
+      "description": "Der **Rippa R22 PRO** ist ein leistungsstarker und vielseitiger Minibagger, ideal für mittelgroße bis große Bau- und Landschaftsprojekte. Mit seinem robusten Design und dem leistungsstarken **Kubota-Dieselmotor** kombiniert er Effizienz, Präzision und Zuverlässigkeit für den professionellen Einsatz.\n\nMit einem **Betriebsgewicht von 2.371,5 kg**, einer **Grabetiefe von 2,29 Metern** und einer **Reißkraft von 18,4 kN** meistert der R22 PRO mühelos anspruchsvolle Aufgaben und bietet maximale Kontrolle in jeder Bewegung.\n\n### Standardmerkmale:\n\n✔ 40 cm gezahnte Schaufel für präzises Graben\n\n✔ Leistungsstarker Kubota-Dieselmotor (Euro 5 zertifiziert)\n\n✔ Hohe Reißkraft für effiziente Leistung\n\n✔ Robuste Konstruktion für langanhaltende Zuverlässigkeit\n\nZusätzliche Zubehörteile, wie verschiedene Schaufeln, Greifer oder Schnellwechsler, finden Sie in der **„ [Zubehör](https://rippa-europe.com/collections/r22 \"Accessoires\")“**-Sektion auf unserer Website.",
+      "variants": [
+        {
+          "option_name": "Antrieb",
+          "values": [
+            "Diesel"
+          ]
+        },
+        {
+          "option_name": "Fahrwerk",
+          "values": [
+            "Gummiketten"
+          ]
+        }
+      ],
+      "specifications": {
+        "engine": [
+          {
+            "field": "Hersteller",
+            "eu": "Kubota",
+            "us": ""
+          },
+          {
+            "field": "Modell",
+            "eu": "D1105",
+            "us": ""
+          },
+          {
+            "field": "Max. Leistung",
+            "eu": "18.2 kW",
+            "us": ""
+          },
+          {
+            "field": "Max. PS",
+            "eu": "24.8 hp",
+            "us": ""
+          },
+          {
+            "field": "Max. Drehzahl",
+            "eu": "3000 rpm",
+            "us": ""
+          },
+          {
+            "field": "Hubraum",
+            "eu": "1.23 L",
+            "us": "0.31 gal"
+          },
+          {
+            "field": "Zylinderanzahl",
+            "eu": "3",
+            "us": ""
+          },
+          {
+            "field": "Kühlung",
+            "eu": "Wassergekühlt",
+            "us": ""
+          },
+          {
+            "field": "Ölwechselmenge",
+            "eu": "4.2 L",
+            "us": "1.1 gal"
+          },
+          {
+            "field": "Kraftstoff",
+            "eu": "Diesel",
+            "us": ""
+          },
+          {
+            "field": "Kraftstoffgrad",
+            "eu": "Nr. 0",
+            "us": "-10"
+          },
+          {
+            "field": "Theoretischer Kraftstoffverbrauch",
+            "eu": "1.3–1.5 L/h",
+            "us": "0.34–0.40 gal/h"
+          }
+        ],
+        "dimensions_and_weight": [
+          {
+            "field": "Transportlänge",
+            "eu": "2824 mm",
+            "us": "111.2 in"
+          },
+          {
+            "field": "Transportbreite",
+            "eu": "1300 mm",
+            "us": "51.2 in"
+          },
+          {
+            "field": "Transporthöhe",
+            "eu": "2361 mm",
+            "us": "92.9 in"
+          },
+          {
+            "field": "Min. Bodenfreiheit",
+            "eu": "450 mm",
+            "us": "17.7 in"
+          },
+          {
+            "field": "Schaufelbreite",
+            "eu": "450 mm",
+            "us": "17.7 in"
+          },
+          {
+            "field": "Auslegerlänge",
+            "eu": "1350 mm",
+            "us": "53.1 in"
+          },
+          {
+            "field": "Armlänge",
+            "eu": "1250 mm",
+            "us": "49.2 in"
+          },
+          {
+            "field": "Dozerblattbreite",
+            "eu": "1300 mm",
+            "us": "51.2 in"
+          }
+        ],
+        "performance_and_load": [
+          {
+            "field": "Betriebsgewicht",
+            "eu": "2371.5 kg",
+            "us": "5228 lb"
+          },
+          {
+            "field": "Schaufelvolumen",
+            "eu": "0.049 m³",
+            "us": "1.9 ft³"
+          },
+          {
+            "field": "Fahrgeschwindigkeit (niedrig/hoch)",
+            "eu": "0–1.5 / 2.8 km/h",
+            "us": "0–0.93 / 1.71 mph"
+          },
+          {
+            "field": "Steigfähigkeit",
+            "eu": "30 %",
+            "us": ""
+          },
+          {
+            "field": "Bodendruck",
+            "eu": "33.4 kPa",
+            "us": "4.84 psi"
+          },
+          {
+            "field": "Max. Reißkraft",
+            "eu": "18.4 kN",
+            "us": ""
+          },
+          {
+            "field": "Max. Grabreichweite",
+            "eu": "4143 mm",
+            "us": "163.1 in"
+          },
+          {
+            "field": "Max. Grabtiefe",
+            "eu": "2293 mm",
+            "us": "90.3 in"
+          },
+          {
+            "field": "Max. Grabhöhe",
+            "eu": "3761 mm",
+            "us": "148.1 in"
+          },
+          {
+            "field": "Max. Ausschutthöhe",
+            "eu": "3496 mm",
+            "us": "138.9 in"
+          },
+          {
+            "field": "Spurverbreiterungsbereich",
+            "eu": "1300–1500 mm",
+            "us": "51.2–59.1 in"
+          }
+        ],
+        "hydraulic_system": [
+          {
+            "field": "Hauptpumpentyp/-modell",
+            "eu": "Lastsensitiver variabler Kolbenpumpe",
+            "us": "/ 28"
+          },
+          {
+            "field": "Hauptpumpenmarke",
+            "eu": "Taifeng",
+            "us": ""
+          },
+          {
+            "field": "Max. Durchfluss",
+            "eu": "67.2 L/min",
+            "us": ""
+          },
+          {
+            "field": "Mehrwegeventil",
+            "eu": "9-Wege-Hydraulikmehrwegeventil",
+            "us": ""
+          },
+          {
+            "field": "Mehrwegeventilmarke",
+            "eu": "Taifeng",
+            "us": ""
+          },
+          {
+            "field": "Nenn-Druck",
+            "eu": "18 MPa",
+            "us": ""
+          },
+          {
+            "field": "Max. Druck",
+            "eu": "20 MPa",
+            "us": ""
+          },
+          {
+            "field": "Fahrmotor-Typ",
+            "eu": "LTM03CDK",
+            "us": ""
+          },
+          {
+            "field": "Fahrmotor-Marke",
+            "eu": "Likuchuan",
+            "us": ""
+          },
+          {
+            "field": "Motorhubraum (Fahrmotor)",
+            "eu": "11–20",
+            "us": ""
+          },
+          {
+            "field": "Drehmotor-Typ",
+            "eu": "Likuchuan",
+            "us": ""
+          },
+          {
+            "field": "Drehmotor-Hubraum",
+            "eu": "15.1",
+            "us": ""
+          }
+        ],
+        "other_sections": []
+      },
+      "image_urls": [
+        "https://rippa-europe.com/cdn/shop/files/06.png?v=1747740777",
+        "https://rippa-europe.com/cdn/shop/files/07.png?v=1747740777",
+        "https://rippa-europe.com/cdn/shop/files/08.png?v=1747740777",
+        "https://rippa-europe.com/cdn/shop/files/04.png?v=1747740777",
+        "https://rippa-europe.com/cdn/shop/files/10.png?v=1747740777",
+        "https://rippa-europe.com/cdn/shop/files/03.png?v=1747740777",
+        "https://rippa-europe.com/cdn/shop/files/02.png?v=1747740777",
+        "https://rippa-europe.com/cdn/shop/files/01.png?v=1747740777",
+        "https://rippa-europe.com/cdn/shop/files/05.png?v=1747740777",
+        "https://rippa-europe.com/cdn/shop/files/09.png?v=1747740777",
+        "https://rippa-europe.com/cdn/shop/files/11.png?v=1747740741",
+        "https://rippa-europe.com/cdn/shop/files/12.png?v=1747740740",
+        "https://rippa-europe.com/cdn/shop/files/13.png?v=1747740740",
+        "https://rippa-europe.com/cdn/shop/files/14.png?v=1747740740",
+        "https://rippa-europe.com/cdn/shop/files/15.png?v=1747740739"
+      ]
+    },
+    "image_urls": [
+      "https://judgeme.imgix.net/rippa-europe/1780413687__1000028895__original.jpg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314546__1776314541067-img_3990__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314547__1776314542379-img_3988__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314548__1776314542869-img_3991__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314550__1776314543541-img_3992__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773028401__1773028391446-img_3547__original.jpeg?auto=format&w=1024"
+    ],
+    "image_files": [
+      "images\\r22-pro\\12.png",
+      "images\\r22-pro\\08.png",
+      "images\\r22-pro\\1776314547__1776314542379-img_3988__original.jpeg",
+      "images\\r22-pro\\03.png",
+      "images\\r22-pro\\1773028401__1773028391446-img_3547__original.jpeg",
+      "images\\r22-pro\\06.png",
+      "images\\r22-pro\\07.png",
+      "images\\r22-pro\\14.png",
+      "images\\r22-pro\\1780413687__1000028895__original.jpg",
+      "images\\r22-pro\\05.png",
+      "images\\r22-pro\\10.png",
+      "images\\r22-pro\\1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp",
+      "images\\r22-pro\\r22-pro-1.html",
+      "images\\r22-pro\\1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg",
+      "images\\r22-pro\\11.png",
+      "images\\r22-pro\\04.png",
+      "images\\r22-pro\\1776314546__1776314541067-img_3990__original.jpeg",
+      "images\\r22-pro\\1776314548__1776314542869-img_3991__original.jpeg",
+      "images\\r22-pro\\1776314550__1776314543541-img_3992__original.jpeg",
+      "images\\r22-pro\\09.png",
+      "images\\r22-pro\\02.png",
+      "images\\r22-pro\\15.png",
+      "images\\r22-pro\\01.png",
+      "images\\r22-pro\\13.png"
+    ]
+  },
+  {
+    "product_name_input": "R32 PRO",
+    "url": "https://rippa-europe.com/de/products/r32-pro-1",
+    "url_en": "https://rippa-europe.com/products/r32-pro-1",
+    "slug": "r32-pro",
+    "structured": {
+      "product_name": "R32 PRO",
+      "brand": "Rippa",
+      "price": "24.765,00 EUR",
+      "currency": "EUR",
+      "tax_note": "excl. MwSt",
+      "availability": "Auf Lager",
+      "short_tagline": "Der Rippa R32 PRO ist ein leistungsstarker, professioneller Minibagger.",
+      "description": "Der **Rippa R32 PRO** ist ein hochleistungsfähiger, professioneller Minibagger, ideal für große Bauprojekte, tiefe Aushubarbeiten und anspruchsvolle Erdbewegungsoperationen. Mit seiner Kombination aus massiver Leistung, präziser Steuerung und robuster Bauweise ist er die perfekte Wahl für Profis, die Effizienz und Langlebigkeit schätzen.\n\nAngetrieben von einem starken **Kubota-Dieselmotor** bietet der R32 PRO herausragende Leistung mit einem **Betriebsgewicht von 3.375 kg**, einer **Grabetiefe von 2,83 Metern** und einer **Grableistung von 27 kN** – für maximale Produktivität bei jeder Aufgabe.\n\n### Standardmerkmale:\n\n✔ 40 cm gezahnter Löffel für präzises Graben\n\n✔ Leistungsstarker Kubota-Dieselmotor (Euro 5 zertifiziert)\n\n✔ Hohe Grableistung für schwere Aushubarbeiten\n\n✔ Robuste Bauweise für langlebigen professionellen Einsatz\n\nZusätzliche Zubehörteile, wie verschiedene Löffel, Greifer oder Schnellwechsler, finden Sie in der **„[Zubehör](https://rippa-europe.com/collections/r32 \"Accessoires\")“**-Sektion auf unserer Website.",
+      "variants": [
+        {
+          "option_name": "Farbe",
+          "values": [
+            "Rot",
+            "Blau",
+            "Grün"
+          ]
+        }
+      ],
+      "specifications": {
+        "engine": [
+          {
+            "field": "Hersteller",
+            "eu": "Kubota",
+            "us": "Kubota"
+          },
+          {
+            "field": "Modell",
+            "eu": "V1505",
+            "us": "V1505"
+          },
+          {
+            "field": "Max. Leistung",
+            "eu": "25.0 PS",
+            "us": "25.0 hp"
+          },
+          {
+            "field": "Max. Leistung",
+            "eu": "18.5 kW",
+            "us": "18.5 kW"
+          },
+          {
+            "field": "Max. Drehzahl",
+            "eu": "2300 rpm",
+            "us": "2300 rpm"
+          },
+          {
+            "field": "Hubraum",
+            "eu": "1.498 L",
+            "us": "0.40 gal"
+          },
+          {
+            "field": "Zylinderanzahl",
+            "eu": "4",
+            "us": "4"
+          },
+          {
+            "field": "Kühlung",
+            "eu": "Wassergekühlt",
+            "us": "Wassergekühlt"
+          },
+          {
+            "field": "Motoröl",
+            "eu": "4.5 L",
+            "us": "1.19 gal"
+          },
+          {
+            "field": "Kraftstoff",
+            "eu": "Diesel",
+            "us": "Diesel"
+          },
+          {
+            "field": "Kraftstoffgrad",
+            "eu": "No. 0 / -10",
+            "us": ""
+          },
+          {
+            "field": "Theoretischer Verbrauch",
+            "eu": "2.0–2.2 L/h",
+            "us": "0.53–0.58 gal/h"
+          }
+        ],
+        "dimensions_and_weight": [
+          {
+            "field": "Transportlänge",
+            "eu": "3200 mm",
+            "us": "126.0 in"
+          },
+          {
+            "field": "Transportbreite",
+            "eu": "1500 mm",
+            "us": "59.1 in"
+          },
+          {
+            "field": "Transporthöhe",
+            "eu": "2500 mm",
+            "us": "98.4 in"
+          },
+          {
+            "field": "Bodenfreiheit",
+            "eu": "480 mm",
+            "us": "18.9 in"
+          },
+          {
+            "field": "Schaufelbreite",
+            "eu": "650 mm",
+            "us": "25.6 in"
+          },
+          {
+            "field": "Auslegerlänge",
+            "eu": "2000 mm",
+            "us": "78.7 in"
+          },
+          {
+            "field": "Arm Länge",
+            "eu": "1200 mm",
+            "us": "47.2 in"
+          },
+          {
+            "field": "Klingenbreite",
+            "eu": "1500 mm",
+            "us": "59.1 in"
+          }
+        ],
+        "performance_and_load": [
+          {
+            "field": "Betriebsgewicht",
+            "eu": "3200 kg",
+            "us": "7055 lb"
+          },
+          {
+            "field": "Schaufelvolumen",
+            "eu": "0.08 m³",
+            "us": "2.83 ft³"
+          },
+          {
+            "field": "Fahrgeschwindigkeit",
+            "eu": "0–3.2 km/h",
+            "us": "0–1.99 mph"
+          },
+          {
+            "field": "Steigfähigkeit",
+            "eu": "30 %",
+            "us": "30 %"
+          },
+          {
+            "field": "Bodendruck",
+            "eu": "36 kPa",
+            "us": "5.22 psi"
+          },
+          {
+            "field": "Max. Grableistung",
+            "eu": "27.0 kN",
+            "us": "27.0 kN"
+          },
+          {
+            "field": "Max. Grabradius",
+            "eu": "4831 mm",
+            "us": "190.2 in"
+          },
+          {
+            "field": "Max. Grabetiefe",
+            "eu": "2827 mm",
+            "us": "111.3 in"
+          },
+          {
+            "field": "Max. Grabhöhe",
+            "eu": "3181 mm",
+            "us": "125.3 in"
+          },
+          {
+            "field": "Max. Ausschutthöhe",
+            "eu": "2500 mm",
+            "us": "98.4 in"
+          },
+          {
+            "field": "Max. Schwenkwinkel",
+            "eu": "120°",
+            "us": "120°"
+          },
+          {
+            "field": "Bahn (Breite×Pitch×Links)",
+            "eu": "300 mm×100 mm×42",
+            "us": "11.8 in×3.9 in×42"
+          }
+        ],
+        "hydraulic_system": [
+          {
+            "field": "Hauptpumpentyp/-modell",
+            "eu": "CBGJ2120",
+            "us": "CBGJ2120"
+          },
+          {
+            "field": "Hauptpumpenmarke",
+            "eu": "Tianjin Walking",
+            "us": "Tianjin Walking"
+          },
+          {
+            "field": "Max. Durchfluss",
+            "eu": "40 L/min",
+            "us": "40 L/min"
+          },
+          {
+            "field": "Steuerventil",
+            "eu": "2–3 Gelenke",
+            "us": "2–3 Gelenke"
+          },
+          {
+            "field": "Steuerventilmarke",
+            "eu": "Tengfei",
+            "us": "Tengfei"
+          },
+          {
+            "field": "Nenn-Druck",
+            "eu": "20 MPa",
+            "us": "20 MPa"
+          },
+          {
+            "field": "Max. Druck",
+            "eu": "22 MPa",
+            "us": "22 MPa"
+          },
+          {
+            "field": "Fahrmotor",
+            "eu": "BM5-500",
+            "us": "BM5-500"
+          },
+          {
+            "field": "Fahrmotor Marke",
+            "eu": "Paiyi",
+            "us": "Paiyi"
+          },
+          {
+            "field": "Fahrmotor Hubraum",
+            "eu": "500",
+            "us": "500"
+          },
+          {
+            "field": "Schwenkmotor",
+            "eu": "BM2-500",
+            "us": "BM2-500"
+          },
+          {
+            "field": "Schwenkmotor Hubraum",
+            "eu": "500",
+            "us": "500"
+          }
+        ],
+        "other_sections": [
+          {
+            "section_name": "Tanks",
+            "rows": [
+              {
+                "field": "Kraftstofftank",
+                "eu": "30 L",
+                "us": ""
+              },
+              {
+                "field": "Öltank",
+                "eu": "20 L",
+                "us": ""
+              }
+            ]
+          }
+        ]
+      },
+      "image_urls": [
+        "https://rippa-europe.com/cdn/shop/files/06_fbcf429a-310c-4b76-99c5-554a6a5a60f9.png?v=1747741090",
+        "https://rippa-europe.com/cdn/shop/files/07_29008768-23db-4e81-95ff-5d74da6b0c56.png?v=1747741090",
+        "https://rippa-europe.com/cdn/shop/files/08_9f5295f1-6661-4e0b-867a-0e8fb0c3eb9b.png?v=1747741090",
+        "https://rippa-europe.com/cdn/shop/files/04_a0b93e0d-5acf-4e98-95d1-54899a7a7fe4.png?v=1747741090",
+        "https://rippa-europe.com/cdn/shop/files/10_8d8ed616-0713-4df3-b779-72b89bf26f57.png?v=1747741090",
+        "https://rippa-europe.com/cdn/shop/files/03_95d7a227-d04f-4a7d-b010-9d954ae7fe85.png?v=1747741090",
+        "https://rippa-europe.com/cdn/shop/files/01_09e4d0e1-7914-4db0-9d81-c2472479e53c.png?v=1747741090",
+        "https://rippa-europe.com/cdn/shop/files/02_04bf3602-455c-4653-8caa-e29ea8559f3c.png?v=1747741090",
+        "https://rippa-europe.com/cdn/shop/files/05_0e98ca03-1322-44a6-bbb8-acfdd9afc23c.png?v=1747741090",
+        "https://rippa-europe.com/cdn/shop/files/09_6369ac3d-a4e1-46c7-a639-aa635d858855.png?v=1747741090",
+        "https://rippa-europe.com/cdn/shop/files/11_94d9b82d-2fcd-47ca-b14e-90275acc3def.png?v=1747741059",
+        "https://rippa-europe.com/cdn/shop/files/12_090f5b75-b961-46fd-8051-03a7576f33f9.png?v=1747741058",
+        "https://rippa-europe.com/cdn/shop/files/13_6adcf2c5-01ab-4408-9419-a92d8b2bffe8.png?v=1747741058",
+        "https://rippa-europe.com/cdn/shop/files/14_455a1418-eedd-45fe-88e7-9c6bc7bbe4c6.png?v=1747741058",
+        "https://rippa-europe.com/cdn/shop/files/15_9ab40de7-5b9e-47a0-adad-ae91b0c1314a.png?v=1747741058",
+        "https://rippa-europe.com/cdn/shop/files/16.png?v=1747741057",
+        "https://rippa-europe.com/cdn/shop/files/17.png?v=1747741057",
+        "https://rippa-europe.com/cdn/shop/files/18.png?v=1747741058"
+      ]
+    },
+    "image_urls": [
+      "https://judgeme.imgix.net/rippa-europe/1780413687__1000028895__original.jpg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314546__1776314541067-img_3990__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314547__1776314542379-img_3988__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314548__1776314542869-img_3991__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1776314550__1776314543541-img_3992__original.jpeg?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp?auto=format&w=1024",
+      "https://judgeme.imgix.net/rippa-europe/1773028401__1773028391446-img_3547__original.jpeg?auto=format&w=1024"
+    ],
+    "image_files": [
+      "images\\r32-pro\\1780413687__1000028895__original.jpg",
+      "images\\r32-pro\\02_04bf3602-455c-4653-8caa-e29ea8559f3c.png",
+      "images\\r32-pro\\10_8d8ed616-0713-4df3-b779-72b89bf26f57.png",
+      "images\\r32-pro\\16.png",
+      "images\\r32-pro\\14_455a1418-eedd-45fe-88e7-9c6bc7bbe4c6.png",
+      "images\\r32-pro\\11_94d9b82d-2fcd-47ca-b14e-90275acc3def.png",
+      "images\\r32-pro\\r32-pro-1.html",
+      "images\\r32-pro\\07_29008768-23db-4e81-95ff-5d74da6b0c56.png",
+      "images\\r32-pro\\13_6adcf2c5-01ab-4408-9419-a92d8b2bffe8.png",
+      "images\\r32-pro\\03_95d7a227-d04f-4a7d-b010-9d954ae7fe85.png",
+      "images\\r32-pro\\18.png",
+      "images\\r32-pro\\1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg",
+      "images\\r32-pro\\1773028401__1773028391446-img_3547__original.jpeg",
+      "images\\r32-pro\\06_fbcf429a-310c-4b76-99c5-554a6a5a60f9.png",
+      "images\\r32-pro\\04_a0b93e0d-5acf-4e98-95d1-54899a7a7fe4.png",
+      "images\\r32-pro\\12_090f5b75-b961-46fd-8051-03a7576f33f9.png",
+      "images\\r32-pro\\01_09e4d0e1-7914-4db0-9d81-c2472479e53c.png",
+      "images\\r32-pro\\1776314546__1776314541067-img_3990__original.jpeg",
+      "images\\r32-pro\\08_9f5295f1-6661-4e0b-867a-0e8fb0c3eb9b.png",
+      "images\\r32-pro\\1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp",
+      "images\\r32-pro\\05_0e98ca03-1322-44a6-bbb8-acfdd9afc23c.png",
+      "images\\r32-pro\\09_6369ac3d-a4e1-46c7-a639-aa635d858855.png",
+      "images\\r32-pro\\15_9ab40de7-5b9e-47a0-adad-ae91b0c1314a.png",
+      "images\\r32-pro\\17.png"
+    ]
+  }
+]

@@ -568,7 +568,7 @@ p { line-height: 1.55; color: var(--ink-2); }
   .pd__blurb { padding: 18px 0 4px; font-size: 16px; }
   .pd__variants { margin: 20px 0 4px; }
   .pd__qty { margin: 20px 0 0; }
-  .pd__delivery, .pd__acc-link, .variant--engine, .pd__pricenote { margin-left: 0; margin-right: 0; }
+  .pd__delivery, .pd__acc-link, .variant--engine, .pd__pricenote, .pd__variant-desc { margin-left: 0; margin-right: 0; }
   .specs2 { margin: 26px 0 0; }
   .specs { margin: 18px 0 0; }
   .config { margin: 18px 0 0; }
@@ -584,8 +584,11 @@ p { line-height: 1.55; color: var(--ink-2); }
 
 /* Engine selector + variant deltas (Task 2) */
 .variant--engine { margin: 6px 18px 4px; }
-.variant--engine .chip { display: inline-flex; align-items: center; gap: 6px; }
-.chip__delta { font-weight: 800; opacity: .9; }
+.variant--engine .chip { display: inline-flex; align-items: center; gap: 10px; }
+.chip__label { font-weight: 700; }
+.chip__price { font-weight: 800; opacity: .82; font-size: 13px; white-space: nowrap; }
+.chip--on .chip__price { opacity: 1; }
+.pd__variant-desc { margin: 8px 18px 0; font-size: 13.5px; color: var(--ink-2); }
 .pd__pricenote { color: var(--muted); font-size: 12.5px; margin: 6px 0 0; padding: 0 18px; }
 
 /* Delivery-time box on product page (Task 4) */

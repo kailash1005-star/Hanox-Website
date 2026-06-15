@@ -4,21 +4,28 @@ import { Icon } from "@/components/Icon";
 import { Btn } from "@/components/ui";
 import { TrustStrip, Reviews, Newsletter, Footer } from "@/components/sections";
 import { ModelCard } from "@/components/product-card";
-import { MODELS } from "@/lib/data";
+import { MODELS, type Model } from "@/lib/data";
 import { useGo } from "@/lib/nav";
+
+// Lead the grid with the available machines (R10 ECO, then RD-06), rest follow.
+const FEATURED = ["r10-eco", "rd-06"];
+const ORDERED_MODELS: Model[] = [
+  ...FEATURED.map((id) => MODELS.find((m) => m.id === id)).filter((m): m is Model => !!m),
+  ...MODELS.filter((m) => !FEATURED.includes(m.id)),
+];
 
 export function CatalogView() {
   const go = useGo();
   return (
     <div className="page">
       <section className="lead lead--hero wrapx">
-        <p className="eyebrow">Diesel-Reihe</p>
-        <h1>Sechs Maschinen. Eine auf Lager, fünf auf Bestellung.</h1>
-        <p>Jeder Hanox teilt denselben zuverlässigen Diesel-Antriebsstrang und EU-Teileversorgung. Der R10 ist sofort lieferbar; die übrigen werden nach Ihren Vorgaben gefertigt.</p>
+        <p className="eyebrow">Alle Maschinen</p>
+        <h1>Sofort lieferbar oder auf Anfrage gefertigt.</h1>
+        <p>Jeder Hanox teilt denselben zuverlässigen Diesel-Antriebsstrang und EU-Teileversorgung. <strong>R10 ECO</strong> und <strong>RD-06</strong> sind sofort lieferbar; alle übrigen Modelle fertigen wir auf Bestellung — jetzt unverbindlich anfragen.</p>
       </section>
       <TrustStrip />
       <div className="grid wrapx">
-        {MODELS.map((m) => <ModelCard key={m.id} m={m} go={go} />)}
+        {ORDERED_MODELS.map((m) => <ModelCard key={m.id} m={m} go={go} />)}
       </div>
       <section className="band wrapx">
         <h2>Unsicher bei der Größe?</h2>

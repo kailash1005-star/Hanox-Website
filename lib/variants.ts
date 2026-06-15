@@ -16,23 +16,28 @@ export type EngineOption = {
   id: string;
   /** Customer-facing label (German). */
   label: string;
-  /** € added to the product's base price when this option is selected. */
+  /** € added to the product's base price when this option is selected (may be negative). */
   priceDelta: number;
   /** true => the upcharge is not yet confirmed by the client (shows a note). */
   priceTbd?: boolean;
-  /** Engine spec rows shown (in German) while this option is selected. */
-  specs: SpecRow[];
+  /** Short German description of this option, shown when selected. */
+  desc?: string;
+  /** Spec rows shown (in German) while this option is selected. */
+  specs?: SpecRow[];
 };
 
 export type EngineConfig = {
-  /** Heading for the selector, e.g. "Motor". */
+  /** Heading for the selector, e.g. "Motor" or "Hydraulikfunktion". */
   label: string;
-  /** First option is the base/default. */
+  /** When true, the selected option's `specs` replace the engine spec table. */
+  replacesEngineSpecs?: boolean;
+  /** First option is the base/default (matches the product's base price). */
   options: EngineOption[];
 };
 
 const R10_ECO_ENGINES: EngineConfig = {
   label: "Motor",
+  replacesEngineSpecs: true,
   options: [
     {
       id: "yoop-1cyl",
@@ -53,10 +58,8 @@ const R10_ECO_ENGINES: EngineConfig = {
     {
       id: "kubota-2cyl",
       label: "Zweizylinder-Dieselmotor (Kubota)",
-      // TODO(CONFIRM): exact Kubota upcharge to be confirmed with the client.
-      // Until then we add €0 and flag the price as provisional in the UI.
-      priceDelta: 0,
-      priceTbd: true,
+      // €7.673 vs €5.625 base (rippa-europe r10-eco-1).
+      priceDelta: 2048,
       specs: [
         { field: "Modell / Hersteller", eu: "Kubota Z482" },
         { field: "Max. Leistung", eu: "11 PS" },
@@ -72,9 +75,31 @@ const R10_ECO_ENGINES: EngineConfig = {
   ],
 };
 
-/** Registry: product id -> engine configuration. Add products here as needed. */
+/* RD-06 dumper: "Hydraulikfunktion" — Rise and Fall (€5.000, base) vs No Rise and
+ * Fall (€4.490). Same machine specs otherwise (verified on rippa-europe), so only
+ * the price + description change. Base product price is €5.000 (Rise and Fall). */
+const RD06_HYDRAULIK: EngineConfig = {
+  label: "Hydraulikfunktion",
+  options: [
+    {
+      id: "rise-fall",
+      label: "Heben und Kippen",
+      priceDelta: 0,
+      desc: "Hydraulisches Heben und Kippen der Mulde — für eine höhere Entladehöhe.",
+    },
+    {
+      id: "no-rise-fall",
+      label: "Nur Kippen",
+      priceDelta: -510, // 4.490 statt 5.000
+      desc: "Mulde kippt zum Entladen, ohne hydraulisches Heben.",
+    },
+  ],
+};
+
+/** Registry: product id -> variant configuration. Add products here as needed. */
 export const ENGINE_VARIANTS: Record<string, EngineConfig> = {
   "r10-eco": R10_ECO_ENGINES,
+  "rd-06": RD06_HYDRAULIK,
 };
 
 export function engineConfig(productId: string): EngineConfig | undefined {

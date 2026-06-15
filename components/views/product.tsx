@@ -75,13 +75,17 @@ export function ProductView({ id }: { id: string }) {
           </div>
 
           {engines ? (
-            <EngineSelector cfg={engines} selected={engineId} onSelect={setEngineId} />
+            <>
+              <EngineSelector cfg={engines} basePrice={m.price} selected={engineId} onSelect={setEngineId} />
+              {engine?.desc ? <p className="pd__variant-desc">{engine.desc}</p> : null}
+            </>
           ) : null}
 
-          {/* Non-engine multi-option variants (display only) */}
-          {m.variants.filter((v) => v.name.toLowerCase() !== "engine" && v.values.length > 1).map((v) => (
-            <VariantPicker key={v.name} v={v} />
-          ))}
+          {/* Generic multi-option variants — only when this product has no dedicated
+              variant config (which already renders the proper price-aware selector). */}
+          {!engines
+            ? m.variants.filter((v) => v.values.length > 1).map((v) => <VariantPicker key={v.name} v={v} />)
+            : null}
 
           {description ? <p className="pd__blurb">{description}</p> : null}
 
@@ -110,7 +114,7 @@ export function ProductView({ id }: { id: string }) {
             </button>
           ) : null}
 
-          <SpecsBlock m={m} engineSpecs={engine?.specs} />
+          <SpecsBlock m={m} engineSpecs={engines?.replacesEngineSpecs ? engine?.specs : undefined} />
 
           {m.inStock ? (
             <>
@@ -154,10 +158,12 @@ export function ProductView({ id }: { id: string }) {
 /* ---- Engine selector: switches price + engine specs live (Task 2) ---- */
 function EngineSelector({
   cfg,
+  basePrice,
   selected,
   onSelect,
 }: {
   cfg: EngineConfig;
+  basePrice: number;
   selected?: string;
   onSelect: (id: string) => void;
 }) {
@@ -173,8 +179,8 @@ function EngineSelector({
             onClick={() => onSelect(o.id)}
             aria-pressed={selected === o.id}
           >
-            {o.label}
-            {o.priceDelta > 0 ? <span className="chip__delta"> +{euro(o.priceDelta)}</span> : null}
+            <span className="chip__label">{o.label}</span>
+            <span className="chip__price">{o.priceTbd ? "auf Anfrage" : euro(basePrice + o.priceDelta)}</span>
           </button>
         ))}
       </div>

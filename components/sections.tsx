@@ -34,12 +34,12 @@ export function Reviews() {
       <div className="reviews__head">
         <p className="eyebrow">Bewertungen</p>
         <h2>Worauf Profis bei Hanox vertrauen.</h2>
-        <div className="reviews__rating"><Stars /> <span>4,9 / 5 — aus über 200 Lieferungen</span></div>
+        <div className="reviews__rating"><Stars n={4} /> <span>4,3 / 5 — aus geprüften Kundenbewertungen</span></div>
       </div>
       <div className="reviews__grid">
         {REVIEWS.map((r, i) => (
           <figure className="rev" key={i}>
-            <Stars />
+            <Stars n={r.rating} />
             <blockquote>{r.text}</blockquote>
             <figcaption><b>{r.name}</b><span>{r.role}</span></figcaption>
           </figure>

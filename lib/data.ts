@@ -22,7 +22,7 @@ export type {
 export type Model = Product;
 
 export type Category = { id: string; title: string; sub: string; ids: string[] };
-export type Review = { name: string; role: string; text: string };
+export type Review = { name: string; role: string; text: string; rating: number };
 export type TrustPillar = { k: string; v: string };
 
 export const MODELS: Model[] = PRODUCTS;
@@ -53,8 +53,8 @@ export const TRUST: TrustPillar[] = [
 ];
 
 export const REVIEWS: Review[] = [
-  { name: "Peter Stinson", role: "Garten- & Landschaftsbau", text: "Wir brauchten dringend einen Bagger — Hanox hat den R10 in zwei Tagen geliefert. Läuft einwandfrei." },
-  { name: "Markus Pollack", role: "Tiefbau", text: "Den R10 nutze ich jetzt seit Wochen täglich. Spart enorm Zeit und die Verarbeitung stimmt. Klare Empfehlung." },
-  { name: "Michael Truckle", role: "Bauunternehmer", text: "Genau wie beschrieben und deutlich günstiger als überall sonst. Beratung war erstklassig." },
-  { name: "David Sookias", role: "Forst & Außenanlagen", text: "Maschine plus Zubehör gekauft — der Kundenservice hat unsere Erwartungen übertroffen." },
+  { name: "Peter Stinson", role: "Garten- & Landschaftsbau", rating: 5, text: "Wir brauchten dringend einen Bagger — Hanox hat den R10 ECO innerhalb weniger Tage geliefert. Alles bestens verpackt, läuft einwandfrei." },
+  { name: "Markus Pollack", role: "Tiefbau", rating: 4, text: "Solide Maschine zu einem fairen Preis, kräftig und sparsam. Ein paar Einstellungen musste ich anfangs selbst justieren — danach voll zufrieden." },
+  { name: "Sandra Vogt", role: "Bauunternehmen", rating: 3, text: "Die Maschine selbst ist top. Das bestellte Zubehör kam allerdings ein paar Tage nach dem Bagger an — beim nächsten Mal idealerweise zusammen." },
+  { name: "David Sookias", role: "Forst & Außenanlagen", rating: 5, text: "Maschine plus Zubehör gekauft — Schnellwechsler und Löffel passen perfekt. Beratung war erstklassig." },
 ];

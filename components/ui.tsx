@@ -194,7 +194,7 @@ export function Btn({
 export function Stars({ n = 5 }: { n?: number }) {
   return (
     <span className="stars" aria-label={n + " von 5 Sternen"}>
-      {Array.from({ length: n }).map((_, i) => <span key={i}>{Icon.star()}</span>)}
+      {Array.from({ length: 5 }).map((_, i) => <span key={i} className={i < n ? "" : "star--off"}>{Icon.star()}</span>)}
     </span>
   );
 }

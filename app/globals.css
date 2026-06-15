@@ -482,6 +482,7 @@ p { line-height: 1.55; color: var(--ink-2); }
 .reviews__head h2 { font-size: clamp(26px, 6vw, 38px); }
 .reviews__rating { display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
 .stars { display: inline-flex; gap: 2px; color: var(--orange-d); }
+.stars .star--off { color: #d9d5cc; }
 .reviews__grid { display: grid; gap: 14px; max-width: 1320px; margin: 0 auto; }
 .rev { margin: 0; background: var(--paper); border-radius: 16px; box-shadow: var(--sh); padding: 20px; }
 .rev .stars { margin-bottom: 12px; }

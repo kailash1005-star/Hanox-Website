@@ -1,7 +1,7 @@
 "use client";
 
 import { Icon } from "@/components/Icon";
-import { Btn, Placeholder, Shot, Price, StockBadge } from "@/components/ui";
+import { Btn, Shot, Price, StockBadge } from "@/components/ui";
 import { TrustStrip, Reviews, Newsletter, Footer } from "@/components/sections";
 import { TopBar } from "@/components/chrome";
 import { ProductRow } from "@/components/product-card";
@@ -26,6 +26,8 @@ export function HomeView() {
           playsInline
           preload="auto"
           aria-hidden="true"
+          onLoadedMetadata={(e) => { e.currentTarget.playbackRate = 0.5; }}
+          onPlay={(e) => { e.currentTarget.playbackRate = 0.5; }}
         />
         <div className="hero2__overlay" />
         <div className="hero2__inner">
@@ -65,9 +67,7 @@ export function HomeView() {
             </div>
           </button>
           <button className="choose__tile" onClick={() => go("electric")}>
-            {/* TODO(Task 1): replace with the client-supplied ELECTRIC banner image
-                when available (e.g. /products/images/Electric gen/<file>). */}
-            <Placeholder label="" tone="electric" ratio="4 / 3" />
+            <img className="tile__img" src="/products/images/Electric%20gen/Electric%20gen%20motor.jpeg" alt="Elektro-Maschinen" />
             <div className="tile__scrim" />
             <span className="badge badge--soon badge--sm tile__soon">Demnächst</span>
             <div className="tile__body">

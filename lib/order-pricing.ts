@@ -9,10 +9,31 @@
  * later with the invoicing layer. */
 
 import { byId } from "./data";
+import { engineDelta } from "./variants";
+import { getAccessory } from "./accessories";
 
 export const VAT_RATE = 0.19;
-export const SHIPPING_NET = 300; // flat delivery fee (net €)
-export type Fulfilment = "pickup" | "delivery";
+
+/** Flat delivery fees (net €; VAT is added on top like the product prices). */
+export const SHIPPING = {
+  "delivery-de": 550, // Innerhalb Deutschlands
+  "delivery-eu": 750, // Innerhalb der EU
+} as const;
+
+export type Fulfilment = "pickup" | "delivery-de" | "delivery-eu";
+
+/** Human label for a fulfilment option (German). */
+export const FULFILMENT_LABEL: Record<Fulfilment, string> = {
+  pickup: "Selbstabholung",
+  "delivery-de": "Lieferung innerhalb Deutschlands",
+  "delivery-eu": "Lieferung innerhalb der EU",
+};
+
+/** Delivery-time wording shown on product pages and at checkout (Task 4). */
+export const DELIVERY_TIME = {
+  de: "Innerhalb Deutschlands: 2–7 Tage",
+  eu: "Innerhalb der EU: 2–4 Wochen",
+} as const;
 
 export type CartLineInput = { key: string; qty: number };
 
@@ -45,19 +66,28 @@ function parseKey(key: string): { modelId: string; addonIds: string[] } {
 export function priceOrder(items: CartLineInput[], fulfil: Fulfilment): PricedOrder {
   const lines: PricedLine[] = items.map((it) => {
     const { modelId, addonIds } = parseKey(it.key);
+    const qty = Math.max(1, Math.floor(it.qty));
+
+    // Accessory line: key shape "acc:<accessoryId>".
+    if (modelId === "acc") {
+      const acc = getAccessory(addonIds[0]);
+      if (!acc) throw new Error(`Unbekanntes Zubehör: ${addonIds[0]}`);
+      return { key: it.key, name: acc.name, qty, unitNet: acc.price };
+    }
+
     const model = byId(modelId);
     if (!model) throw new Error(`Unbekanntes Modell: ${modelId}`);
     if (!model.inStock) throw new Error(`${model.name} ist nicht zum Kauf verfügbar.`);
 
-    // Addons not implemented for the new catalogue yet; keep the key shape so the
-    // checkout flow keeps working and add-on data can be re-introduced later.
-    void addonIds;
-    const qty = Math.max(1, Math.floor(it.qty));
-    return { key: it.key, name: model.name, qty, unitNet: model.price };
+    // The first key token (if any) is the chosen engine-variant id; recompute the
+    // unit price from the base price + the variant's confirmed price delta.
+    const variantId = addonIds[0];
+    const unitNet = model.price + engineDelta(modelId, variantId);
+    return { key: it.key, name: model.name, qty, unitNet };
   });
 
   const itemTotalNet = lines.reduce((s, l) => s + l.unitNet * l.qty, 0);
-  const shippingNet = fulfil === "delivery" ? SHIPPING_NET : 0;
+  const shippingNet = fulfil === "pickup" ? 0 : SHIPPING[fulfil];
   const vatAmount = round2((itemTotalNet + shippingNet) * VAT_RATE);
   const totalGross = round2(itemTotalNet + shippingNet + vatAmount);
 

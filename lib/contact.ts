@@ -5,8 +5,9 @@
 export const CONTACT = {
   email: "info@hanox-baumaschinen.de",
   // E.164 form for tel: links (no spaces); display form for humans.
-  phoneHref: "+4915774328168",
-  phoneDisplay: "+49 1577 4328168",
+  // TODO(Task 9, CONFIRM): client-provided number — verify exact digits before launch.
+  phoneHref: "+4915750631604",
+  phoneDisplay: "+49 1575 0631604",
   hours: "Mo–Fr · 8:00–17:00 Uhr (MEZ)",
   instagram: "https://www.instagram.com/hanox_baumaschinen/",
 } as const;

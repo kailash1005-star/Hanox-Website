@@ -11,7 +11,7 @@ import { CONTACT } from "@/lib/contact";
 export function TopBar() {
   const msgs = [
     "Alle Preise zzgl. MwSt. · Lieferung europaweit zum Pauschalpreis",
-    "Hanox R10 ab Lager — versandbereit in 2–3 Werktagen",
+    "Lieferung: Innerhalb Deutschlands 2–7 Tage · Innerhalb der EU 2–4 Wochen",
     "Garantie bei jeder Maschine inklusive · EU-Ersatzteillager",
   ];
   return (
@@ -26,8 +26,10 @@ export function TopBar() {
 /* ---------- Header (announcement + nav) ---------- */
 function Header({ go, cartCount, onMenu }: { go: Go; cartCount: number; onMenu: () => void }) {
   const nav: [View, string][] = [
+    ["home", "Start"],
     ["catalog", "Bagger"],
     ["electric", "Elektro"],
+    ["accessories", "Zubehör"],
     ["about", "Über uns"],
     ["contact", "Kontakt"],
   ];
@@ -62,6 +64,7 @@ function MenuDrawer({ open, onClose, go }: { open: boolean; onClose: () => void;
   const items: [View, string][] = [
     ["home", "Start"],
     ["catalog", "Alle Bagger"],
+    ["accessories", "Zubehör"],
     ["electric", "Elektro-Reihe"],
     ["about", "Über Hanox"],
     ["contact", "Kontakt"],
@@ -96,12 +99,24 @@ function MenuDrawer({ open, onClose, go }: { open: boolean; onClose: () => void;
  */
 export function Chrome({ children }: { children: React.ReactNode }) {
   const go = useGo();
-  const { cartCount, toast } = useCart();
+  const { cartCount, toast, order, clearOrder } = useCart();
   const [menu, setMenu] = useState(false);
   return (
     <>
       <Header go={go} cartCount={cartCount} onMenu={() => setMenu(true)} />
       <MenuDrawer open={menu} onClose={() => setMenu(false)} go={go} />
+      {order ? (
+        <div className="orderbanner" role="status">
+          <div className="orderbanner__in">
+            <span className="orderbanner__ic">{Icon.check()}</span>
+            <p>
+              Vielen Dank für Ihre Bestellung! Wir haben eine Bestellbestätigung an Ihre
+              E-Mail gesendet{order.email ? `: ${order.email}` : "."}
+            </p>
+            <button className="orderbanner__x" onClick={clearOrder} aria-label="Schließen">{Icon.close()}</button>
+          </div>
+        </div>
+      ) : null}
       {children}
       <div className={"toast " + (toast ? "toast--on" : "")}>{toast}</div>
     </>

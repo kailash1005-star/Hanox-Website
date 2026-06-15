@@ -15,7 +15,8 @@ export async function POST(req: Request) {
   }
 
   const items = Array.isArray(body.items) ? body.items : [];
-  const fulfil: Fulfilment = body.fulfil === "pickup" ? "pickup" : "delivery";
+  const VALID: Fulfilment[] = ["pickup", "delivery-de", "delivery-eu"];
+  const fulfil: Fulfilment = VALID.includes(body.fulfil as Fulfilment) ? (body.fulfil as Fulfilment) : "delivery-de";
   if (!items.length) return NextResponse.json({ error: "Warenkorb ist leer." }, { status: 400 });
 
   // Server-authoritative pricing — never trust client amounts.
@@ -50,7 +51,7 @@ export async function POST(req: Request) {
     ],
     application_context: {
       brand_name: "Hanox",
-      shipping_preference: fulfil === "delivery" ? "GET_FROM_FILE" : "NO_SHIPPING",
+      shipping_preference: fulfil === "pickup" ? "NO_SHIPPING" : "GET_FROM_FILE",
       user_action: "PAY_NOW",
     },
   };

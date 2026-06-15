@@ -45,13 +45,15 @@ export function AgbView() {
 
       <h2>§ 4 Lieferung und Verfügbarkeit</h2>
       <p>
-        Die Lieferung erfolgt innerhalb des europäischen Liefergebiets des Anbieters zu
-        einer Versandkostenpauschale von € 300; bei Selbstabholung entfallen die
-        Versandkosten. Als &bdquo;Auf Lager&ldquo; gekennzeichnete Modelle sind
-        kurzfristig versandbereit; übrige Modelle werden auf Bestellung gefertigt, wobei
-        der Anbieter vor einer Zahlung ein konkretes Lieferfenster bestätigt.
-        Lieferzeiten berechnen sich ab vollständigem Zahlungseingang; genannte Termine
-        sind unverbindlich, sofern nicht ausdrücklich anders vereinbart. Gegenüber
+        Die Lieferung erfolgt zu einer Versandkostenpauschale je nach Lieferregion:
+        innerhalb Deutschlands € 550, innerhalb der EU € 750 (jeweils zzgl. MwSt.). Bei
+        Selbstabholung entfallen die Versandkosten. Als Lieferzeit gilt: innerhalb
+        Deutschlands 2–7 Tage, innerhalb der EU 2–4 Wochen. Als &bdquo;Auf Lager&ldquo;
+        gekennzeichnete Modelle sind kurzfristig versandbereit; übrige Modelle werden auf
+        Bestellung gefertigt, wobei der Anbieter vor einer Zahlung ein konkretes
+        Lieferfenster bestätigt. Lieferzeiten berechnen sich ab vollständigem
+        Zahlungseingang; genannte Termine sind unverbindlich, sofern nicht ausdrücklich
+        anders vereinbart. Gegenüber
         Unternehmern geht die Gefahr des zufälligen Untergangs mit der Übergabe an das
         Transportunternehmen über; gegenüber Verbrauchern geht die Gefahr erst mit der
         Übergabe der Ware an den Verbraucher über. Transportschäden sind unverzüglich

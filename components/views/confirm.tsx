@@ -17,7 +17,7 @@ export function ConfirmView() {
         <h1 style={{ fontSize: 26 }}>Bestellung aufgegeben</h1>
         <p style={{ margin: "10px 0 4px" }}>
           Vielen Dank. Wir haben Ihre Bestätigung per E-Mail gesendet und melden uns, um die{" "}
-          {order && order.fulfil === "delivery" ? "Lieferung" : "Abholung"} zu vereinbaren.
+          {order && order.fulfil.startsWith("delivery") ? "Lieferung" : "Abholung"} zu vereinbaren.
         </p>
         {order ? <p style={{ fontWeight: 800, color: "var(--ink)", fontSize: 18 }}>Bezahlter Betrag: {euro(order.total)}</p> : null}
         <div style={{ marginTop: 22 }}>

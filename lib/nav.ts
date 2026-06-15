@@ -14,6 +14,7 @@ export type View =
   | "electric"
   | "about"
   | "contact"
+  | "accessories"
   | "impressum"
   | "datenschutz"
   | "agb"
@@ -34,6 +35,8 @@ export function routeFor(view: View, arg?: string | null): string {
       return "/ueber-uns";
     case "contact":
       return "/kontakt";
+    case "accessories":
+      return "/zubehoer";
     case "impressum":
       return "/impressum";
     case "datenschutz":

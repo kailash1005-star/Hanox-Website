@@ -14,7 +14,7 @@ export const PRODUCT_COPY_DE: Record<string, ProductCopy> = {
     tagline:
       "Vielseitiger Mini-Bagger für Bau, Garten- und Landschaftsbau sowie private Projekte.",
     description:
-      "Der R10 ECO ist ein leistungsstarker und vielseitiger Mini-Bagger – perfekt für Bauarbeiten, Garten- und Landschaftsbau sowie private Projekte. Dank seiner flexiblen Konfigurationsmöglichkeiten lässt er sich genau an Ihre Anforderungen anpassen.",
+      "Der R10 ECO ist ein extrem robuster, zuverlässiger und wertstabiler Minibagger – perfekt für Bauarbeiten, den Garten- und Landschaftsbau sowie private Projekte. Das Beste für Sie: Er kommt direkt in serienmäßiger Vollausstattung zu Ihnen und ist ohne Extrakosten oder Wartezeiten sofort einsatzbereit für jede Herausforderung.",
   },
 };
 

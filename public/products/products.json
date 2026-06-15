@@ -538,7 +538,7 @@
             "us": "3197 lb"
           },
           {
-            "field": "Bucket capacity",
+            "field": "Bucket Volume",
             "eu": "0.16 m³",
             "us": "5.65 ft³"
           },
@@ -807,7 +807,7 @@
             "us": "2712 lb"
           },
           {
-            "field": "Bucket capacity",
+            "field": "Bucket Volume",
             "eu": "0.16 m³",
             "us": "5.65 ft³"
           },
@@ -1136,7 +1136,7 @@
             "us": "1647 lb"
           },
           {
-            "field": "Bucket capacity",
+            "field": "Bucket Volume",
             "eu": "0.014 m³",
             "us": "0.494 ft³"
           },
@@ -1502,86 +1502,23 @@
         "other_sections": []
       },
       "image_urls": [
-        "https://rippa-europe.com/cdn/shop/files/01_b1a66c97-009c-4396-8105-16404ce6ca1b.png?v=1747741315",
-        "https://rippa-europe.com/cdn/shop/files/07_5d22e93f-24f8-409a-a8f5-13de0e2edbc9.png?v=1747741315",
-        "https://rippa-europe.com/cdn/shop/files/06_68f22cce-8840-4ada-89a9-77d00ce3c31e.png?v=1747741315",
-        "https://rippa-europe.com/cdn/shop/files/08_145f9f99-e0bf-4d26-b581-ad787d76d146.png?v=1747741315",
-        "https://rippa-europe.com/cdn/shop/files/04_502784c4-168e-49d2-8f02-99b24728a2e4.png?v=1747741315",
-        "https://rippa-europe.com/cdn/shop/files/09_2250acb3-d233-4f0f-9a72-3e421b7c9308.png?v=1747741315",
-        "https://rippa-europe.com/cdn/shop/files/03_a16a1a2d-8e88-43f2-8d76-603cc239bca2.png?v=1747741315",
-        "https://rippa-europe.com/cdn/shop/files/02_692b87f2-e914-47d1-80bb-ab11aff780b1.png?v=1747741315",
-        "https://rippa-europe.com/cdn/shop/files/05_c9b13daa-07b5-4266-97a4-9364de49ce9a.png?v=1747741315",
-        "https://rippa-europe.com/cdn/shop/files/10_ad840e2c-0a9e-43f3-b30b-7ecc2f70dad8.png?v=1747741294",
-        "https://rippa-europe.com/cdn/shop/files/11_8eeb6457-825c-4407-b892-3973c81c2604.png?v=1747741293",
-        "https://rippa-europe.com/cdn/shop/files/12_d7d3648b-53a9-4886-b66d-b57bab4b0d7b.png?v=1747741294",
-        "https://rippa-europe.com/cdn/shop/files/13_addae2fd-1c5a-4ffd-87ce-c65b78bd3408.png?v=1747741296",
-        "https://rippa-europe.com/cdn/shop/files/14_1abc9066-7083-4567-92a9-410150fbf3ab.png?v=1747741294",
-        "https://rippa-europe.com/cdn/shop/files/15_7277a8ea-9260-4233-9498-e7dbfff2311b.png?v=1747741294",
-        "https://rippa-europe.com/cdn/shop/files/16_37906280-275b-44fa-bf0c-bf36bcb7f154.png?v=1747741294",
-        "https://rippa-europe.com/cdn/shop/files/17_4e36c00d-918b-4b7b-bad2-3f2dbd142d00.png?v=1747741294",
-        "https://rippa-europe.com/cdn/shop/files/18_2a300ae7-1bc4-48fa-a4a1-63220fb537a5.png?v=1747741294",
-        "https://rippa-europe.com/cdn/shop/files/1_9e5ba234-dcc4-4b3a-a11b-f1f56ea1d0a7.jpg?v=1764076607"
+        "https://rippa-europe.com/cdn/shop/files/r10-eco-1.jpg",
+        "https://rippa-europe.com/cdn/shop/files/r10-eco-2.jpg",
+        "https://rippa-europe.com/cdn/shop/files/r10-eco-3.jpg",
+        "https://rippa-europe.com/cdn/shop/files/r10-eco-4.jpg"
       ]
     },
     "image_urls": [
-      "https://rippa-europe.com/cdn/shop/files/02_692b87f2-e914-47d1-80bb-ab11aff780b1.png?v=1747741315&width=1946",
-      "https://rippa-europe.com/cdn/shop/files/04_502784c4-168e-49d2-8f02-99b24728a2e4.png?v=1747741315&width=1445",
-      "https://rippa-europe.com/cdn/shop/files/05_c9b13daa-07b5-4266-97a4-9364de49ce9a.png?v=1747741315&width=1946",
-      "https://rippa-europe.com/cdn/shop/files/12_d7d3648b-53a9-4886-b66d-b57bab4b0d7b.png?v=1747741294&width=416",
-      "https://rippa-europe.com/cdn/shop/files/03_a16a1a2d-8e88-43f2-8d76-603cc239bca2.png?v=1747741315&width=1946",
-      "https://rippa-europe.com/cdn/shop/files/16_37906280-275b-44fa-bf0c-bf36bcb7f154.png?v=1747741294&width=1445",
-      "https://rippa-europe.com/cdn/shop/files/10_ad840e2c-0a9e-43f3-b30b-7ecc2f70dad8.png?v=1747741294&width=1445",
-      "https://rippa-europe.com/cdn/shop/files/13_addae2fd-1c5a-4ffd-87ce-c65b78bd3408.png?v=1747741296&width=416",
-      "https://rippa-europe.com/cdn/shop/files/06_68f22cce-8840-4ada-89a9-77d00ce3c31e.png?v=1747741315&width=416",
-      "https://rippa-europe.com/cdn/shop/files/08_145f9f99-e0bf-4d26-b581-ad787d76d146.png?v=1747741315&width=1445",
-      "https://rippa-europe.com/cdn/shop/files/11_8eeb6457-825c-4407-b892-3973c81c2604.png?v=1747741293&width=1946",
-      "https://rippa-europe.com/cdn/shop/files/14_1abc9066-7083-4567-92a9-410150fbf3ab.png?v=1747741294&width=1946",
-      "https://judgeme.imgix.net/rippa-europe/1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg?auto=format&w=240",
-      "https://judgeme.imgix.net/rippa-europe/1776314546__1776314541067-img_3990__original.jpeg?auto=format&w=160",
-      "https://judgeme.imgix.net/rippa-europe/1776314547__1776314542379-img_3988__original.jpeg?auto=format&w=160",
-      "https://rippa-europe.com/cdn/shop/files/09_2250acb3-d233-4f0f-9a72-3e421b7c9308.png?v=1747741315&width=1946",
-      "https://rippa-europe.com/cdn/shop/files/07_5d22e93f-24f8-409a-a8f5-13de0e2edbc9.png?v=1747741315&width=416",
-      "https://rippa-europe.com/cdn/shop/files/1_9e5ba234-dcc4-4b3a-a11b-f1f56ea1d0a7.jpg?v=1764076607&width=1946",
-      "https://rippa-europe.com/cdn/shop/files/01_b1a66c97-009c-4396-8105-16404ce6ca1b.png?v=1747741315&width=416",
-      "https://rippa-europe.com/cdn/shop/files/18_2a300ae7-1bc4-48fa-a4a1-63220fb537a5.png?v=1747741294&width=1445",
-      "https://judgeme.imgix.net/rippa-europe/1780413687__1000028895__original.jpg?auto=format&w=160",
-      "https://judgeme.imgix.net/rippa-europe/1776314550__1776314543541-img_3992__original.jpeg?auto=format&w=160",
-      "https://rippa-europe.com/cdn/shop/files/15_7277a8ea-9260-4233-9498-e7dbfff2311b.png?v=1747741294&width=416",
-      "https://judgeme.imgix.net/rippa-europe/1773028401__1773028391446-img_3547__original.jpeg?auto=format&w=160",
-      "https://judgeme.imgix.net/rippa-europe/1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp?auto=format&w=160",
-      "https://rippa-europe.com/cdn/shop/files/17_4e36c00d-918b-4b7b-bad2-3f2dbd142d00.png?v=1747741294&width=416",
-      "https://judgeme.imgix.net/rippa-europe/1776314548__1776314542869-img_3991__original.jpeg?auto=format&w=160",
-      "https://rippa-europe.com/products/r10-eco-1"
+      "https://rippa-europe.com/cdn/shop/files/r10-eco-1.jpg",
+      "https://rippa-europe.com/cdn/shop/files/r10-eco-2.jpg",
+      "https://rippa-europe.com/cdn/shop/files/r10-eco-3.jpg",
+      "https://rippa-europe.com/cdn/shop/files/r10-eco-4.jpg"
     ],
     "image_files": [
-      "images\\r10-eco\\04_502784c4-168e-49d2-8f02-99b24728a2e4.png",
-      "images\\r10-eco\\12_d7d3648b-53a9-4886-b66d-b57bab4b0d7b.png",
-      "images\\r10-eco\\13_addae2fd-1c5a-4ffd-87ce-c65b78bd3408.png",
-      "images\\r10-eco\\05_c9b13daa-07b5-4266-97a4-9364de49ce9a.png",
-      "images\\r10-eco\\06_68f22cce-8840-4ada-89a9-77d00ce3c31e.png",
-      "images\\r10-eco\\02_692b87f2-e914-47d1-80bb-ab11aff780b1.png",
-      "images\\r10-eco\\03_a16a1a2d-8e88-43f2-8d76-603cc239bca2.png",
-      "images\\r10-eco\\10_ad840e2c-0a9e-43f3-b30b-7ecc2f70dad8.png",
-      "images\\r10-eco\\1778849660__1778849657529-2f05a68c-718b-41f0-9302-bc__original.jpeg",
-      "images\\r10-eco\\1776314546__1776314541067-img_3990__original.jpeg",
-      "images\\r10-eco\\08_145f9f99-e0bf-4d26-b581-ad787d76d146.png",
-      "images\\r10-eco\\1776314547__1776314542379-img_3988__original.jpeg",
-      "images\\r10-eco\\16_37906280-275b-44fa-bf0c-bf36bcb7f154.png",
-      "images\\r10-eco\\07_5d22e93f-24f8-409a-a8f5-13de0e2edbc9.png",
-      "images\\r10-eco\\1_9e5ba234-dcc4-4b3a-a11b-f1f56ea1d0a7.jpg",
-      "images\\r10-eco\\11_8eeb6457-825c-4407-b892-3973c81c2604.png",
-      "images\\r10-eco\\01_b1a66c97-009c-4396-8105-16404ce6ca1b.png",
-      "images\\r10-eco\\1776314550__1776314543541-img_3992__original.jpeg",
-      "images\\r10-eco\\1780413687__1000028895__original.jpg",
-      "images\\r10-eco\\1773815062__1773815060233-10_ad840e2c-0a9e-43f3-b30b__original.webp",
-      "images\\r10-eco\\1773028401__1773028391446-img_3547__original.jpeg",
-      "images\\r10-eco\\09_2250acb3-d233-4f0f-9a72-3e421b7c9308.png",
-      "images\\r10-eco\\15_7277a8ea-9260-4233-9498-e7dbfff2311b.png",
-      "images\\r10-eco\\1776314548__1776314542869-img_3991__original.jpeg",
-      "images\\r10-eco\\14_1abc9066-7083-4567-92a9-410150fbf3ab.png",
-      "images\\r10-eco\\17_4e36c00d-918b-4b7b-bad2-3f2dbd142d00.png",
-      "images\\r10-eco\\18_2a300ae7-1bc4-48fa-a4a1-63220fb537a5.png",
-      "images\\r10-eco\\r10-eco-1.html"
+      "images\\r10-eco\\r10-eco-1.jpg",
+      "images\\r10-eco\\r10-eco-2.jpg",
+      "images\\r10-eco\\r10-eco-3.jpg",
+      "images\\r10-eco\\r10-eco-4.jpg"
     ]
   },
   {
@@ -1710,7 +1647,7 @@
             "us": "2866 lb"
           },
           {
-            "field": "Bucket Capacity",
+            "field": "Bucket Volume",
             "eu": "0.025 m³",
             "us": "0.88 ft³"
           },
@@ -2000,7 +1937,7 @@
             "us": "3307 lb"
           },
           {
-            "field": "Bucket capacity",
+            "field": "Bucket Volume",
             "eu": "0.018 m³",
             "us": "0.64 ft³"
           },
@@ -2324,7 +2261,7 @@
             "us": "3982 lb"
           },
           {
-            "field": "Bucket capacity",
+            "field": "Bucket Volume",
             "eu": "0.07 m³",
             "us": "2.47 ft³"
           },
@@ -2888,7 +2825,7 @@
             "us": "7055 lb"
           },
           {
-            "field": "Bucket capacity",
+            "field": "Bucket Volume",
             "eu": "0.08 m³",
             "us": "2.83 ft³"
           },

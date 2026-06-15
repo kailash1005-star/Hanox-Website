@@ -47,20 +47,11 @@ export function AboutView() {
       <section className="prose prose--story wrapx">
         <h2>Unsere Geschichte</h2>
         <p>
-          Vier Jahre lang haben wir an einem Bagger gearbeitet, der dem deutschen und
-          internationalen Markt gerecht wird — entwickelt und gefertigt unter
-          konsequenter deutscher Qualitätskontrolle und nach deutschen Standards.
-          Und das alles zu einem fairen Preis.
-        </p>
-        <p>
-          Schluss mit überzogenen Summen für Maschinen, die ihren Preis nicht wert
-          sind. Wir sind überzeugt: Hochwertige Bagger müssen kein Vermögen kosten.
-          Genau dafür steht Hanox — verlässliche Technik, transparente Preise und
-          eine Garantie, auf die Sie sich verlassen können.
-        </p>
-        <p>
-          Ob professioneller Einsatz auf der Baustelle oder das eigene Projekt zu
-          Hause: Starten Sie Ihr Vorhaben — und haben Sie Freude daran.
+                Unser Anspruch war von Anfang an klar: Profi-Bagger anzubieten, die den harten
+          Anforderungen auf deutschen Baustellen standhalten, aber bezahlbar bleiben. Dank
+          kontinuierlicher Prozessoptimierung und unserer strengen deutschen
+          Qualitätssicherung ist genau das heute Realität. Hanox steht für verlässliche Technik
+          zu transparenten Preisen.
         </p>
       </section>
 

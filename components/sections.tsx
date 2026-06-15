@@ -83,7 +83,7 @@ export function Footer({ go }: { go: Go }) {
       <div className="ftr__inner">
         <div className="ftr__brand">
           <Logo size={26} light onClick={() => go("home")} />
-          <p>Bezahlbare Kompakt- und Minibagger — in Europa bevorratet, geliefert und betreut.</p>
+          <p>Leistungsstarke Kompakt- und Minibagger zu fairen Preisen – mit schnellen Lieferzeiten und zuverlässigem Service in Europa.</p>
           <div className="ftr__social">
             <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">{Icon.instagram()}</a>
           </div>

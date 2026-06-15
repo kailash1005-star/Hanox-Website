@@ -13,8 +13,8 @@ export function CatalogView() {
     <div className="page">
       <section className="lead lead--hero wrapx">
         <p className="eyebrow">Diesel-Reihe</p>
-        <h1>Sechs Maschinen. Eine auf Lager, fünf auf Bestellung.</h1>
-        <p>Jeder Hanox teilt denselben zuverlässigen Diesel-Antriebsstrang und EU-Teileversorgung. Der R10 ist sofort lieferbar; die übrigen werden nach Ihren Vorgaben gefertigt.</p>
+        <h1>Unsere Antriebstechnik.</h1>
+        <p>Jedes unserer Modelle setzt auf bewährte, leistungsstarke Motoren namhafter Hersteller und eine gesicherte, europaweite Teileversorgung. Profitieren Sie von maximaler Betriebssicherheit und zuverlässiger Power für jede Herausforderung.</p>
       </section>
       <TrustStrip />
       <div className="grid wrapx">

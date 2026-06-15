@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { ReactNode } from "react";
 import { Icon } from "./Icon";
 import { euro } from "@/lib/data";
@@ -98,11 +98,62 @@ export function Shot({
 /* ---------- Photo gallery ---------- */
 export function Gallery({ images, alt }: { images: string[]; alt: string }) {
   const [i, setI] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (!images || images.length <= 1 || isHovered) return;
+
+    const interval = setInterval(() => {
+      setI((prev) => (prev + 1) % images.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [images, isHovered, i]);
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setI((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setI((prev) => (prev + 1) % images.length);
+  };
+
+  if (!images || images.length === 0) return null;
+
   return (
     <div className="gal">
-      <div className="gal__main">
+      <div
+        className="gal__main"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         {/* key forces the fade animation to replay on change */}
         <img key={i} src={images[i]} alt={alt} />
+
+        {images.length > 1 && (
+          <>
+            <button
+              className="gal__arrow gal__arrow--left"
+              onClick={prevImage}
+              aria-label="Vorheriges Bild"
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              className="gal__arrow gal__arrow--right"
+              onClick={nextImage}
+              aria-label="Nächstes Bild"
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </>
+        )}
         <span className="gal__count">{i + 1} / {images.length}</span>
       </div>
       <div className="gal__thumbs">
@@ -133,7 +184,7 @@ export function Btn({
 } & React.ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <button className={`btn btn--${variant} ${full ? "btn--full" : ""} ${className}`} {...rest}>
-      <span>{children}</span>
+      <span suppressHydrationWarning>{children}</span>
       {icon ? <span className="btn__icon">{icon}</span> : null}
     </button>
   );

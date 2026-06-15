@@ -32,7 +32,7 @@ export function HomeView() {
           <div className="hero2__copy">
             <span className="badge badge--stock"><i className="dot" /> Hanox {r10.name} — jetzt auf Lager</span>
             <h1>Profi-Bagger, die&nbsp;sich&nbsp;rechnen.</h1>
-            <p>Robuste Kompakt- und Minibagger von 1,0 bis 3,2 Tonnen — in Europa bevorratet, fair bepreist und schnell geliefert. Der {r10.name} ist sofort versandbereit.</p>
+            <p>Robuste Kompakt- und Minibagger von 1,0 bis 3,2 Tonnen – direkt ab Lager, fair im Preis und blitzschnell geliefert. Unser Top-Modell R10 ECO steht bereits für Sie bereit!</p>
             <div className="hero2__cta">
               <Btn onClick={() => go("catalog")} icon={Icon.arrow()}>Bagger entdecken</Btn>
               <Btn variant="ghost" onClick={() => go("product", r10.id)}>{r10.name} ab {euro(r10.price)}</Btn>

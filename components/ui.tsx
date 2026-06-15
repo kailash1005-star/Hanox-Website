@@ -3,11 +3,14 @@
 import { useState } from "react";
 import type { ReactNode } from "react";
 import { Icon } from "./Icon";
-import { HANOX_EMBLEM } from "./logo-data";
 import { euro } from "@/lib/data";
 
+/* Brand emblem served from public/brand/ (the previous inline base64 was corrupt
+ * and rendered blank). */
+const HANOX_EMBLEM = "/brand/hanox-emblem.png";
+
 /* ---------- Logo ----------
- * Uses the brand emblem (public/brand/hanox-logo.png). On dark surfaces (footer)
+ * Uses the brand emblem (public/brand/hanox-emblem.png). On dark surfaces (footer)
  * pass `light` to back it with a white tile so the black parts stay legible. */
 export function Logo({
   size = 22,

@@ -9,6 +9,13 @@ import { byId, euro, CATEGORIES, type Model } from "@/lib/data";
 import { FLAGSHIP_ID } from "@/lib/products";
 import { useGo } from "@/lib/nav";
 
+/**
+ * Optional hero video sources. Add files under public/hero/ and list them here
+ * (webm first, mp4 fallback) to enable the looping hero clip; an empty list
+ * keeps the still flagship photo and avoids requesting non-existent assets.
+ */
+const HERO_VIDEO: { src: string; type: string }[] = [];
+
 export function HomeView() {
   const go = useGo();
   const r10 = byId(FLAGSHIP_ID) as Model;
@@ -54,20 +61,21 @@ export function HomeView() {
             {r10.images[0] ? (
               <img className="hero2__poster" src={r10.images[0]} alt={`Hanox ${r10.name} ${r10.class}`} />
             ) : null}
-            <video
-              ref={videoRef}
-              className="hero2__video"
-              muted
-              loop
-              playsInline
-              autoPlay
-              preload="metadata"
-              aria-label={`Hanox ${r10.name} im Einsatz`}
-              onPlaying={() => setPlaying(true)}
-            >
-              <source src="/hero/hanox-hero.webm" type="video/webm" />
-              <source src="/hero/hanox-hero.mp4" type="video/mp4" />
-            </video>
+            {HERO_VIDEO.length > 0 ? (
+              <video
+                ref={videoRef}
+                className="hero2__video"
+                muted
+                loop
+                playsInline
+                autoPlay
+                preload="metadata"
+                aria-label={`Hanox ${r10.name} im Einsatz`}
+                onPlaying={() => setPlaying(true)}
+              >
+                {HERO_VIDEO.map((v) => <source key={v.src} src={v.src} type={v.type} />)}
+              </video>
+            ) : null}
           </div>
         </div>
       </section>

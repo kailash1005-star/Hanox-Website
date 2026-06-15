@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Icon } from "@/components/Icon";
 import { Btn, Placeholder, Shot, Price, StockBadge } from "@/components/ui";
 import { TrustStrip, Reviews, Newsletter, Footer } from "@/components/sections";
+import { TopBar } from "@/components/chrome";
 import { ProductRow } from "@/components/product-card";
 import { byId, euro, CATEGORIES, type Model } from "@/lib/data";
 import { FLAGSHIP_ID } from "@/lib/products";
@@ -12,22 +12,23 @@ import { useGo } from "@/lib/nav";
 export function HomeView() {
   const go = useGo();
   const r10 = byId(FLAGSHIP_ID) as Model;
-  // Hero carousel: the currently-available machines. Auto-slides; click → ordering page.
-  const slides = (["r10-eco", "rd-06"].map(byId).filter(Boolean) as Model[]);
-  const [slide, setSlide] = useState(0);
-  useEffect(() => {
-    if (slides.length < 2) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const t = setInterval(() => setSlide((s) => (s + 1) % slides.length), 4500);
-    return () => clearInterval(t);
-  }, [slides.length]);
-  const current = slides[slide] ?? r10;
 
   return (
     <div className="page">
-      {/* Hero */}
+      {/* Hero — full-bleed background video with a dark overlay */}
       <section className="hero2">
-        <div className="hero2__inner wrapx">
+        <video
+          className="hero2__video"
+          src="/Hanox-Hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        />
+        <div className="hero2__overlay" />
+        <div className="hero2__inner">
           <div className="hero2__copy">
             <span className="badge badge--stock"><i className="dot" /> Hanox {r10.name} — jetzt auf Lager</span>
             <h1>Profi-Bagger, die&nbsp;sich&nbsp;rechnen.</h1>
@@ -42,39 +43,10 @@ export function HomeView() {
               <div><b>2–7 Tage</b><span>Lieferung (DE)</span></div>
             </div>
           </div>
-          <div className="hero2__media">
-            <span className="hero2__flag">Ab {euro(current.price)}<small>zzgl. MwSt.</small></span>
-            <div className="hero2__slider">
-              <div className="hero2__track" style={{ transform: `translateX(-${slide * 100}%)` }}>
-                {slides.map((s) => (
-                  <button
-                    key={s.id}
-                    className="hero2__slide"
-                    onClick={() => go("product", s.id)}
-                    aria-label={`${s.name} ansehen`}
-                  >
-                    {s.images[0] ? (
-                      <img src={s.images[0]} alt={`Hanox ${s.name} ${s.class}`} />
-                    ) : null}
-                  </button>
-                ))}
-              </div>
-              {slides.length > 1 ? (
-                <div className="hero2__dots">
-                  {slides.map((s, i) => (
-                    <button
-                      key={s.id}
-                      className={"hero2__dot" + (i === slide ? " hero2__dot--on" : "")}
-                      onClick={() => setSlide(i)}
-                      aria-label={`Bild ${i + 1}`}
-                    />
-                  ))}
-                </div>
-              ) : null}
-            </div>
-          </div>
         </div>
       </section>
+
+      <TopBar />
 
       <TrustStrip />
 

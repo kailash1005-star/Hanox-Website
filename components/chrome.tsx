@@ -35,11 +35,10 @@ function Header({ go, cartCount, onMenu }: { go: Go; cartCount: number; onMenu: 
   ];
   return (
     <div className="hdr-wrap">
-      <TopBar />
       <header className="hdr">
         <div className="hdr__inner">
           <button className="hdr__menu" onClick={onMenu} aria-label="Menü">{Icon.menu()}</button>
-          <Logo size={26} onClick={() => go("home")} />
+          <Logo size={20} onClick={() => go("home")} />
           <nav className="hdr__nav">
             {nav.map(([v, label], i) => (
               <button key={i} onClick={() => go(v)}>{label}</button>

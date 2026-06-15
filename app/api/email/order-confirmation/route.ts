@@ -54,6 +54,9 @@ export async function POST(req: Request) {
 
   const html = `
   <div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#16181b">
+    <div style="padding:8px 0 18px">
+      <img src="${base}/brand/hanox-emblem.png" alt="Hanox" width="56" height="56" style="display:block;border:0">
+    </div>
     <h1 style="font-size:22px">Vielen Dank für Ihre Bestellung!</h1>
     <p style="color:#3c4148">Wir haben Ihre Zahlung erhalten und bestätigen hiermit Ihre Bestellung${body.orderId ? ` (Referenz: ${body.orderId})` : ""}.</p>
     <table style="width:100%;border-collapse:collapse;margin:16px 0">${rows}</table>

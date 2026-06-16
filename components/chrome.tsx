@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon } from "./Icon";
 import { Logo } from "./ui";
 import { useCart } from "@/lib/cart";
@@ -99,6 +99,44 @@ export function Chrome({ children }: { children: React.ReactNode }) {
   const go = useGo();
   const { cartCount, toast, order, clearOrder } = useCart();
   const [menu, setMenu] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof Node === "function" && Node.prototype) {
+      const originalRemoveChild = Node.prototype.removeChild;
+      (Node.prototype as any).removeChild = function (child: any) {
+        if (child.parentNode !== this) {
+          if (typeof console !== "undefined" && console.error) {
+            console.error("removeChild: Parent mismatch, child is not a child of this node.", this, child);
+          }
+          return child;
+        }
+        return originalRemoveChild.apply(this, arguments as any);
+      };
+
+      const originalInsertBefore = Node.prototype.insertBefore;
+      (Node.prototype as any).insertBefore = function (newNode: any, referenceNode: any) {
+        if (referenceNode && referenceNode.parentNode !== this) {
+          if (typeof console !== "undefined" && console.error) {
+            console.error("insertBefore: Parent mismatch, referenceNode is not a child of this node.", this, referenceNode);
+          }
+          return newNode;
+        }
+        return originalInsertBefore.apply(this, arguments as any);
+      };
+
+      const originalReplaceChild = Node.prototype.replaceChild;
+      (Node.prototype as any).replaceChild = function (newChild: any, oldChild: any) {
+        if (oldChild.parentNode !== this) {
+          if (typeof console !== "undefined" && console.error) {
+            console.error("replaceChild: Parent mismatch, oldChild is not a child of this node.", this, oldChild);
+          }
+          return oldChild;
+        }
+        return originalReplaceChild.apply(this, arguments as any);
+      };
+    }
+  }, []);
+
   return (
     <>
       <Header go={go} cartCount={cartCount} onMenu={() => setMenu(true)} />

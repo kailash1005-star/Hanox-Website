@@ -1,17 +1,19 @@
 import { NextResponse } from "next/server";
 import { verifyWebhookSignature } from "@/lib/paypal";
+import { recordCapture, recordRefund, markOrderStatus, recordWebhookEvent } from "@/lib/orders";
 
 export const runtime = "nodejs";
 
 /**
- * PayPal webhook receiver. PayPal calls this URL (server-to-server) whenever
- * something happens to a payment — even if the buyer's browser already left.
+ * PayPal webhook receiver — the SOURCE OF TRUTH for payment state. PayPal calls
+ * this URL server-to-server whenever something happens to a payment, even if the
+ * buyer's browser already closed before our capture response landed. It also
+ * redelivers on any non-2xx/timeout, so every handler must be idempotent.
  *
- * Setup: register this URL in the PayPal dashboard (Apps & Credentials → your app
- * → Webhooks) as `<your-site>/api/webhooks/paypal`, subscribe to the events below,
- * and put the resulting Webhook ID in PAYPAL_WEBHOOK_ID. PayPal cannot reach
- * localhost, so for local testing expose it with a tunnel (ngrok/cloudflared) or
- * use the PayPal "Webhooks Simulator".
+ * Setup: register `<your-site>/api/webhooks/paypal` in the PayPal dashboard
+ * (Apps & Credentials → your app → Webhooks), subscribe to the events below, and
+ * put the Webhook ID in PAYPAL_WEBHOOK_ID. PayPal can't reach localhost — use a
+ * tunnel (ngrok/cloudflared) or the PayPal "Webhooks Simulator" for local tests.
  */
 export async function POST(req: Request) {
   const raw = await req.text();
@@ -32,7 +34,12 @@ export async function POST(req: Request) {
     console.warn("PayPal webhook: PAYPAL_WEBHOOK_ID not set — skipping verification (dev only).");
   }
 
-  let event: { event_type?: string; resource?: Record<string, unknown> };
+  let event: {
+    id?: string;
+    event_type?: string;
+    resource_type?: string;
+    resource?: Record<string, unknown>;
+  };
   try {
     event = JSON.parse(raw);
   } catch {
@@ -40,36 +47,98 @@ export async function POST(req: Request) {
   }
 
   const type = event.event_type ?? "";
-  const resource = event.resource ?? {};
-  const amount = (resource as { amount?: { value?: string; currency_code?: string } }).amount;
-  const money = amount ? `${amount.value} ${amount.currency_code}` : "—";
+  const eventId = event.id ?? "";
+  const resource = (event.resource ?? {}) as Record<string, any>;
 
-  // Handlers. For now they log; this is the single place to later mark the order
-  // paid/refunded in the database and trigger the confirmation/refund email.
-  switch (type) {
-    case "PAYMENT.CAPTURE.COMPLETED":
-      console.log(`✅ Webhook: payment COMPLETED — ${money} (capture ${(resource as { id?: string }).id})`);
-      // TODO: mark order paid + send confirmation email (once email/DB are wired)
-      break;
-    case "PAYMENT.CAPTURE.DENIED":
-    case "PAYMENT.CAPTURE.DECLINED":
-      console.log(`⛔ Webhook: payment DENIED — ${money}`);
-      // TODO: flag order as failed
-      break;
-    case "PAYMENT.CAPTURE.REFUNDED":
-    case "PAYMENT.CAPTURE.REVERSED":
-      console.log(`↩️  Webhook: payment REFUNDED — ${money}`);
-      // TODO: mark order refunded + notify
-      break;
-    case "CUSTOMER.DISPUTE.CREATED":
-    case "CUSTOMER.DISPUTE.UPDATED":
-      console.log(`⚠️  Webhook: dispute event — ${type}`);
-      // TODO: alert the team
-      break;
-    default:
-      console.log(`ℹ️  Webhook: unhandled event ${type}`);
+  // Audit log of every delivery (idempotent on event id). We do NOT early-return
+  // on a duplicate: PayPal redelivers when a prior attempt errored, and our
+  // handlers below are all idempotent (keyed by capture/refund id, forward-only
+  // status), so reprocessing a redelivery is safe and avoids dropping an event
+  // whose first attempt failed mid-way. If even this audit write fails, return
+  // 503 so PayPal retries rather than us processing without a record.
+  let duplicate = false;
+  if (eventId) {
+    try {
+      ({ duplicate } = await recordWebhookEvent(eventId, type, event));
+      if (duplicate) console.log(`Webhook ${type} (${eventId}) is a redelivery — reprocessing idempotently.`);
+    } catch (e) {
+      console.error("recordWebhookEvent failed:", e);
+      return NextResponse.json({ error: "storage unavailable" }, { status: 503 });
+    }
   }
 
-  // Always 200 quickly so PayPal stops retrying.
+  // Capture resources carry the originating order id under supplementary_data.
+  const orderIdFromCapture: string | undefined =
+    resource?.supplementary_data?.related_ids?.order_id;
+
+  try {
+    switch (type) {
+      case "CHECKOUT.ORDER.APPROVED": {
+        const orderId = resource?.id as string | undefined;
+        if (orderId) await markOrderStatus(orderId, "APPROVED", type);
+        break;
+      }
+      case "PAYMENT.CAPTURE.COMPLETED": {
+        const orderId = orderIdFromCapture;
+        if (orderId) {
+          await recordCapture({
+            paypalOrderId: orderId,
+            captureId: String(resource?.id ?? `wh-${eventId}`),
+            captureStatus: "COMPLETED",
+            capturedAmount: Number(resource?.amount?.value ?? 0),
+            capturedCurrency: resource?.amount?.currency_code ?? "EUR",
+            raw: resource,
+          });
+        } else {
+          console.warn("Webhook CAPTURE.COMPLETED without related order_id", resource?.id);
+        }
+        break;
+      }
+      case "PAYMENT.CAPTURE.DENIED":
+      case "PAYMENT.CAPTURE.DECLINED": {
+        const orderId = orderIdFromCapture;
+        if (orderId) {
+          await recordCapture({
+            paypalOrderId: orderId,
+            captureId: String(resource?.id ?? `wh-${eventId}`),
+            captureStatus: "DECLINED",
+            capturedAmount: Number(resource?.amount?.value ?? 0),
+            capturedCurrency: resource?.amount?.currency_code ?? "EUR",
+            raw: resource,
+          });
+        }
+        break;
+      }
+      case "PAYMENT.CAPTURE.REFUNDED":
+      case "PAYMENT.CAPTURE.REVERSED": {
+        // Refund resource: id = refund id, links back to the capture id.
+        const captureId: string | undefined =
+          resource?.links?.find?.((l: any) => l.rel === "up")?.href?.split("/").pop();
+        await recordRefund({
+          paypalOrderId: orderIdFromCapture,
+          captureId,
+          refundId: String(resource?.id ?? `wh-${eventId}`),
+          amount: Number(resource?.amount?.value ?? 0),
+          currency: resource?.amount?.currency_code ?? "EUR",
+          raw: resource,
+        });
+        break;
+      }
+      case "CUSTOMER.DISPUTE.CREATED":
+      case "CUSTOMER.DISPUTE.UPDATED":
+        console.warn(`⚠️  Webhook: dispute event ${type} — ${resource?.dispute_id ?? ""}`);
+        // Disputes don't change capture state; flagged for the team via logs/alerting.
+        break;
+      default:
+        console.log(`ℹ️  Webhook: unhandled event ${type}`);
+    }
+  } catch (e) {
+    // A processing error: ask PayPal to retry (it will redeliver) rather than
+    // silently dropping a real payment event.
+    console.error(`Webhook ${type} processing failed:`, e);
+    return NextResponse.json({ error: "processing failed" }, { status: 500 });
+  }
+
+  // 200 so PayPal marks it delivered.
   return NextResponse.json({ received: true });
 }

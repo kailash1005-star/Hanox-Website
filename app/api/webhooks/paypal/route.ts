@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { verifyWebhookSignature } from "@/lib/paypal";
+import { saveWebhookEvent, markOrderPaid } from "@/lib/orders-store";
 
 export const runtime = "nodejs";
 
@@ -44,13 +45,32 @@ export async function POST(req: Request) {
   const amount = (resource as { amount?: { value?: string; currency_code?: string } }).amount;
   const money = amount ? `${amount.value} ${amount.currency_code}` : "—";
 
+  // Persist every event for audit/idempotency (best-effort).
+  try {
+    await saveWebhookEvent(type, event, (event as { id?: string }).id);
+  } catch (e) {
+    console.error("saveWebhookEvent failed:", e);
+  }
+
   // Handlers. For now they log; this is the single place to later mark the order
   // paid/refunded in the database and trigger the confirmation/refund email.
   switch (type) {
-    case "PAYMENT.CAPTURE.COMPLETED":
+    case "PAYMENT.CAPTURE.COMPLETED": {
       console.log(`✅ Webhook: payment COMPLETED — ${money} (capture ${(resource as { id?: string }).id})`);
-      // TODO: mark order paid + send confirmation email (once email/DB are wired)
+      // Idempotent backup: ensure the order is marked PAID even if the browser
+      // closed before the client capture call finished.
+      const orderId = (resource as { supplementary_data?: { related_ids?: { order_id?: string } } })
+        .supplementary_data?.related_ids?.order_id;
+      const captureId = (resource as { id?: string }).id;
+      if (orderId) {
+        try {
+          await markOrderPaid(orderId, { captureId, captureStatus: "COMPLETED" });
+        } catch (e) {
+          console.error("webhook markOrderPaid failed:", e);
+        }
+      }
       break;
+    }
     case "PAYMENT.CAPTURE.DENIED":
     case "PAYMENT.CAPTURE.DECLINED":
       console.log(`⛔ Webhook: payment DENIED — ${money}`);

@@ -58,10 +58,10 @@ export function HomeView() {
         <div className="sec sec--center"><div><p className="eyebrow">Zwei Wege, ein Anspruch</p><h2>Wählen Sie Ihren Antrieb</h2></div></div>
         <div className="choose">
           <button className="choose__tile" onClick={() => go("catalog")}>
-            <Shot src="/diesel-bg.jpg" alt="Diesel Bagger" ratio="16 / 9" />
+            <Shot src="/diesel-bg.jpg" alt="Verbrennermotoren" ratio="16 / 9" />
             <div className="choose__overlay" />
             <div className="choose__content">
-              <h3>Diesel-Bagger</h3>
+              <h3>Verbrennermotoren</h3>
               <span>Konventionelle Kraftpakete für jede Baustelle</span>
             </div>
           </button>

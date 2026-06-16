@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getAccessToken, paypalBase } from "@/lib/paypal";
 import { priceOrder, money, type CartLineInput, type Fulfilment } from "@/lib/order-pricing";
+import { saveCreatedOrder } from "@/lib/orders-store";
 
 export const runtime = "nodejs";
 
@@ -67,5 +68,13 @@ export async function POST(req: Request) {
     console.error("PayPal create order failed:", data);
     return NextResponse.json({ error: "Zahlung konnte nicht gestartet werden." }, { status: 502 });
   }
+
+  // Record the order as CREATED (best-effort — never block the payment on the DB).
+  try {
+    await saveCreatedOrder(data.id, priced, fulfil);
+  } catch (e) {
+    console.error("saveCreatedOrder failed:", e);
+  }
+
   return NextResponse.json({ id: data.id });
 }

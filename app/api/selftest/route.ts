@@ -58,7 +58,7 @@ export async function GET(req: Request) {
   // 3) duplicate capture is idempotent (no extra transactions, still COMPLETED)
   await recordCapture({ paypalOrderId: orderId, captureId: "CAP-1", captureStatus: "COMPLETED", capturedAmount: priced.totalGross, capturedCurrency: "EUR" });
   const db = await getDb();
-  const capCount = await db.collection<any>("transactions").countDocuments({ _id: "CAP-1" });
+  const capCount = await db.collection<{ _id: string }>("transactions").countDocuments({ _id: "CAP-1" });
   assert(capCount === 1, "duplicate capture stored only once (idempotent)");
 
   // 4) forward-only: a late APPROVED must NOT downgrade COMPLETED
@@ -92,9 +92,9 @@ export async function GET(req: Request) {
   assert(e1.duplicate === false && e2.duplicate === true, "webhook event id deduped on redelivery");
 
   // cleanup test docs
-  await db.collection<any>("orders").deleteMany({ _id: { $in: [orderId, orderId2] } });
-  await db.collection<any>("transactions").deleteMany({ _id: { $in: ["CAP-1", "CAP-2", "REF-1", "REF-2"] } });
-  await db.collection<any>("webhook_events").deleteMany({ _id: "EVT-1" });
+  await db.collection<{ _id: string }>("orders").deleteMany({ _id: { $in: [orderId, orderId2] } });
+  await db.collection<{ _id: string }>("transactions").deleteMany({ _id: { $in: ["CAP-1", "CAP-2", "REF-1", "REF-2"] } });
+  await db.collection<{ _id: string }>("webhook_events").deleteMany({ _id: "EVT-1" });
 
   const passed = log.every((l) => l.startsWith("PASS"));
   return NextResponse.json({ passed, results: log });

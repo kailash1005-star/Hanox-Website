@@ -100,41 +100,47 @@ export function Chrome({ children }: { children: React.ReactNode }) {
   const { cartCount, toast, order, clearOrder } = useCart();
   const [menu, setMenu] = useState(false);
 
+  // Guard against third-party scripts / browser extensions (notably Google
+  // Translate) that mutate React-managed DOM nodes and otherwise crash the app
+  // with "Failed to execute 'removeChild'/'insertBefore' on 'Node'". When the
+  // target node isn't actually a child, we no-op instead of throwing. The native
+  // methods are restored on unmount.
   useEffect(() => {
-    if (typeof window !== "undefined" && typeof Node === "function" && Node.prototype) {
-      const originalRemoveChild = Node.prototype.removeChild;
-      (Node.prototype as any).removeChild = function (child: any) {
-        if (child.parentNode !== this) {
-          if (typeof console !== "undefined" && console.error) {
-            console.error("removeChild: Parent mismatch, child is not a child of this node.", this, child);
-          }
-          return child;
-        }
-        return originalRemoveChild.apply(this, arguments as any);
-      };
+    if (typeof Node !== "function" || !Node.prototype) return;
+    const proto = Node.prototype;
+    const originalRemoveChild = proto.removeChild;
+    const originalInsertBefore = proto.insertBefore;
+    const originalReplaceChild = proto.replaceChild;
 
-      const originalInsertBefore = Node.prototype.insertBefore;
-      (Node.prototype as any).insertBefore = function (newNode: any, referenceNode: any) {
-        if (referenceNode && referenceNode.parentNode !== this) {
-          if (typeof console !== "undefined" && console.error) {
-            console.error("insertBefore: Parent mismatch, referenceNode is not a child of this node.", this, referenceNode);
-          }
-          return newNode;
-        }
-        return originalInsertBefore.apply(this, arguments as any);
-      };
+    proto.removeChild = function <T extends Node>(this: Node, child: T): T {
+      if (child.parentNode !== this) {
+        console.error("removeChild: target is not a child of this node — ignoring.");
+        return child;
+      }
+      return originalRemoveChild.call(this, child) as T;
+    };
 
-      const originalReplaceChild = Node.prototype.replaceChild;
-      (Node.prototype as any).replaceChild = function (newChild: any, oldChild: any) {
-        if (oldChild.parentNode !== this) {
-          if (typeof console !== "undefined" && console.error) {
-            console.error("replaceChild: Parent mismatch, oldChild is not a child of this node.", this, oldChild);
-          }
-          return oldChild;
-        }
-        return originalReplaceChild.apply(this, arguments as any);
-      };
-    }
+    proto.insertBefore = function <T extends Node>(this: Node, newNode: T, referenceNode: Node | null): T {
+      if (referenceNode && referenceNode.parentNode !== this) {
+        console.error("insertBefore: reference node is not a child of this node — ignoring.");
+        return newNode;
+      }
+      return originalInsertBefore.call(this, newNode, referenceNode) as T;
+    };
+
+    proto.replaceChild = function <T extends Node>(this: Node, newChild: Node, oldChild: T): T {
+      if (oldChild.parentNode !== this) {
+        console.error("replaceChild: old child is not a child of this node — ignoring.");
+        return oldChild;
+      }
+      return originalReplaceChild.call(this, newChild, oldChild) as T;
+    };
+
+    return () => {
+      proto.removeChild = originalRemoveChild;
+      proto.insertBefore = originalInsertBefore;
+      proto.replaceChild = originalReplaceChild;
+    };
   }, []);
 
   return (

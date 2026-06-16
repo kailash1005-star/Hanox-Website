@@ -75,6 +75,9 @@ export default function AdminOrdersPage() {
   useEffect(() => {
     const saved = sessionStorage.getItem("hanox-admin-token");
     if (saved) {
+      // One-time hydration from an external store (sessionStorage); intentional —
+      // sessionStorage isn't available during SSR so this can't be a lazy initializer.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setToken(saved);
       load(saved);
     }

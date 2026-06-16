@@ -15,6 +15,15 @@ export const runtime = "nodejs";
  * put the Webhook ID in PAYPAL_WEBHOOK_ID. PayPal can't reach localhost — use a
  * tunnel (ngrok/cloudflared) or the PayPal "Webhooks Simulator" for local tests.
  */
+/** Shape of the PayPal webhook `resource` fields we read. */
+type PaypalResource = {
+  id?: string;
+  amount?: { value?: string | number; currency_code?: string };
+  supplementary_data?: { related_ids?: { order_id?: string } };
+  links?: { rel?: string; href?: string }[];
+  dispute_id?: string;
+};
+
 export async function POST(req: Request) {
   const raw = await req.text();
 
@@ -48,7 +57,7 @@ export async function POST(req: Request) {
 
   const type = event.event_type ?? "";
   const eventId = event.id ?? "";
-  const resource = (event.resource ?? {}) as Record<string, any>;
+  const resource = (event.resource ?? {}) as PaypalResource;
 
   // Audit log of every delivery (idempotent on event id). We do NOT early-return
   // on a duplicate: PayPal redelivers when a prior attempt errored, and our
@@ -113,7 +122,7 @@ export async function POST(req: Request) {
       case "PAYMENT.CAPTURE.REVERSED": {
         // Refund resource: id = refund id, links back to the capture id.
         const captureId: string | undefined =
-          resource?.links?.find?.((l: any) => l.rel === "up")?.href?.split("/").pop();
+          resource?.links?.find((l) => l.rel === "up")?.href?.split("/").pop();
         await recordRefund({
           paypalOrderId: orderIdFromCapture,
           captureId,

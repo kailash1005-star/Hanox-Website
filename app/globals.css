@@ -639,7 +639,7 @@ p { line-height: 1.55; color: var(--ink-2); }
 .mach-card:hover { border-color: var(--ink-2); transform: translateY(-2px); }
 .mach-card--on { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
 .mach-card__media { aspect-ratio: 4 / 3; display: grid; place-items: center; background: #fff; border-radius: 12px; overflow: hidden; }
-.mach-card__media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.mach-card__media img { width: 100%; height: 100%; object-fit: contain; object-position: center; padding: 8%; }
 .mach-card__name { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-family: var(--font-display); font-weight: 800; font-size: 16px; color: var(--ink); letter-spacing: -.01em; }
 .mach-card--on .mach-card__name svg { color: var(--orange-d); }
 @media (min-width: 760px) { .mach-grid { grid-template-columns: repeat(3, 1fr); max-width: 940px; margin: 0 auto; } }
@@ -667,7 +667,18 @@ p { line-height: 1.55; color: var(--ink-2); }
 /* ---- Mobile polish (Task 11) ---- */
 @media (max-width: 600px) {
   .hero2__copy h1 { font-size: clamp(32px, 11vw, 46px); }
-  .hero2__stats { gap: 18px; flex-wrap: wrap; }
+  .hero2__inner { padding: 56px 18px; }
+  .hero2__copy > p { font-size: 15px; margin: 14px auto 22px; }
+  /* stats wrap centred, with a tidy divider, instead of overflowing in one row */
+  .hero2__stats { gap: 14px 22px; flex-wrap: wrap; justify-content: center; margin-top: 26px; padding-top: 18px; }
+  .hero2__stats b { font-size: 21px; }
+  /* drive tiles: keep two-up but scale the overlay text to the smaller tiles */
+  .choose { gap: 10px; padding: 12px 14px 4px; }
+  .choose__content { padding: 13px 12px; }
+  .choose__content h3 { font-size: 16px; }
+  .choose__content span { font-size: 11.5px; }
+  /* section headings */
+  .sec--center h2 { font-size: 23px; }
   .pd__title { flex-direction: column; gap: 6px; }
   .pd__price { font-size: 22px; }
   .variant--engine .chip { width: 100%; justify-content: space-between; }
@@ -676,6 +687,8 @@ p { line-height: 1.55; color: var(--ink-2); }
   .orderbanner__in { padding: 10px 14px; }
   .orderbanner p { font-size: 13px; }
   .acc-grid { padding: 8px 14px; }
+  /* footer columns: 2-up is tight on small phones — single column reads cleaner */
+  .ftr__links { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 14px; }
 }
 
 /* ==================== CUSTOM MARKDOWN STYLES ==================== */

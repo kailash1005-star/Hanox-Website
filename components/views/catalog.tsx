@@ -1,11 +1,11 @@
 "use client";
 
 import { Icon } from "@/components/Icon";
-import { Btn } from "@/components/ui";
+import { Btn, Shot } from "@/components/ui";
 import { TrustStrip, Reviews, Newsletter, Footer } from "@/components/sections";
 import { ModelCard } from "@/components/product-card";
 import { MODELS, type Model } from "@/lib/data";
-import { useGo } from "@/lib/nav";
+import { useGo, type Go } from "@/lib/nav";
 
 // Lead the grid with the available machines (R10 ECO, then RD-06), rest follow.
 const FEATURED = ["r10-eco", "rd-06"];
@@ -25,6 +25,7 @@ export function CatalogView() {
       <TrustStrip />
       <div className="grid wrapx">
         {ORDERED_MODELS.map((m) => <ModelCard key={m.id} m={m} go={go} />)}
+        <ZubehoerCard go={go} />
       </div>
       <section className="band wrapx">
         <h2>Unsicher bei der Größe?</h2>
@@ -35,5 +36,21 @@ export function CatalogView() {
       <Newsletter />
       <Footer go={go} />
     </div>
+  );
+}
+
+/* A card matching the product cards that leads to the accessories page. */
+function ZubehoerCard({ go }: { go: Go }) {
+  return (
+    <article className="pcard" onClick={() => go("accessories")}>
+      <div className="pcard__media">
+        <Shot src="/products/accessories/GridBucket_Compl_600x600px.jpg" alt="Zubehör & Anbaugeräte" ratio="1 / 1" />
+        <span className="pcard__tab">Zubehör</span>
+      </div>
+      <div className="pcard__b">
+        <div className="pcard__name">Zubehör & Anbaugeräte</div>
+        <div className="pcard__class">Schaufeln, Greifer, Schnellwechsler &amp; mehr</div>
+      </div>
+    </article>
   );
 }

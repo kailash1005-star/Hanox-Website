@@ -12,7 +12,7 @@ const VALUES: { icon: keyof typeof Icon; title: string; body: string }[] = [
   {
     icon: "shield",
     title: "Geprüfte Qualität",
-    body: "Vier Jahre Entwicklung nach deutschen Qualitäts- und Prüfstandards — damit Sie sich auf jede Maschine verlassen können.",
+    body: "Hohe Qualitäts- und Prüfstandards, damit Sie sich auf jede Maschine verlassen können.",
   },
   {
     icon: "tag",
@@ -47,11 +47,12 @@ export function AboutView() {
       <section className="prose prose--story wrapx">
         <h2>Unsere Geschichte</h2>
         <p>
-                Unser Anspruch war von Anfang an klar: Profi-Bagger anzubieten, die den harten
-          Anforderungen auf deutschen Baustellen standhalten, aber bezahlbar bleiben. Dank
-          kontinuierlicher Prozessoptimierung und unserer strengen deutschen
-          Qualitätssicherung ist genau das heute Realität. Hanox steht für verlässliche Technik
-          zu transparenten Preisen.
+          Unser Anspruch war von Anfang an klar: Zuverlässige Baumaschinen anzubieten, die den
+          harten Anforderungen im täglichen Arbeitseinsatz standhalten und gleichzeitig
+          wirtschaftlich bleiben. Durch den direkten Vertrieb von Maschinen, die nach strengen
+          Qualitäts- und Sicherheitsstandards gefertigt werden, machen wir genau das möglich.
+          Hanox steht für robuste Technik, transparente Preise und einen verlässlichen Service
+          für Gewerbe und Privatkunden.
         </p>
       </section>
 

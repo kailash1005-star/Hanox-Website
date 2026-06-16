@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Icon } from "@/components/Icon";
-import { Btn, Placeholder } from "@/components/ui";
+import { Btn, Shot } from "@/components/ui";
 import { Footer } from "@/components/sections";
 import { useGo } from "@/lib/nav";
 import { ELECTRIC_PAGE } from "@/lib/page-copy";
@@ -42,7 +42,7 @@ export function ElectricView() {
         <p>{c.intro}</p>
       </section>
       <div className="wrapx" style={{ padding: "0 18px" }}>
-        <Placeholder label={c.placeholderLabel} tone="electric" ratio="16 / 9" />
+        <Shot src="/electric-bg.jpg" alt="Hanox Elektro-Antrieb" ratio="16 / 9" />
       </div>
       <section className="band band--green wrapx" style={{ marginTop: 22 }}>
         <h2>{c.ctaHeading}</h2>

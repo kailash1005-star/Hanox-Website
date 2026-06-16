@@ -227,9 +227,11 @@ export function CheckoutView() {
           </div>
         )}
 
-        <p style={{ fontSize: 12, color: "var(--muted)", textAlign: "center", margin: "14px 0 0" }}>
-          Testmodus (PayPal Sandbox) — es wird keine echte Zahlung verarbeitet.
-        </p>
+        {process.env.NEXT_PUBLIC_PAYPAL_ENV !== "live" ? (
+          <p style={{ fontSize: 12, color: "var(--muted)", textAlign: "center", margin: "14px 0 0" }}>
+            Testmodus (PayPal Sandbox) — es wird keine echte Zahlung verarbeitet.
+          </p>
+        ) : null}
       </div>
       <Footer go={go} />
     </div>

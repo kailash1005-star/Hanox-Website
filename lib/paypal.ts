@@ -1,7 +1,12 @@
 /* PayPal REST (Orders v2) server helpers. Server-only — never import in client code. */
 
+// Single source of truth: NEXT_PUBLIC_PAYPAL_ENV controls both the API base
+// (here) and the client-side "Testmodus" notice. Falls back to the legacy
+// server-only PAYPAL_ENV for backward compatibility. Set it to "live" to go live.
+const PAYPAL_ENV = process.env.NEXT_PUBLIC_PAYPAL_ENV ?? process.env.PAYPAL_ENV;
+
 const BASE =
-  process.env.PAYPAL_ENV === "live"
+  PAYPAL_ENV === "live"
     ? "https://api-m.paypal.com"
     : "https://api-m.sandbox.paypal.com";
 

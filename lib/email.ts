@@ -9,6 +9,8 @@
  *
  * Server-only — never import from client code. */
 
+import { SITE_URL } from "./site-url";
+
 export const EMAIL_FROM =
   process.env.EMAIL_FROM || "Hanox <info@hanox-baumaschinen.de>";
 export const ORDER_NOTIFY_TO =
@@ -52,7 +54,7 @@ export async function sendEmail(opts: {
   }
 }
 
-/** Absolute site URL for links/images in emails. */
+/** Absolute site URL for links/images in emails (validated, never malformed). */
 export function siteUrl(): string {
-  return (process.env.NEXT_PUBLIC_SITE_URL || "https://hanox-baumaschinen.de").replace(/\/$/, "");
+  return SITE_URL;
 }

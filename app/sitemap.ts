@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import { PRODUCTS } from "@/lib/products";
 import { ACCESSORY_MACHINE_IDS } from "@/lib/accessories";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hanox-baumaschinen.de";
+import { SITE_URL } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

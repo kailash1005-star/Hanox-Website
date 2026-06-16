@@ -25,7 +25,7 @@ export type CartItem = {
 /** Minimal accessory shape needed to add one to the cart. */
 export type CartAccessory = { id: string; name: string; price: number; image?: string };
 
-export type Order = { fulfil: string; total: number; email?: string };
+export type Order = { fulfil: string; total: number; email?: string; reference?: string };
 
 type CartContextValue = {
   cart: CartItem[];

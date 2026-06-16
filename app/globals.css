@@ -131,6 +131,14 @@ p { line-height: 1.55; color: var(--ink-2); }
 .choose__tile { position: relative; border: 0; padding: 0; border-radius: 18px; overflow: hidden; text-align: left; aspect-ratio: 5 / 7; display: flex; }
 .choose__tile .ph { border-radius: 0; height: 100%; }
 .choose__tile .ph__tag { display: none; }
+/* Full-bleed background image + readable overlay text for the drive tiles.
+   Overrides the default product-shot treatment (contain + padding) for these tiles only. */
+.choose__tile .shot { position: absolute; inset: 0; aspect-ratio: auto !important; height: 100%; width: 100%; background: #16181b; }
+.choose__tile .shot img { object-fit: cover; padding: 0; }
+.choose__overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(16,18,20,.10) 28%, rgba(16,18,20,.82)); }
+.choose__content { position: absolute; inset: auto 0 0 0; z-index: 2; padding: 20px 18px; color: #fff; }
+.choose__content h3 { margin: 0 0 4px; font-size: 22px; line-height: 1.15; color: #fff; }
+.choose__content span { font-size: 13.5px; opacity: .9; }
 .tile__scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16,18,20,.05) 30%, rgba(16,18,20,.78)); }
 .tile__body { position: absolute; inset: auto 0 0 0; padding: 16px 15px; color: #fff; }
 .tile__kicker { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; opacity: .85; margin: 0 0 3px; font-weight: 700; }

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { priceOrder, FULFILMENT_LABEL, type CartLineInput, type Fulfilment } from "@/lib/order-pricing";
 import { byId, euro } from "@/lib/data";
+import { getAccessory } from "@/lib/accessories";
 import { sendEmail, siteUrl } from "@/lib/email";
 
 export const runtime = "nodejs";
@@ -35,9 +36,18 @@ export async function POST(req: Request) {
   const base = siteUrl();
   const rows = priced.lines
     .map((l) => {
-      const p = byId(l.key.split(":")[0]);
-      const img = p?.images?.[0] ? base + p.images[0] : "";
-      const link = p ? `${base}/bagger/${p.id}` : base;
+      // Accessory lines use the "acc:<id>" key shape; machines use "<productId>:<variantId>".
+      let img = "";
+      let link = base;
+      if (l.key.startsWith("acc:")) {
+        const a = getAccessory(l.key.slice(4));
+        img = a?.image ? base + encodeURI(a.image) : "";
+        link = `${base}/zubehoer`;
+      } else {
+        const p = byId(l.key.split(":")[0]);
+        img = p?.images?.[0] ? base + encodeURI(p.images[0]) : "";
+        link = p ? `${base}/bagger/${p.id}` : base;
+      }
       return `
         <tr>
           <td style="padding:10px;border-bottom:1px solid #eee;width:84px">
@@ -54,6 +64,9 @@ export async function POST(req: Request) {
 
   const html = `
   <div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#16181b">
+    <div style="padding:8px 0 18px">
+      <img src="${base}/brand/hanox-emblem.png" alt="Hanox" width="56" height="56" style="display:block;border:0">
+    </div>
     <h1 style="font-size:22px">Vielen Dank für Ihre Bestellung!</h1>
     <p style="color:#3c4148">Wir haben Ihre Zahlung erhalten und bestätigen hiermit Ihre Bestellung${body.orderId ? ` (Referenz: ${body.orderId})` : ""}.</p>
     <table style="width:100%;border-collapse:collapse;margin:16px 0">${rows}</table>

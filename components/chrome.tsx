@@ -146,8 +146,10 @@ export function Chrome({ children }: { children: React.ReactNode }) {
           <div className="orderbanner__in">
             <span className="orderbanner__ic">{Icon.check()}</span>
             <p>
-              Vielen Dank für Ihre Bestellung! Wir haben eine Bestellbestätigung an Ihre
-              E-Mail gesendet{order.email ? `: ${order.email}` : "."}
+              <b>Ihre Bestellung ist bestätigt!</b>{" "}
+              {order.reference ? <>Bestellreferenz: <b>{order.reference}</b>. </> : null}
+              Eine Bestellbestätigung wurde an Ihre E-Mail gesendet
+              {order.email ? `: ${order.email}` : "."}
             </p>
             <button className="orderbanner__x" onClick={clearOrder} aria-label="Schließen">{Icon.close()}</button>
           </div>

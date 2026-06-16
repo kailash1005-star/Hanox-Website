@@ -96,7 +96,7 @@ export async function POST(req: Request) {
     html: `<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#16181b">
       <h1 style="font-size:20px">Vielen Dank${name ? `, ${esc(name)}` : ""}!</h1>
       <p style="color:#3c4148">Wir haben Ihre Anfrage${productName ? ` zum <b>${esc(productName)}</b>` : ""} erhalten und melden uns in der Regel innerhalb eines Werktags mit einer festen Lieferzeit und einem verbindlichen Angebot. Es wird keine Zahlung fällig, bevor Sie zustimmen.</p>
-      <p style="font-weight:700;margin-top:18px">Ihr Hanox-Team</p>
+      <p style="font-weight:700;margin-top:18px">Ihr Hanox-Baumaschinen Team</p>
     </div>`,
   });
 

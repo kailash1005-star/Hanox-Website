@@ -37,7 +37,7 @@ export async function POST(req: Request) {
         ? "Vielen Dank für Ihr Interesse! Wir melden uns bei Ihnen, sobald wir Maschinen verfügbar haben."
         : "Sie sind registriert – wir benachrichtigen Sie, sobald die Elektro-Reihe verfügbar ist."
     }</p>
-    <p style="font-weight:700;margin-top:18px">Ihr Hanox-Team</p>
+    <p style="font-weight:700;margin-top:18px">Ihr Hanox-Baumaschinen Team</p>
   </div>`;
 
   const visitor = await sendEmail({

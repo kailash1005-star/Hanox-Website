@@ -78,7 +78,7 @@ export async function POST(req: Request) {
     </table>
     <p style="color:#757a82;font-size:13px;margin-top:18px">Lieferzeit — Innerhalb Deutschlands: 2–7 Tage · Innerhalb der EU: 2–4 Wochen.</p>
     <p style="color:#757a82;font-size:13px">Bei Fragen antworten Sie einfach auf diese E-Mail.</p>
-    <p style="font-weight:700;margin-top:18px">Ihr Hanox-Team</p>
+    <p style="font-weight:700;margin-top:18px">Ihr Hanox-Baumaschinen Team</p>
   </div>`;
 
   const result = await sendEmail({

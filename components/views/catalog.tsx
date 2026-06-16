@@ -19,7 +19,6 @@ export function CatalogView() {
   return (
     <div className="page">
       <section className="lead lead--hero wrapx">
-        <p className="eyebrow">Alle Maschinen</p>
         <h1>Unsere Antriebstechnik.</h1>
         <p>Jedes unserer Modelle setzt auf bewährte, leistungsstarke Motoren namhafter Hersteller und eine gesicherte, europaweite Teileversorgung. Profitieren Sie von maximaler Betriebssicherheit und zuverlässiger Power für jede Herausforderung.</p>
       </section>

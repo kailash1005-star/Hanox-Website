@@ -16,10 +16,33 @@ const manrope = Manrope({
   display: "swap",
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hanox-baumaschinen.de";
+const SITE_DESC =
+  "Robuste Kompakt- und Minibagger von 1,0 bis 3,2 Tonnen — in Europa bevorratet, fair bepreist und schnell geliefert.";
+
 export const metadata: Metadata = {
-  title: "Hanox — Kompaktbagger",
-  description:
-    "Robuste Kompakt- und Minibagger von 1,0 bis 3,2 Tonnen — in Europa bevorratet, fair bepreist und schnell geliefert.",
+  metadataBase: new URL(SITE_URL),
+  title: { default: "Hanox — Kompaktbagger", template: "%s — Hanox" },
+  description: SITE_DESC,
+  applicationName: "Hanox",
+  keywords: ["Minibagger", "Kompaktbagger", "Bagger kaufen", "Raupendumper", "Kompaktlader", "Hanox"],
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    siteName: "Hanox",
+    url: SITE_URL,
+    title: "Hanox — Kompaktbagger",
+    description: SITE_DESC,
+    images: [{ url: "/brand/hanox-emblem.png", width: 256, height: 256, alt: "Hanox" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Hanox — Kompaktbagger",
+    description: SITE_DESC,
+    images: ["/brand/hanox-emblem.png"],
+  },
 };
 
 export const viewport: Viewport = {

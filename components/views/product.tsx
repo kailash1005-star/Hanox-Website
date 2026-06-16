@@ -262,9 +262,31 @@ function SpecTable({ title, rows }: { title: string; rows: SpecRow[] }) {
 /* ---- Anfrage-Panel für nicht lagernde Modelle ---- */
 function RequestPanel({ m, go }: { m: Model; go: Go }) {
   const [sent, setSent] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({ name: "", email: "", country: "", note: "" });
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setBusy(true);
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "product-inquiry", ...form, productId: m.id, productName: m.name }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Anfrage konnte nicht gesendet werden.");
+      setSent(true);
+    } catch (err) {
+      setError((err as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  };
 
   if (sent) {
     return (
@@ -281,7 +303,7 @@ function RequestPanel({ m, go }: { m: Model; go: Go }) {
     <div className="req">
       <h3>Auf Anfrage erhältlich</h3>
       <p>Der {m.name} wird auftragsbezogen in unserem Werk gefertigt. Sagen Sie uns, wo Sie sind, und wir melden uns mit einer festen Lieferzeit und einem Angebot zurück — keine Kasse und keine Vorkasse vorher.</p>
-      <form onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+      <form onSubmit={submit}>
         <div className="field">
           <label>Name</label>
           <input required value={form.name} onChange={set("name")} placeholder="Ihr Name" />
@@ -298,7 +320,10 @@ function RequestPanel({ m, go }: { m: Model; go: Go }) {
           <label>Sonstiges? <span style={{ color: "var(--muted)", fontWeight: 400 }}>(optional)</span></label>
           <textarea rows={3} value={form.note} onChange={set("note")} placeholder="Anbaugeräte, Zeitrahmen, Zufahrt zur Baustelle…" />
         </div>
-        <Btn full type="submit" icon={Icon.arrow()}>Lieferzeit anfragen</Btn>
+        {error ? <p style={{ color: "#b3261e", fontSize: 13, margin: "0 0 10px" }}>{error}</p> : null}
+        <Btn full type="submit" icon={Icon.arrow()} disabled={busy}>
+          {busy ? "Wird gesendet…" : "Lieferzeit anfragen"}
+        </Btn>
       </form>
       <div className="req__note">
         {Icon.shield({ width: 18, height: 18 })}

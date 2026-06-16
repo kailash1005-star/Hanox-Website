@@ -1,14 +1,13 @@
 "use client";
 
 import { Icon } from "@/components/Icon";
-import { Btn, Shot, Price, StockBadge } from "@/components/ui";
+import { Btn, Shot } from "@/components/ui";
 import { TrustStrip, Reviews, Newsletter, Footer } from "@/components/sections";
 import { TopBar } from "@/components/chrome";
 import { ProductRow } from "@/components/product-card";
 import { byId, euro, CATEGORIES, type Model } from "@/lib/data";
 import { FLAGSHIP_ID } from "@/lib/products";
 import { useGo } from "@/lib/nav";
-import { Markdown } from "@/components/Markdown";
 
 export function HomeView() {
   const go = useGo();
@@ -88,25 +87,6 @@ export function HomeView() {
 
       {/* Produktreihen nach Kategorie */}
       {CATEGORIES.map((cat) => <ProductRow key={cat.id} cat={cat} go={go} />)}
-
-      {/* Flagship Spotlight */}
-      <section className="spotlight wrapx">
-        <div className="spotlight__media">
-          {r10.images[2] || r10.images[0] ? (
-            <Shot src={r10.images[2] ?? r10.images[0]} alt={`Hanox ${r10.name}`} ratio="4 / 3" className="shot--feat" />
-          ) : null}
-        </div>
-        <div className="spotlight__body">
-          <StockBadge inStock={r10.inStock} />
-          <h2>{r10.name}</h2>
-          <div className="spotlight__class">{r10.class}</div>
-          <div className="spotlight__description">
-            <Markdown text={r10.description} />
-          </div>
-          <Price price={r10.price} regular={r10.regularPrice} />
-          <Btn onClick={() => go("product", r10.id)} icon={Icon.arrow()}>Details & kaufen</Btn>
-        </div>
-      </section>
 
       <Reviews />
       <Newsletter />

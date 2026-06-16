@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { sendEmail, ORDER_NOTIFY_TO } from "@/lib/email";
+import { saveLead } from "@/lib/leads";
 
 export const runtime = "nodejs";
 
@@ -23,6 +24,9 @@ export async function POST(req: Request) {
   const message = (body.message || "").trim();
   const source = body.source === "contact" ? "contact" : "waitlist";
   if (!email) return NextResponse.json({ error: "E-Mail erforderlich." }, { status: 400 });
+
+  // Durable record (best-effort) — store the lead alongside the email.
+  await saveLead({ type: source === "contact" ? "contact" : "electric-waitlist", name, email, note: message, source });
 
   // Confirmation to the visitor (German).
   const visitorHtml = `

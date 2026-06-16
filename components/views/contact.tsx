@@ -12,13 +12,28 @@ export function ContactView() {
   const [name, setName] = useState("");
   const [from, setFrom] = useState("");
   const [msg, setMsg] = useState("");
+  const [sent, setSent] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
 
-  // No mail backend yet — open the visitor's mail client with a prefilled draft.
-  function send(e: React.FormEvent) {
+  async function send(e: React.FormEvent) {
     e.preventDefault();
-    const subject = encodeURIComponent(`Anfrage von ${name || "Website"}`);
-    const body = encodeURIComponent(`${msg}\n\n— ${name}\n${from}`);
-    window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
+    setError("");
+    setBusy(true);
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "contact", name, email: from, note: msg }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Nachricht konnte nicht gesendet werden.");
+      setSent(true);
+    } catch (err) {
+      setError((err as Error).message);
+    } finally {
+      setBusy(false);
+    }
   }
 
   return (
@@ -66,33 +81,40 @@ export function ContactView() {
       <section className="band wrapx">
         <h2>Schreiben Sie uns</h2>
         <p>Wir melden uns in der Regel innerhalb eines Werktags zurück.</p>
-        <form className="cform" onSubmit={send}>
-          <input
-            type="text"
-            placeholder="Ihr Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            aria-label="Name"
-          />
-          <input
-            type="email"
-            placeholder="Ihre E-Mail"
-            value={from}
-            onChange={(e) => setFrom(e.target.value)}
-            required
-            aria-label="E-Mail"
-          />
-          <textarea
-            placeholder="Ihre Nachricht"
-            value={msg}
-            onChange={(e) => setMsg(e.target.value)}
-            rows={5}
-            required
-            aria-label="Nachricht"
-          />
-          <Btn variant="primary" type="submit" icon={Icon.arrow()}>Nachricht senden</Btn>
-        </form>
+        {sent ? (
+          <div className="news__done" style={{ margin: "0 auto" }}>{Icon.check()} Danke — Ihre Nachricht ist eingegangen.</div>
+        ) : (
+          <form className="cform" onSubmit={send}>
+            <input
+              type="text"
+              placeholder="Ihr Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              aria-label="Name"
+            />
+            <input
+              type="email"
+              placeholder="Ihre E-Mail"
+              value={from}
+              onChange={(e) => setFrom(e.target.value)}
+              required
+              aria-label="E-Mail"
+            />
+            <textarea
+              placeholder="Ihre Nachricht"
+              value={msg}
+              onChange={(e) => setMsg(e.target.value)}
+              rows={5}
+              required
+              aria-label="Nachricht"
+            />
+            {error ? <p style={{ color: "#b3261e", fontSize: 13 }}>{error}</p> : null}
+            <Btn variant="primary" type="submit" icon={Icon.arrow()} disabled={busy}>
+              {busy ? "Wird gesendet…" : "Nachricht senden"}
+            </Btn>
+          </form>
+        )}
       </section>
       <Footer go={go} />
     </div>

@@ -85,7 +85,7 @@ function parsePrice(s: string): number {
  * machines are actually purchasable online; every other product is "auf Anfrage"
  * (shown dulled, with the request form instead of add-to-cart).
  */
-const AVAILABLE_IDS = new Set<string>(["r10-eco", "rd-06"]);
+const AVAILABLE_IDS = new Set<string>(["r10-eco"]);
 
 function categoryFor(slug: string): ProductCategory {
   if (slug.startsWith("rs-")) return "skid-loader";

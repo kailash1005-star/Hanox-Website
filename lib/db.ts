@@ -40,6 +40,12 @@ function clientPromise(): Promise<MongoClient> {
   return globalForMongo._mongoClientPromise;
 }
 
+/** Whether the database is configured (MONGODB_URI present). Lets best-effort
+ *  callers (lead/order capture) skip cleanly instead of throwing when unset. */
+export function isDbConfigured(): boolean {
+  return Boolean(URI);
+}
+
 /** Get the application database handle (connects lazily, reuses the pool). */
 export async function getDb(): Promise<Db> {
   const client = await clientPromise();

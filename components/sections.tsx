@@ -52,6 +52,30 @@ export function Reviews() {
 /* ---------- Newsletter ---------- */
 export function Newsletter() {
   const [done, setDone] = useState(false);
+  const [email, setEmail] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setBusy(true);
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "newsletter", email }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Anmeldung fehlgeschlagen.");
+      setDone(true);
+    } catch (err) {
+      setError((err as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  };
+
   return (
     <section className="news">
       <div className="news__inner">
@@ -62,11 +86,21 @@ export function Newsletter() {
         {done ? (
           <div className="news__done">{Icon.check()} Danke — Sie sind angemeldet.</div>
         ) : (
-          <form className="news__form" onSubmit={(e) => { e.preventDefault(); setDone(true); }}>
-            <input type="email" required placeholder="ihr.name@firma.de" aria-label="E-Mail" />
-            <Btn variant="dark" type="submit" icon={Icon.arrow()}>Abonnieren</Btn>
+          <form className="news__form" onSubmit={submit}>
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="ihr.name@firma.de"
+              aria-label="E-Mail"
+            />
+            <Btn variant="dark" type="submit" icon={Icon.arrow()} disabled={busy}>
+              {busy ? "…" : "Abonnieren"}
+            </Btn>
           </form>
         )}
+        {error ? <p style={{ color: "#b3261e", fontSize: 13, marginTop: 8 }}>{error}</p> : null}
       </div>
     </section>
   );

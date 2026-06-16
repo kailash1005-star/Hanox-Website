@@ -18,6 +18,44 @@ export function CheckoutView() {
   const [accepted, setAccepted] = useState(false); // AGB + Datenschutz (Task 13)
   const [error, setError] = useState("");
 
+  // Customer details collected on-site (we ship large goods — don't rely on the
+  // buyer's PayPal-stored address). Persisted with the order at create time.
+  const [cust, setCust] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    line1: "",
+    line2: "",
+    city: "",
+    postalCode: "",
+    country: "DE",
+  });
+  const setC = (k: keyof typeof cust) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+    setCust((c) => ({ ...c, [k]: e.target.value }));
+
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cust.email.trim());
+  const needsAddress = fulfil !== "pickup";
+  const customerValid =
+    cust.name.trim().length >= 2 &&
+    emailOk &&
+    (!needsAddress ||
+      (cust.line1.trim() && cust.city.trim() && cust.postalCode.trim() && /^[A-Za-z]{2}$/.test(cust.country)));
+
+  const customerPayload = {
+    name: cust.name.trim(),
+    email: cust.email.trim(),
+    phone: cust.phone.trim() || undefined,
+    address: needsAddress
+      ? {
+          line1: cust.line1.trim(),
+          line2: cust.line2.trim() || undefined,
+          city: cust.city.trim(),
+          postalCode: cust.postalCode.trim(),
+          country: cust.country.trim().toUpperCase(),
+        }
+      : undefined,
+  };
+
   // empty cart → back to cart
   useEffect(() => {
     if (!items.length) go("cart");
@@ -76,6 +114,38 @@ export function CheckoutView() {
         </div>
       </div>
 
+      {/* Customer details (collected on-site; stored with the order) */}
+      <div className="wrap" style={{ marginTop: 20 }}>
+        <h3 style={{ fontSize: 17, margin: "4px 0 10px" }}>Ihre Daten</h3>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+          <input className="fld" style={{ gridColumn: "1 / -1" }} placeholder="Vollständiger Name *" value={cust.name} onChange={setC("name")} />
+          <input className="fld" type="email" placeholder="E-Mail *" value={cust.email} onChange={setC("email")} />
+          <input className="fld" placeholder="Telefon (optional)" value={cust.phone} onChange={setC("phone")} />
+          {needsAddress ? (
+            <>
+              <input className="fld" style={{ gridColumn: "1 / -1" }} placeholder="Straße und Hausnummer *" value={cust.line1} onChange={setC("line1")} />
+              <input className="fld" style={{ gridColumn: "1 / -1" }} placeholder="Adresszusatz (optional)" value={cust.line2} onChange={setC("line2")} />
+              <input className="fld" placeholder="PLZ *" value={cust.postalCode} onChange={setC("postalCode")} />
+              <input className="fld" placeholder="Ort *" value={cust.city} onChange={setC("city")} />
+              <select className="fld" style={{ gridColumn: "1 / -1" }} value={cust.country} onChange={setC("country")}>
+                <option value="DE">Deutschland</option>
+                <option value="AT">Österreich</option>
+                <option value="CH">Schweiz</option>
+                <option value="NL">Niederlande</option>
+                <option value="BE">Belgien</option>
+                <option value="FR">Frankreich</option>
+                <option value="IT">Italien</option>
+                <option value="ES">Spanien</option>
+                <option value="PL">Polen</option>
+                <option value="LU">Luxemburg</option>
+                <option value="DK">Dänemark</option>
+                <option value="CZ">Tschechien</option>
+              </select>
+            </>
+          ) : null}
+        </div>
+      </div>
+
       {/* AGB + Datenschutz acceptance (Task 13) */}
       <div className="wrap" style={{ marginTop: 16 }}>
         <label className="accept">
@@ -94,7 +164,11 @@ export function CheckoutView() {
         {error ? (
           <p style={{ color: "#b3261e", fontSize: 14, marginBottom: 12 }}>{error}</p>
         ) : null}
-        {!accepted ? (
+        {!customerValid ? (
+          <p style={{ fontSize: 13, color: "var(--muted)", marginBottom: 10 }}>
+            Bitte füllen Sie zuerst Ihre Daten{needsAddress ? " und Lieferadresse" : ""} vollständig aus.
+          </p>
+        ) : !accepted ? (
           <p style={{ fontSize: 13, color: "var(--muted)", marginBottom: 10 }}>
             Bitte akzeptieren Sie zuerst AGB und Datenschutzerklärung, um fortzufahren.
           </p>
@@ -105,20 +179,20 @@ export function CheckoutView() {
             PayPal ist nicht konfiguriert (NEXT_PUBLIC_PAYPAL_CLIENT_ID fehlt).
           </p>
         ) : (
-          <div style={{ opacity: accepted ? 1 : 0.5, pointerEvents: accepted ? "auto" : "none" }}>
+          <div style={{ opacity: accepted && customerValid ? 1 : 0.5, pointerEvents: accepted && customerValid ? "auto" : "none" }}>
             <PayPalScriptProvider
               options={{ clientId: PAYPAL_CLIENT_ID, currency: "EUR", intent: "capture" }}
             >
               <PayPalButtons
                 style={{ layout: "vertical", color: "gold", shape: "pill", label: "paypal" }}
-                disabled={!accepted}
-                forceReRender={[fulfil, priced.totalGross, accepted]}
+                disabled={!accepted || !customerValid}
+                forceReRender={[fulfil, priced.totalGross, accepted, customerValid]}
                 createOrder={async () => {
                   setError("");
                   const res = await fetch("/api/paypal/orders", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ items: lineItems, fulfil }),
+                    body: JSON.stringify({ items: lineItems, fulfil, customer: customerPayload }),
                   });
                   const data = await res.json();
                   if (!res.ok) throw new Error(data.error || "Fehler beim Start der Zahlung.");
@@ -132,7 +206,8 @@ export function CheckoutView() {
                     return;
                   }
                   const total = Number(result.amount) || priced.totalGross;
-                  const email = result.email || "";
+                  // Prefer the email the buyer entered on-site; fall back to PayPal's.
+                  const email = customerPayload.email || result.email || "";
                   // Fire-and-forget confirmation email (Task 6) — never block the redirect.
                   if (email) {
                     fetch("/api/email/order-confirmation", {

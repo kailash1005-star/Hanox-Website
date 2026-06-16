@@ -193,7 +193,7 @@ export function Btn({
 /* ---------- Stars ---------- */
 export function Stars({ n = 5 }: { n?: number }) {
   return (
-    <span className="stars" aria-label={n + " von 5 Sternen"}>
+    <span className="stars" aria-label={n + " von 5 Sternen"} suppressHydrationWarning>
       {Array.from({ length: 5 }).map((_, i) => <span key={i} className={i < n ? "" : "star--off"}>{Icon.star()}</span>)}
     </span>
   );

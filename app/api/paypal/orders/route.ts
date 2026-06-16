@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import { getAccessToken, paypalBase } from "@/lib/paypal";
 import { priceOrder, money, type CartLineInput, type Fulfilment } from "@/lib/order-pricing";
-import { saveCreatedOrder } from "@/lib/orders-store";
+import { validateCustomer } from "@/lib/customer";
+import { createOrderRecord } from "@/lib/orders";
 
 export const runtime = "nodejs";
 
-type Body = { items?: CartLineInput[]; fulfil?: Fulfilment };
+type Body = { items?: CartLineInput[]; fulfil?: Fulfilment; customer?: unknown };
 
 export async function POST(req: Request) {
   let body: Body;
@@ -20,6 +21,10 @@ export async function POST(req: Request) {
   const fulfil: Fulfilment = VALID.includes(body.fulfil as Fulfilment) ? (body.fulfil as Fulfilment) : "delivery-de";
   if (!items.length) return NextResponse.json({ error: "Warenkorb ist leer." }, { status: 400 });
 
+  // Validate the on-site customer details (name/email + shipping address for delivery).
+  const cust = validateCustomer(body.customer, fulfil);
+  if (!cust.ok) return NextResponse.json({ error: cust.error }, { status: 400 });
+
   // Server-authoritative pricing — never trust client amounts.
   let priced;
   try {
@@ -29,6 +34,32 @@ export async function POST(req: Request) {
   }
 
   const token = await getAccessToken();
+
+  // For delivery, hand PayPal the address the buyer entered (SET_PROVIDED_ADDRESS)
+  // so the PayPal sheet shows where the goods ship. Pickup ships nothing.
+  const shipping =
+    fulfil === "pickup" || !cust.customer.address
+      ? { shipping_preference: "NO_SHIPPING" as const }
+      : {
+          shipping_preference: "SET_PROVIDED_ADDRESS" as const,
+        };
+  const a = cust.customer.address;
+  const shippingDetail =
+    fulfil !== "pickup" && a
+      ? {
+          shipping: {
+            name: { full_name: cust.customer.name.slice(0, 300) },
+            address: {
+              address_line_1: a.line1.slice(0, 300),
+              ...(a.line2 ? { address_line_2: a.line2.slice(0, 300) } : {}),
+              admin_area_2: a.city.slice(0, 120),
+              postal_code: a.postalCode.slice(0, 60),
+              country_code: a.country,
+            },
+          },
+        }
+      : {};
+
   const orderPayload = {
     intent: "CAPTURE",
     purchase_units: [
@@ -48,11 +79,12 @@ export async function POST(req: Request) {
           unit_amount: { currency_code: "EUR", value: money(l.unitNet) },
           category: "PHYSICAL_GOODS",
         })),
+        ...shippingDetail,
       },
     ],
     application_context: {
       brand_name: "Hanox",
-      shipping_preference: fulfil === "pickup" ? "NO_SHIPPING" : "GET_FROM_FILE",
+      ...shipping,
       user_action: "PAY_NOW",
     },
   };
@@ -69,11 +101,18 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Zahlung konnte nicht gestartet werden." }, { status: 502 });
   }
 
-  // Record the order as CREATED (best-effort — never block the payment on the DB).
+  // Persist the order with its authoritative pricing snapshot + customer details.
+  // If the DB write fails we still let the payment proceed — the webhook will
+  // reconcile and create the record — but we log loudly.
   try {
-    await saveCreatedOrder(data.id, priced, fulfil);
+    await createOrderRecord({
+      paypalOrderId: data.id,
+      priced,
+      fulfil,
+      customer: cust.customer,
+    });
   } catch (e) {
-    console.error("saveCreatedOrder failed:", e);
+    console.error("createOrderRecord failed (payment will still proceed, webhook reconciles):", e);
   }
 
   return NextResponse.json({ id: data.id });

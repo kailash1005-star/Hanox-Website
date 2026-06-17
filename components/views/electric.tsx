@@ -48,8 +48,24 @@ export function ElectricView() {
         <h2>{c.ctaHeading}</h2>
         <p>{c.ctaText}</p>
         {done ? (
-          <div className="badge badge--soon" style={{ background: "rgba(255,255,255,.16)", color: "#fff", boxShadow: "none" }}>
-            {Icon.check()} Vielen Dank für Ihr Interesse! Wir melden uns bei Ihnen, sobald wir Maschinen verfügbar haben.
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-start",
+              gap: 10,
+              maxWidth: 460,
+              margin: "0 auto",
+              padding: "14px 16px",
+              borderRadius: 14,
+              background: "rgba(255,255,255,.16)",
+              color: "#fff",
+              fontWeight: 600,
+              lineHeight: 1.45,
+              textAlign: "left",
+            }}
+          >
+            <span style={{ flexShrink: 0, marginTop: 2 }}>{Icon.check()}</span>
+            <span>Vielen Dank für Ihr Interesse! Wir melden uns bei Ihnen, sobald wir Maschinen verfügbar haben.</span>
           </div>
         ) : (
           <form onSubmit={submit} style={{ maxWidth: 460, margin: "0 auto" }}>

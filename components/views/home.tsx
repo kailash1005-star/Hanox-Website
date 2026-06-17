@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { Icon } from "@/components/Icon";
 import { Btn, Shot } from "@/components/ui";
 import { TrustStrip, Reviews, Newsletter, Footer } from "@/components/sections";
@@ -9,15 +10,41 @@ import { byId, euro, CATEGORIES, type Model } from "@/lib/data";
 import { FLAGSHIP_ID } from "@/lib/products";
 import { useGo } from "@/lib/nav";
 
+const HERO_RATE = 0.5;
+
 export function HomeView() {
   const go = useGo();
   const r10 = byId(FLAGSHIP_ID) as Model;
+  const heroRef = useRef<HTMLVideoElement>(null);
+
+  // Force the hero to half speed imperatively. Inline React handlers can miss
+  // the event because autoPlay starts the video before hydration attaches them;
+  // a ref + re-assert on the relevant events guarantees the rate sticks.
+  useEffect(() => {
+    const v = heroRef.current;
+    if (!v) return;
+    const apply = () => {
+      if (v.playbackRate !== HERO_RATE) v.playbackRate = HERO_RATE;
+    };
+    apply();
+    v.addEventListener("loadedmetadata", apply);
+    v.addEventListener("loadeddata", apply);
+    v.addEventListener("play", apply);
+    v.addEventListener("ratechange", apply);
+    return () => {
+      v.removeEventListener("loadedmetadata", apply);
+      v.removeEventListener("loadeddata", apply);
+      v.removeEventListener("play", apply);
+      v.removeEventListener("ratechange", apply);
+    };
+  }, []);
 
   return (
     <div className="page">
       {/* Hero — full-bleed background video with a dark overlay */}
       <section className="hero2">
         <video
+          ref={heroRef}
           className="hero2__video"
           src="/Hanox-Hero.mp4"
           autoPlay
@@ -26,8 +53,6 @@ export function HomeView() {
           playsInline
           preload="auto"
           aria-hidden="true"
-          onLoadedMetadata={(e) => { e.currentTarget.playbackRate = 0.5; }}
-          onPlay={(e) => { e.currentTarget.playbackRate = 0.5; }}
         />
         <div className="hero2__overlay" />
         <div className="hero2__inner">

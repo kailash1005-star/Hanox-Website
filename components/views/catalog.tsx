@@ -30,7 +30,7 @@ export function CatalogView() {
       <section className="band wrapx">
         <h2>Unsicher bei der Größe?</h2>
         <p>Sagen Sie uns Ihre typische Aufgabe — Gräben, Fundamente, Landschaftsbau — und wir empfehlen Ihnen die richtige Maschine.</p>
-        <Btn variant="ghost" onClick={() => go("about")} icon={Icon.arrow()}>Sprechen Sie mit uns</Btn>
+        <Btn variant="ghost" onClick={() => go("contact")} icon={Icon.arrow()}>Sprechen Sie mit uns</Btn>
       </section>
       <Reviews />
       <Newsletter />

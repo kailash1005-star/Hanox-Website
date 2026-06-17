@@ -214,17 +214,26 @@ function VariantPicker({ v }: { v: Variant }) {
 }
 
 /* ---- Spec tables (Motor / Abmessungen / Leistung / Hydraulik + Sonstiges) ---- */
+// A spec value counts as "empty" when it's blank or just a placeholder dash.
+const hasSpecValue = (v: string) => {
+  const t = (v ?? "").trim();
+  return t !== "" && !/^[-–—]+$/.test(t);
+};
+const withValues = (rows: SpecRow[]) => rows.filter((r) => hasSpecValue(r.eu));
+
 function SpecsBlock({ m, engineSpecs }: { m: Model; engineSpecs?: SpecRow[] }) {
   const sections = useMemo(() => {
     // When an engine variant is selected, its spec rows replace the base engine table.
     const engineRows = engineSpecs && engineSpecs.length ? engineSpecs : m.specs.engine;
     const named: { label: string; rows: SpecRow[] }[] = [
-      { label: SPEC_SECTION_LABELS.engine, rows: engineRows },
-      { label: SPEC_SECTION_LABELS.dimensions, rows: m.specs.dimensions },
-      { label: SPEC_SECTION_LABELS.performance, rows: m.specs.performance },
-      { label: SPEC_SECTION_LABELS.hydraulics, rows: m.specs.hydraulics },
+      { label: SPEC_SECTION_LABELS.engine, rows: withValues(engineRows) },
+      { label: SPEC_SECTION_LABELS.dimensions, rows: withValues(m.specs.dimensions) },
+      { label: SPEC_SECTION_LABELS.performance, rows: withValues(m.specs.performance) },
+      { label: SPEC_SECTION_LABELS.hydraulics, rows: withValues(m.specs.hydraulics) },
     ].filter((s) => s.rows.length > 0);
-    const other: SpecSection[] = m.specs.other.filter((s) => s.rows.length > 0);
+    const other: SpecSection[] = m.specs.other
+      .map((s) => ({ ...s, rows: withValues(s.rows) }))
+      .filter((s) => s.rows.length > 0);
     return { named, other };
   }, [m, engineSpecs]);
 

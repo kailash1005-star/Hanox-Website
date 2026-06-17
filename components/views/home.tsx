@@ -51,7 +51,7 @@ export function HomeView() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           aria-hidden="true"
         />
         <div className="hero2__overlay" />

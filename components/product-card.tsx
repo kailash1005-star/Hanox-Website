@@ -3,13 +3,18 @@
 import { Icon } from "./Icon";
 import { Shot, Silhouette, Price } from "./ui";
 import { byId, euro, type Model, type Category } from "@/lib/data";
-import type { Go } from "@/lib/nav";
+import { usePrefetch, type Go } from "@/lib/nav";
 
 /* ---------- Produktkarte (Buffalo-Stil, kompakt) ---------- */
 export function ModelCard({ m, go }: { m: Model; go: Go }) {
+  const prefetch = usePrefetch();
   const onSale = m.regularPrice && m.regularPrice > m.price;
   return (
-    <article className={"pcard" + (m.inStock ? "" : " pcard--req")} onClick={() => go("product", m.id)}>
+    <article
+      className={"pcard" + (m.inStock ? "" : " pcard--req")}
+      onClick={() => go("product", m.id)}
+      onPointerEnter={() => prefetch("product", m.id)}
+    >
       <div className="pcard__media">
         {m.images.length ? <Shot src={m.images[0]} alt={m.name} ratio="1 / 1" /> : <Silhouette label="" />}
         {m.inStock

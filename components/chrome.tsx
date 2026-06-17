@@ -4,8 +4,12 @@ import { useEffect, useState } from "react";
 import { Icon } from "./Icon";
 import { Logo } from "./ui";
 import { useCart } from "@/lib/cart";
-import { useGo, type Go, type View } from "@/lib/nav";
+import { useGo, usePrefetch, type Go, type Prefetch, type View } from "@/lib/nav";
 import { CONTACT } from "@/lib/contact";
+
+// Primary destinations worth warming as soon as the chrome mounts, so the
+// global nav (where most clicks happen) navigates instantly site-wide.
+const PRIMARY_ROUTES: View[] = ["home", "catalog", "electric", "accessories", "about", "contact", "cart"];
 
 /* ---------- Announcement bar ---------- */
 export function TopBar() {
@@ -24,7 +28,7 @@ export function TopBar() {
 }
 
 /* ---------- Header (announcement + nav) ---------- */
-function Header({ go, cartCount, onMenu }: { go: Go; cartCount: number; onMenu: () => void }) {
+function Header({ go, prefetch, cartCount, onMenu }: { go: Go; prefetch: Prefetch; cartCount: number; onMenu: () => void }) {
   const nav: [View, string][] = [
     ["catalog", "Bagger"],
     ["electric", "Elektro"],
@@ -40,13 +44,13 @@ function Header({ go, cartCount, onMenu }: { go: Go; cartCount: number; onMenu: 
           <Logo size={20} onClick={() => go("home")} />
           <nav className="hdr__nav">
             {nav.map(([v, label], i) => (
-              <button key={i} onClick={() => go(v)}>{label}</button>
+              <button key={i} onClick={() => go(v)} onPointerEnter={() => prefetch(v)} onFocus={() => prefetch(v)}>{label}</button>
             ))}
           </nav>
           <div className="hdr__actions">
             <a className="hdr__call" href={`tel:${CONTACT.phoneHref}`}>{Icon.phone()}<span>{CONTACT.phoneDisplay}</span></a>
-            <button className="hdr__icon" onClick={() => go("catalog")} aria-label="Suche">{Icon.search()}</button>
-            <button className="hdr__icon hdr__cart" onClick={() => go("cart")} aria-label="Warenkorb">
+            <button className="hdr__icon" onClick={() => go("catalog")} onPointerEnter={() => prefetch("catalog")} aria-label="Suche">{Icon.search()}</button>
+            <button className="hdr__icon hdr__cart" onClick={() => go("cart")} onPointerEnter={() => prefetch("cart")} aria-label="Warenkorb">
               {Icon.cart()}
               {cartCount > 0 ? <span className="hdr__count">{cartCount}</span> : null}
             </button>
@@ -97,8 +101,16 @@ function MenuDrawer({ open, onClose, go }: { open: boolean; onClose: () => void;
  */
 export function Chrome({ children }: { children: React.ReactNode }) {
   const go = useGo();
+  const prefetch = usePrefetch();
   const { cartCount, toast, order, clearOrder } = useCart();
   const [menu, setMenu] = useState(false);
+
+  // Warm the client router cache for the primary destinations once the chrome
+  // mounts. Navigation then renders from cache instead of fetching the route's
+  // payload after the click — removing the perceived click→page lag.
+  useEffect(() => {
+    PRIMARY_ROUTES.forEach((v) => prefetch(v));
+  }, [prefetch]);
 
   // Guard against third-party scripts / browser extensions (notably Google
   // Translate) that mutate React-managed DOM nodes and otherwise crash the app
@@ -145,7 +157,7 @@ export function Chrome({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <Header go={go} cartCount={cartCount} onMenu={() => setMenu(true)} />
+      <Header go={go} prefetch={prefetch} cartCount={cartCount} onMenu={() => setMenu(true)} />
       <MenuDrawer open={menu} onClose={() => setMenu(false)} go={go} />
       {order ? (
         <div className="orderbanner" role="status">

@@ -36,11 +36,12 @@ export async function POST(req: Request) {
   const base = siteUrl();
   const rows = priced.lines
     .map((l) => {
-      // Accessory lines use the "acc:<id>" key shape; machines use "<productId>:<variantId>".
+      // Accessory lines use "acc:<id>" or "acc:<id>,<optionId>"; machines use "<productId>:<variantId>".
       let img = "";
       let link = base;
       if (l.key.startsWith("acc:")) {
-        const a = getAccessory(l.key.slice(4));
+        const accId = l.key.slice(4).split(",")[0];
+        const a = getAccessory(accId);
         img = a?.image ? base + encodeURI(a.image) : "";
         link = `${base}/zubehoer`;
       } else {

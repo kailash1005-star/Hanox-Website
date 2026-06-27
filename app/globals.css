@@ -661,6 +661,10 @@ p { line-height: 1.55; color: var(--ink-2); }
 .acc-card__b b { display: block; font-size: 15px; letter-spacing: -.01em; }
 .acc-card__price { font-size: 14px; font-weight: 800; color: var(--ink); }
 .acc-card__add { margin-top: 8px; width: 100%; font-size: 13px; padding: 10px 14px; }
+.acc-card__opt { display: flex; flex-direction: column; gap: 4px; width: 100%; margin-top: 2px; }
+.acc-card__optname { font-size: 12px; color: var(--muted); font-weight: 600; }
+.acc-card__opt select { width: 100%; padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; font: inherit; font-size: 13px; color: var(--ink); cursor: pointer; }
+.acc-card__opt select:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
 @media (min-width: 760px) { .acc-grid { grid-template-columns: repeat(3, 1fr); } .acc-sec { max-width: 940px; margin: 0 auto; } }
 @media (min-width: 1000px) { .acc-grid { grid-template-columns: repeat(4, 1fr); } .acc-sec { max-width: 1180px; } }
 

@@ -21,8 +21,8 @@ const VALUES: { icon: keyof typeof Icon; title: string; body: string }[] = [
   },
   {
     icon: "medal",
-    title: "Garantie inklusive",
-    body: "Jede Maschine kommt mit Garantie und einem Ersatzteillager in Europa — kein Warten auf Container aus Übersee.",
+    title: "Gewährleistung inklusive",
+    body: "Jede Maschine kommt mit Gewährleistung und einem Ersatzteillager in Europa — kein Warten auf Container aus Übersee.",
   },
   {
     icon: "wrench",
@@ -37,7 +37,7 @@ export function AboutView() {
     <div className="page">
       <section className="lead lead--hero wrapx">
         <p className="eyebrow">Über uns</p>
-        <h1>Hochwertige Bagger zum fairen Preis — mit Garantie.</h1>
+        <h1>Hochwertige Bagger zum fairen Preis — mit Gewährleistung.</h1>
         <p className="lead__sub">
           Von Profis gebaut, für Profis und private Anwender. Robuste Technik nach
           deutschen Standards, ohne dass Sie ein Vermögen dafür ausgeben müssen.

@@ -96,10 +96,31 @@ const RD06_HYDRAULIK: EngineConfig = {
   ],
 };
 
+/* R15 ECO cabin option: Ohne Kabine (€9.999, base) vs Mit Kabine (€11.499) —
+ * verified on rippa-europe r15-eco-1. The cabin upgrade adds €1.500. */
+const R15_ECO_CABINE: EngineConfig = {
+  label: "Kabine",
+  options: [
+    {
+      id: "ohne-kabine",
+      label: "Ohne Kabine",
+      priceDelta: 0,
+      desc: "Offene Fahrerplattform mit Schutzdach (ROPS).",
+    },
+    {
+      id: "mit-kabine",
+      label: "Mit Kabine",
+      priceDelta: 1500, // 11.499 statt 9.999
+      desc: "Geschlossene Kabine — Wetterschutz und mehr Komfort.",
+    },
+  ],
+};
+
 /** Registry: product id -> variant configuration. Add products here as needed. */
 export const ENGINE_VARIANTS: Record<string, EngineConfig> = {
   "r10-eco": R10_ECO_ENGINES,
   "rd-06": RD06_HYDRAULIK,
+  "r15-eco": R15_ECO_CABINE,
 };
 
 export function engineConfig(productId: string): EngineConfig | undefined {

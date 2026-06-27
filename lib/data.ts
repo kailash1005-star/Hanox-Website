@@ -48,7 +48,7 @@ export const SPEC_SECTION_LABELS = {
 export const TRUST: TrustPillar[] = [
   { k: "EU-Ersatzteile", v: "Ab Lager, kein langes Warten" },
   { k: "Schnelle Lieferung", v: "Europaweit, zum Pauschalpreis" },
-  { k: "Garantie", v: "Bei jeder Maschine inklusive" },
+  { k: "Gewährleistung", v: "Bei jeder Maschine inklusive" },
   { k: "Bestpreis", v: "Faire Preise, direkt ab Lager" },
 ];
 

@@ -22,8 +22,17 @@ export type CartItem = {
   image?: string;
 };
 
-/** Minimal accessory shape needed to add one to the cart. */
-export type CartAccessory = { id: string; name: string; price: number; image?: string };
+/** Minimal accessory shape needed to add one to the cart. `optionId`/`optionLabel`
+ * carry the chosen size variant (if any); the key encodes the option so the
+ * server can recompute the exact price. */
+export type CartAccessory = {
+  id: string;
+  name: string;
+  price: number;
+  image?: string;
+  optionId?: string;
+  optionLabel?: string;
+};
 
 export type Order = { fulfil: string; total: number; email?: string; reference?: string };
 
@@ -104,13 +113,16 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const addAccessory = useCallback(
     (acc: CartAccessory, qty: number = 1) => {
       const add = Math.max(1, Math.floor(qty));
-      const key = "acc:" + acc.id; // matches the server-side pricing key shape
+      // key shape "acc:<id>" or "acc:<id>,<optionId>" — the comma matches the
+      // server-side parser so the chosen size price can be recomputed.
+      const key = "acc:" + acc.id + (acc.optionId ? "," + acc.optionId : "");
+      const addonLabels = acc.optionLabel ? [acc.optionLabel] : [];
       setCart((c) => {
         const ex = c.find((it) => it.key === key);
         if (ex) return c.map((it) => (it.key === key ? { ...it, qty: it.qty + add } : it));
         return [
           ...c,
-          { key, id: acc.id, name: acc.name, class: "Zubehör", unit: acc.price, qty: add, addonLabels: [], image: acc.image },
+          { key, id: acc.id, name: acc.name, class: "Zubehör", unit: acc.price, qty: add, addonLabels, image: acc.image },
         ];
       });
       showToast(acc.name + " in den Warenkorb gelegt");

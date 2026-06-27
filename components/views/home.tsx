@@ -105,7 +105,7 @@ export function HomeView() {
         <div className="value__inner wrapx">
           <p className="eyebrow eyebrow--on">Unser Versprechen</p>
           <h2>Mehr erwarten.<br />Weniger zahlen.</h2>
-          <p>Hochwertige Baumaschinen müssen nicht das Budget sprengen. Das ist kein Slogan — das ist unser Versprechen. Direkt ab Lager, mit Garantie und EU-Ersatzteilen.</p>
+          <p>Hochwertige Baumaschinen müssen nicht das Budget sprengen. Das ist kein Slogan — das ist unser Versprechen. Direkt ab Lager, mit Gewährleistung und EU-Ersatzteilen.</p>
           <Btn variant="dark" onClick={() => go("catalog")} icon={Icon.arrow()}>Die Hanox-Reihe entdecken</Btn>
         </div>
       </section>

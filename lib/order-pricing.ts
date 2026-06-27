@@ -10,7 +10,7 @@
 
 import { byId } from "./data";
 import { engineDelta } from "./variants";
-import { getAccessory } from "./accessories";
+import { getAccessory, getAccessoryOption } from "./accessories";
 
 export const VAT_RATE = 0.19;
 
@@ -68,11 +68,18 @@ export function priceOrder(items: CartLineInput[], fulfil: Fulfilment): PricedOr
     const { modelId, addonIds } = parseKey(it.key);
     const qty = Math.max(1, Math.floor(it.qty));
 
-    // Accessory line: key shape "acc:<accessoryId>".
+    // Accessory line: key shape "acc:<accessoryId>" or "acc:<accessoryId>,<optionId>".
     if (modelId === "acc") {
       const acc = getAccessory(addonIds[0]);
       if (!acc) throw new Error(`Unbekanntes Zubehör: ${addonIds[0]}`);
-      return { key: it.key, name: acc.name, qty, unitNet: acc.price };
+      const opt = getAccessoryOption(acc, addonIds[1]);
+      if (addonIds[1] && !opt) throw new Error(`Unbekannte Variante: ${addonIds[1]}`);
+      return {
+        key: it.key,
+        name: opt ? `${acc.name} (${opt.label})` : acc.name,
+        qty,
+        unitNet: opt ? opt.price : acc.price,
+      };
     }
 
     const model = byId(modelId);

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { notFound } from "next/navigation";
 import { Icon } from "@/components/Icon";
 import { Btn } from "@/components/ui";
@@ -7,16 +8,63 @@ import { Footer } from "@/components/sections";
 import { useGo } from "@/lib/nav";
 import { byId } from "@/lib/data";
 import { useCart } from "@/lib/cart";
-import { groupForMachine } from "@/lib/accessories";
+import { groupForMachine, type Accessory } from "@/lib/accessories";
 
 function euroAcc(n: number): string {
   return "€" + n.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
+/* A single accessory card. When the accessory has size options, a selector
+ * switches the price live and the chosen size is carried into the cart. */
+function AccCard({ a }: { a: Accessory }) {
+  const go = useGo();
+  const { addAccessory } = useCart();
+  const values = a.options?.values ?? [];
+  const hasOpts = values.length > 0;
+  const [optId, setOptId] = useState<string | undefined>(hasOpts ? values[0].id : undefined);
+  const sel = hasOpts ? values.find((v) => v.id === optId) : undefined;
+  const price = sel ? sel.price : a.price;
+
+  return (
+    <article className="acc-card">
+      <div className="acc-card__media">
+        <img src={a.image} alt={a.name} loading="lazy" />
+      </div>
+      <div className="acc-card__b">
+        <b>{a.name}</b>
+        {hasOpts ? (
+          <label className="acc-card__opt">
+            <span className="acc-card__optname">{a.options!.name}</span>
+            <select value={optId} onChange={(e) => setOptId(e.target.value)} aria-label={a.options!.name}>
+              {values.map((v) => (
+                <option key={v.id} value={v.id}>
+                  {v.label} — {euroAcc(v.price)}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : null}
+        <span className="acc-card__price">{hasOpts ? euroAcc(price) : "ab " + euroAcc(price)}</span>
+        <Btn
+          className="acc-card__add"
+          full
+          onClick={() => {
+            addAccessory({ id: a.id, name: a.name, price, image: a.image, optionId: sel?.id, optionLabel: sel?.label });
+            go("cart");
+          }}
+          icon={Icon.cart({ width: 16, height: 16 })}
+        >
+          In den Warenkorb
+        </Btn>
+      </div>
+    </article>
+  );
+}
+
 /* Accessories for a single machine — its own page (/zubehoer/<id>). */
 export function AccessoryDetailView({ id }: { id: string }) {
   const go = useGo();
-  const { addAccessory, cartCount } = useCart();
+  const { cartCount } = useCart();
   const machine = byId(id);
   const group = groupForMachine(id);
   if (!machine) return notFound();
@@ -39,23 +87,7 @@ export function AccessoryDetailView({ id }: { id: string }) {
         {group && group.items.length ? (
           <div className="acc-grid">
             {group.items.map((a) => (
-              <article className="acc-card" key={a.id}>
-                <div className="acc-card__media">
-                  <img src={a.image} alt={a.name} loading="lazy" />
-                </div>
-                <div className="acc-card__b">
-                  <b>{a.name}</b>
-                  <span className="acc-card__price">ab {euroAcc(a.price)}</span>
-                  <Btn
-                    className="acc-card__add"
-                    full
-                    onClick={() => { addAccessory({ id: a.id, name: a.name, price: a.price, image: a.image }); go("cart"); }}
-                    icon={Icon.cart({ width: 16, height: 16 })}
-                  >
-                    In den Warenkorb
-                  </Btn>
-                </div>
-              </article>
+              <AccCard a={a} key={a.id} />
             ))}
           </div>
         ) : (

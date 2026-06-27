@@ -19,7 +19,57 @@
     "groupLabel": "Für Mini-Bagger R10 / R13 / R15",
     "order": 1,
     "image": "/products/accessories/Auger_Small_2_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/r10-eco-r13-pro-r15-eco-erdbohrer"
+    "url": "https://rippa-europe.com/products/r10-eco-r13-pro-r15-eco-erdbohrer",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "80-cm-x-15-cm",
+          "label": "80 cm x 15 cm",
+          "price": 395
+        },
+        {
+          "id": "80-cm-x-20-cm",
+          "label": "80 cm x 20 cm",
+          "price": 410
+        },
+        {
+          "id": "80-cm-x-30-cm",
+          "label": "80 cm x 30 cm",
+          "price": 445
+        },
+        {
+          "id": "80-cm-x-40-cm",
+          "label": "80 cm x 40 cm",
+          "price": 475
+        },
+        {
+          "id": "100-cm-x-20-cm",
+          "label": "100 cm x 20 cm",
+          "price": 500
+        },
+        {
+          "id": "100-cm-x-25-cm",
+          "label": "100 cm x 25 cm",
+          "price": 520
+        },
+        {
+          "id": "100-cm-x-30-cm",
+          "label": "100 cm x 30 cm",
+          "price": 550
+        },
+        {
+          "id": "120-cm-x-15-cm",
+          "label": "120 cm x 15 cm",
+          "price": 560
+        },
+        {
+          "id": "120-cm-x-20-cm",
+          "label": "120 cm x 20 cm",
+          "price": 590
+        }
+      ]
+    }
   },
   {
     "id": "r10-eco-r13-pro-r15-eco-gabel",
@@ -30,7 +80,37 @@
     "groupLabel": "Für Mini-Bagger R10 / R13 / R15",
     "order": 1,
     "image": "/products/accessories/Rake_Big_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/r10-eco-r13-pro-r15-eco-gabel"
+    "url": "https://rippa-europe.com/products/r10-eco-r13-pro-r15-eco-gabel",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 119
+        },
+        {
+          "id": "50-cm",
+          "label": "50 cm",
+          "price": 145
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 169
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 195
+        },
+        {
+          "id": "100-cm",
+          "label": "100 cm",
+          "price": 210
+        }
+      ]
+    }
   },
   {
     "id": "r10-eco-r13-pro-r15-eco-glattschaufel",
@@ -41,7 +121,47 @@
     "groupLabel": "Für Mini-Bagger R10 / R13 / R15",
     "order": 1,
     "image": "/products/accessories/Mud_Bucket_Compl_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/r10-eco-r13-pro-r15-eco-glattschaufel"
+    "url": "https://rippa-europe.com/products/r10-eco-r13-pro-r15-eco-glattschaufel",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "20-cm",
+          "label": "20 cm",
+          "price": 69
+        },
+        {
+          "id": "30-cm",
+          "label": "30 cm",
+          "price": 81
+        },
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 94
+        },
+        {
+          "id": "50-cm",
+          "label": "50 cm",
+          "price": 103
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 112
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 148
+        },
+        {
+          "id": "100-cm",
+          "label": "100 cm",
+          "price": 179
+        }
+      ]
+    }
   },
   {
     "id": "r10-mechanischer-greifer-kopie",
@@ -52,7 +172,22 @@
     "groupLabel": "Für Mini-Bagger R10 / R13 / R15",
     "order": 1,
     "image": "/products/accessories/Gripper_febfa966-f2f9-438b-aff7-316db23909da.jpg",
-    "url": "https://rippa-europe.com/products/r10-mechanischer-greifer-kopie"
+    "url": "https://rippa-europe.com/products/r10-mechanischer-greifer-kopie",
+    "options": {
+      "name": "Betriebsart",
+      "values": [
+        {
+          "id": "mechanisch",
+          "label": "Mechanisch",
+          "price": 315
+        },
+        {
+          "id": "hydraulisch",
+          "label": "Hydraulisch",
+          "price": 650
+        }
+      ]
+    }
   },
   {
     "id": "r10-zerstorer-kopie",
@@ -74,7 +209,32 @@
     "groupLabel": "Für Mini-Bagger R10 / R13 / R15",
     "order": 1,
     "image": "/products/accessories/SingleTilt_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/r10-eco-r13-pro-r15eco-kippschaufel"
+    "url": "https://rippa-europe.com/products/r10-eco-r13-pro-r15eco-kippschaufel",
+    "options": {
+      "name": "Größe & Zylinder",
+      "values": [
+        {
+          "id": "60-cm-einzylinder",
+          "label": "60 cm Einzylinder",
+          "price": 390
+        },
+        {
+          "id": "80-cm-einzylinder",
+          "label": "80 cm Einzylinder",
+          "price": 440
+        },
+        {
+          "id": "100-cm-einzylinder",
+          "label": "100 cm Einzylinder",
+          "price": 490
+        },
+        {
+          "id": "80-cm-zweizylinder",
+          "label": "80 cm Zweizylinder",
+          "price": 540
+        }
+      ]
+    }
   },
   {
     "id": "zahnschaufel",
@@ -85,7 +245,32 @@
     "groupLabel": "Für Mini-Bagger R10 / R13 / R15",
     "order": 1,
     "image": "/products/accessories/GridBucket_Compl_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/zahnschaufel"
+    "url": "https://rippa-europe.com/products/zahnschaufel",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "20-cm",
+          "label": "20 cm",
+          "price": 217
+        },
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 254
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 291
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 338
+        }
+      ]
+    }
   },
   {
     "id": "r10-eco-r13-pro-r15-eco-zahnschaufel",
@@ -96,7 +281,47 @@
     "groupLabel": "Für Mini-Bagger R10 / R13 / R15",
     "order": 1,
     "image": "/products/accessories/20-30_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/r10-eco-r13-pro-r15-eco-zahnschaufel"
+    "url": "https://rippa-europe.com/products/r10-eco-r13-pro-r15-eco-zahnschaufel",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "20-cm",
+          "label": "20 cm",
+          "price": 83
+        },
+        {
+          "id": "30-cm",
+          "label": "30 cm",
+          "price": 112
+        },
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 134
+        },
+        {
+          "id": "50-cm",
+          "label": "50 cm",
+          "price": 151
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 171
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 225
+        },
+        {
+          "id": "100-cm",
+          "label": "100 cm",
+          "price": 274
+        }
+      ]
+    }
   },
   {
     "id": "zerreisser-r18-pro",
@@ -118,7 +343,52 @@
     "groupLabel": "Für R18 PRO",
     "order": 4,
     "image": "/products/accessories/Auger_Small_2_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/erdbohrer-r18-pro"
+    "url": "https://rippa-europe.com/products/erdbohrer-r18-pro",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "80-cm-x-15-cm",
+          "label": "80 cm x 15 cm",
+          "price": 480
+        },
+        {
+          "id": "80-cm-x-20-cm",
+          "label": "80 cm x 20 cm",
+          "price": 550
+        },
+        {
+          "id": "80-cm-x-30-cm",
+          "label": "80 cm x 30 cm",
+          "price": 624
+        },
+        {
+          "id": "80-cm-x-40-cm",
+          "label": "80 cm x 40 cm",
+          "price": 714
+        },
+        {
+          "id": "100-cm-x-30-cm",
+          "label": "100 cm x 30 cm",
+          "price": 748
+        },
+        {
+          "id": "120-cm-x-25-cm",
+          "label": "120 cm x 25 cm",
+          "price": 854
+        },
+        {
+          "id": "120-cm-x-30-cm",
+          "label": "120 cm x 30 cm",
+          "price": 898
+        },
+        {
+          "id": "120-cm-x-45-cm",
+          "label": "120 cm x 45 cm",
+          "price": 937
+        }
+      ]
+    }
   },
   {
     "id": "gabel-r18",
@@ -129,7 +399,27 @@
     "groupLabel": "Für R18 PRO",
     "order": 4,
     "image": "/products/accessories/Rake_Big_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/gabel-r18"
+    "url": "https://rippa-europe.com/products/gabel-r18",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 149
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 210
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 270
+        }
+      ]
+    }
   },
   {
     "id": "glattschaufel-r18-pro",
@@ -140,7 +430,37 @@
     "groupLabel": "Für R18 PRO",
     "order": 4,
     "image": "/products/accessories/Mud_Bucket_Compl_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/glattschaufel-r18-pro"
+    "url": "https://rippa-europe.com/products/glattschaufel-r18-pro",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "30-cm",
+          "label": "30 cm",
+          "price": 99
+        },
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 110
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 149
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 220
+        },
+        {
+          "id": "100-cm",
+          "label": "100 cm",
+          "price": 310
+        }
+      ]
+    }
   },
   {
     "id": "greifer-r18-pro",
@@ -151,7 +471,22 @@
     "groupLabel": "Für R18 PRO",
     "order": 4,
     "image": "/products/accessories/Gripper_febfa966-f2f9-438b-aff7-316db23909da.jpg",
-    "url": "https://rippa-europe.com/products/greifer-r18-pro"
+    "url": "https://rippa-europe.com/products/greifer-r18-pro",
+    "options": {
+      "name": "Betriebsart",
+      "values": [
+        {
+          "id": "mechanisch",
+          "label": "Mechanisch",
+          "price": 249
+        },
+        {
+          "id": "hydraulisch",
+          "label": "Hydraulisch",
+          "price": 1648
+        }
+      ]
+    }
   },
   {
     "id": "hydraulikhammer-r18-pro",
@@ -173,7 +508,32 @@
     "groupLabel": "Für R18 PRO",
     "order": 4,
     "image": "/products/accessories/SingleTilt_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/kippschaufel-r18-pro"
+    "url": "https://rippa-europe.com/products/kippschaufel-r18-pro",
+    "options": {
+      "name": "Größe & Zylinder",
+      "values": [
+        {
+          "id": "80-cm-einzylinder",
+          "label": "80 cm Einzylinder",
+          "price": 490
+        },
+        {
+          "id": "80-cm-zweizylinder",
+          "label": "80 cm Zweizylinder",
+          "price": 590
+        },
+        {
+          "id": "100-cm-einzylinder",
+          "label": "100 cm Einzylinder",
+          "price": 590
+        },
+        {
+          "id": "100-cm-zweizylinder",
+          "label": "100 cm Zweizylinder",
+          "price": 690
+        }
+      ]
+    }
   },
   {
     "id": "siebschaufel-r18-pro",
@@ -184,7 +544,27 @@
     "groupLabel": "Für R18 PRO",
     "order": 4,
     "image": "/products/accessories/GridBucket_Compl_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/siebschaufel-r18-pro"
+    "url": "https://rippa-europe.com/products/siebschaufel-r18-pro",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 349
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 421
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 525
+        }
+      ]
+    }
   },
   {
     "id": "zahnschaufel-r18-pro",
@@ -195,7 +575,52 @@
     "groupLabel": "Für R18 PRO",
     "order": 4,
     "image": "/products/accessories/Big_50-70_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/zahnschaufel-r18-pro"
+    "url": "https://rippa-europe.com/products/zahnschaufel-r18-pro",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "20-cm",
+          "label": "20 cm",
+          "price": 115
+        },
+        {
+          "id": "30-cm",
+          "label": "30 cm",
+          "price": 130
+        },
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 155
+        },
+        {
+          "id": "50-cm",
+          "label": "50 cm",
+          "price": 179
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 210
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 280
+        },
+        {
+          "id": "100-cm",
+          "label": "100 cm",
+          "price": 338
+        },
+        {
+          "id": "120-cm",
+          "label": "120 cm",
+          "price": 394
+        }
+      ]
+    }
   },
   {
     "id": "zerreisser-r22-pro",
@@ -217,7 +642,42 @@
     "groupLabel": "Für R22 PRO",
     "order": 5,
     "image": "/products/accessories/Auger_Small_2_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/erdbohrer-r22-pro"
+    "url": "https://rippa-europe.com/products/erdbohrer-r22-pro",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "80-cm-x-20-cm",
+          "label": "80 cm x 20 cm",
+          "price": 550
+        },
+        {
+          "id": "80-cm-x-25-cm",
+          "label": "80 cm x 25 cm",
+          "price": 690
+        },
+        {
+          "id": "80-cm-x-30-cm",
+          "label": "80 cm x 30 cm",
+          "price": 750
+        },
+        {
+          "id": "100-cm-x-30-cm",
+          "label": "100 cm x 30 cm",
+          "price": 790
+        },
+        {
+          "id": "120-cm-x-20-cm",
+          "label": "120 cm x 20 cm",
+          "price": 840
+        },
+        {
+          "id": "120-cm-x-25-cm",
+          "label": "120 cm x 25 cm",
+          "price": 910
+        }
+      ]
+    }
   },
   {
     "id": "gabel-r22-pro",
@@ -228,7 +688,27 @@
     "groupLabel": "Für R22 PRO",
     "order": 5,
     "image": "/products/accessories/Rake_Big_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/gabel-r22-pro"
+    "url": "https://rippa-europe.com/products/gabel-r22-pro",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 149
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 210
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 270
+        }
+      ]
+    }
   },
   {
     "id": "glattschaufel-r22-pro-kopie",
@@ -239,7 +719,47 @@
     "groupLabel": "Für R22 PRO",
     "order": 5,
     "image": "/products/accessories/Mud_Bucket_Compl_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/glattschaufel-r22-pro-kopie"
+    "url": "https://rippa-europe.com/products/glattschaufel-r22-pro-kopie",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "30-cm",
+          "label": "30 cm",
+          "price": 160
+        },
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 210
+        },
+        {
+          "id": "50-cm",
+          "label": "50 cm",
+          "price": 235
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 250
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 310
+        },
+        {
+          "id": "100-cm",
+          "label": "100 cm",
+          "price": 390
+        },
+        {
+          "id": "120-cm",
+          "label": "120 cm",
+          "price": 444
+        }
+      ]
+    }
   },
   {
     "id": "glattschaufel-r22-pro",
@@ -250,7 +770,32 @@
     "groupLabel": "Für R22 PRO",
     "order": 5,
     "image": "/products/accessories/Mud_Bucket_Compl_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/glattschaufel-r22-pro"
+    "url": "https://rippa-europe.com/products/glattschaufel-r22-pro",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 110
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 149
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 220
+        },
+        {
+          "id": "100-cm",
+          "label": "100 cm",
+          "price": 310
+        }
+      ]
+    }
   },
   {
     "id": "greifer-r22-pro-1",
@@ -261,7 +806,22 @@
     "groupLabel": "Für R22 PRO",
     "order": 5,
     "image": "/products/accessories/Gripper_febfa966-f2f9-438b-aff7-316db23909da.jpg",
-    "url": "https://rippa-europe.com/products/greifer-r22-pro-1"
+    "url": "https://rippa-europe.com/products/greifer-r22-pro-1",
+    "options": {
+      "name": "Betriebsart",
+      "values": [
+        {
+          "id": "mechanisch",
+          "label": "Mechanisch",
+          "price": 590
+        },
+        {
+          "id": "hydraulisch",
+          "label": "Hydraulisch",
+          "price": 2150
+        }
+      ]
+    }
   },
   {
     "id": "greifer-r22-pro",
@@ -272,7 +832,22 @@
     "groupLabel": "Für R22 PRO",
     "order": 5,
     "image": "/products/accessories/Gripper_febfa966-f2f9-438b-aff7-316db23909da.jpg",
-    "url": "https://rippa-europe.com/products/greifer-r22-pro"
+    "url": "https://rippa-europe.com/products/greifer-r22-pro",
+    "options": {
+      "name": "Betriebsart",
+      "values": [
+        {
+          "id": "mechanisch",
+          "label": "Mechanisch",
+          "price": 490
+        },
+        {
+          "id": "hydraulisch",
+          "label": "Hydraulisch",
+          "price": 1390
+        }
+      ]
+    }
   },
   {
     "id": "hydraulikhammer-r22-pro",
@@ -294,7 +869,32 @@
     "groupLabel": "Für R22 PRO",
     "order": 5,
     "image": "/products/accessories/SingleTilt_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/kippschaufel-r22-pro"
+    "url": "https://rippa-europe.com/products/kippschaufel-r22-pro",
+    "options": {
+      "name": "Größe & Zylinder",
+      "values": [
+        {
+          "id": "80-cm-einzylinder",
+          "label": "80 cm Einzylinder",
+          "price": 590
+        },
+        {
+          "id": "80-cm-zweizylinder",
+          "label": "80 cm Zweizylinder",
+          "price": 690
+        },
+        {
+          "id": "100-cm-einzylinder",
+          "label": "100 cm Einzylinder",
+          "price": 690
+        },
+        {
+          "id": "100-cm-zweizylinder",
+          "label": "100 cm Zweizylinder",
+          "price": 790
+        }
+      ]
+    }
   },
   {
     "id": "siebschaufel-r22-pro",
@@ -305,7 +905,22 @@
     "groupLabel": "Für R22 PRO",
     "order": 5,
     "image": "/products/accessories/GridBucket_Compl_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/siebschaufel-r22-pro"
+    "url": "https://rippa-europe.com/products/siebschaufel-r22-pro",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 512
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 643
+        }
+      ]
+    }
   },
   {
     "id": "zahnschaufel-r22-pro",
@@ -316,7 +931,47 @@
     "groupLabel": "Für R22 PRO",
     "order": 5,
     "image": "/products/accessories/Big_50-70_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/zahnschaufel-r22-pro"
+    "url": "https://rippa-europe.com/products/zahnschaufel-r22-pro",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "25-cm",
+          "label": "25 cm",
+          "price": 115
+        },
+        {
+          "id": "30-cm",
+          "label": "30 cm",
+          "price": 130
+        },
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 155
+        },
+        {
+          "id": "50-cm",
+          "label": "50 cm",
+          "price": 184
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 210
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 280
+        },
+        {
+          "id": "100-cm",
+          "label": "100 cm",
+          "price": 334
+        }
+      ]
+    }
   },
   {
     "id": "zerreisser-r32-pro",
@@ -338,7 +993,42 @@
     "groupLabel": "Für R32 PRO",
     "order": 6,
     "image": "/products/accessories/Auger_Small_2_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/erdbohrer-r32-pro"
+    "url": "https://rippa-europe.com/products/erdbohrer-r32-pro",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "80-cm-x-15-cm",
+          "label": "80 cm x 15 cm",
+          "price": 990
+        },
+        {
+          "id": "80-cm-x-20-cm",
+          "label": "80 cm x 20 cm",
+          "price": 1090
+        },
+        {
+          "id": "80-cm-x-40-cm",
+          "label": "80 cm x 40 cm",
+          "price": 1190
+        },
+        {
+          "id": "100-cm-x-20-cm",
+          "label": "100 cm x 20 cm",
+          "price": 1190
+        },
+        {
+          "id": "100-cm-x-30-cm",
+          "label": "100 cm x 30 cm",
+          "price": 1290
+        },
+        {
+          "id": "120-cm-x-30-cm",
+          "label": "120 cm x 30 cm",
+          "price": 1390
+        }
+      ]
+    }
   },
   {
     "id": "gabel-r32-pro",
@@ -349,7 +1039,32 @@
     "groupLabel": "Für R32 PRO",
     "order": 6,
     "image": "/products/accessories/Rake_Big_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/gabel-r32-pro"
+    "url": "https://rippa-europe.com/products/gabel-r32-pro",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 179
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 249
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 310
+        },
+        {
+          "id": "100-cm",
+          "label": "100 cm",
+          "price": 379
+        }
+      ]
+    }
   },
   {
     "id": "hydraulikhammer-r32-pro",
@@ -371,7 +1086,32 @@
     "groupLabel": "Für R32 PRO",
     "order": 6,
     "image": "/products/accessories/SingleTilt_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/kippschaufel-r32-pro"
+    "url": "https://rippa-europe.com/products/kippschaufel-r32-pro",
+    "options": {
+      "name": "Größe & Zylinder",
+      "values": [
+        {
+          "id": "80-cm-einzylinder",
+          "label": "80 cm Einzylinder",
+          "price": 790
+        },
+        {
+          "id": "80-cm-zweizylinder",
+          "label": "80 cm Zweizylinder",
+          "price": 890
+        },
+        {
+          "id": "100-cm-einzylinder",
+          "label": "100 cm Einzylinder",
+          "price": 890
+        },
+        {
+          "id": "100-cm-zweizylinder",
+          "label": "100 cm Zweizylinder",
+          "price": 990
+        }
+      ]
+    }
   },
   {
     "id": "siebschaufel-r32-pro",
@@ -393,7 +1133,52 @@
     "groupLabel": "Für R32 PRO",
     "order": 6,
     "image": "/products/accessories/Big_50-70_600x600px.jpg",
-    "url": "https://rippa-europe.com/products/zahnschaufel-r32-pro"
+    "url": "https://rippa-europe.com/products/zahnschaufel-r32-pro",
+    "options": {
+      "name": "Größe",
+      "values": [
+        {
+          "id": "25-cm",
+          "label": "25 cm",
+          "price": 123
+        },
+        {
+          "id": "30-cm",
+          "label": "30 cm",
+          "price": 180
+        },
+        {
+          "id": "40-cm",
+          "label": "40 cm",
+          "price": 230
+        },
+        {
+          "id": "50-cm",
+          "label": "50 cm",
+          "price": 249
+        },
+        {
+          "id": "60-cm",
+          "label": "60 cm",
+          "price": 270
+        },
+        {
+          "id": "80-cm",
+          "label": "80 cm",
+          "price": 310
+        },
+        {
+          "id": "100-cm",
+          "label": "100 cm",
+          "price": 345
+        },
+        {
+          "id": "120-cm",
+          "label": "120 cm",
+          "price": 379
+        }
+      ]
+    }
   },
   {
     "id": "4-in-1-schaufel-rs-04",
@@ -481,7 +1266,32 @@
     "groupLabel": "Für Kompaktlader RS 04",
     "order": 7,
     "image": "/products/accessories/LP0104010299.jpg",
-    "url": "https://rippa-europe.com/products/erdbohrer-rs-04"
+    "url": "https://rippa-europe.com/products/erdbohrer-rs-04",
+    "options": {
+      "name": "Size",
+      "values": [
+        {
+          "id": "80-x-15-cm",
+          "label": "80 x 15 cm",
+          "price": 535
+        },
+        {
+          "id": "80-x-20-cm",
+          "label": "80 x 20 cm",
+          "price": 590
+        },
+        {
+          "id": "80-x-22-cm",
+          "label": "80 x 22 cm",
+          "price": 645
+        },
+        {
+          "id": "80-x-25-cm",
+          "label": "80 x 25 cm",
+          "price": 710
+        }
+      ]
+    }
   },
   {
     "id": "freischneider-rs-04",
@@ -580,7 +1390,22 @@
     "groupLabel": "Für Kompaktlader RS 04",
     "order": 7,
     "image": "/products/accessories/LP0104010298.jpg",
-    "url": "https://rippa-europe.com/products/gabel-rs-04"
+    "url": "https://rippa-europe.com/products/gabel-rs-04",
+    "options": {
+      "name": "Size",
+      "values": [
+        {
+          "id": "not-adjustable",
+          "label": "Not adjustable",
+          "price": 385
+        },
+        {
+          "id": "adjustable",
+          "label": "Adjustable",
+          "price": 439
+        }
+      ]
+    }
   },
   {
     "id": "planierschild-rs-04",
@@ -690,7 +1515,42 @@
     "groupLabel": "Für Kompaktlader RS 06",
     "order": 8,
     "image": "/products/accessories/LP0104010299.jpg",
-    "url": "https://rippa-europe.com/products/erdbohrer-rs-06"
+    "url": "https://rippa-europe.com/products/erdbohrer-rs-06",
+    "options": {
+      "name": "Size",
+      "values": [
+        {
+          "id": "80-x-15-cm",
+          "label": "80 x 15 cm",
+          "price": 535
+        },
+        {
+          "id": "80-x-20-cm",
+          "label": "80 x 20 cm",
+          "price": 590
+        },
+        {
+          "id": "80-x-22-cm",
+          "label": "80 x 22 cm",
+          "price": 645
+        },
+        {
+          "id": "80-x-25-cm",
+          "label": "80 x 25 cm",
+          "price": 710
+        },
+        {
+          "id": "80-x-30-cm",
+          "label": "80 x 30 cm",
+          "price": 751
+        },
+        {
+          "id": "80-x-40-cm",
+          "label": "80 x 40 cm",
+          "price": 1562
+        }
+      ]
+    }
   },
   {
     "id": "freischneider-rs-06",
@@ -866,7 +1726,22 @@
     "groupLabel": "Für Kompaktlader RS 06",
     "order": 8,
     "image": "/products/accessories/LP0104010298.jpg",
-    "url": "https://rippa-europe.com/products/pallettengabel-rs-06"
+    "url": "https://rippa-europe.com/products/pallettengabel-rs-06",
+    "options": {
+      "name": "Size",
+      "values": [
+        {
+          "id": "not-adjustable",
+          "label": "Not adjustable",
+          "price": 385
+        },
+        {
+          "id": "adjustable",
+          "label": "Adjustable",
+          "price": 439
+        }
+      ]
+    }
   },
   {
     "id": "planierschild-rs-06",
@@ -932,7 +1807,22 @@
     "groupLabel": "Für Kompaktlader RS 06",
     "order": 8,
     "image": "/products/accessories/LP0104011771.png",
-    "url": "https://rippa-europe.com/products/wurzelfrase-rs-06"
+    "url": "https://rippa-europe.com/products/wurzelfrase-rs-06",
+    "options": {
+      "name": "option",
+      "values": [
+        {
+          "id": "with-electric-side-swivel",
+          "label": "With electric side swivel",
+          "price": 2150
+        },
+        {
+          "id": "without-electric-side-swivel",
+          "label": "Without electric side swivel",
+          "price": 2490
+        }
+      ]
+    }
   },
   {
     "id": "4-in-1-schaufel-rs-07",
@@ -1031,7 +1921,42 @@
     "groupLabel": "Für Kompaktlader RS 07",
     "order": 9,
     "image": "/products/accessories/LP0104010299.jpg",
-    "url": "https://rippa-europe.com/products/erdbohrer-rs-07"
+    "url": "https://rippa-europe.com/products/erdbohrer-rs-07",
+    "options": {
+      "name": "Size",
+      "values": [
+        {
+          "id": "80-x-15-cm",
+          "label": "80 x 15 cm",
+          "price": 535
+        },
+        {
+          "id": "80-x-20-cm",
+          "label": "80 x 20 cm",
+          "price": 590
+        },
+        {
+          "id": "80-x-22-cm",
+          "label": "80 x 22 cm",
+          "price": 645
+        },
+        {
+          "id": "80-x-25-cm",
+          "label": "80 x 25 cm",
+          "price": 710
+        },
+        {
+          "id": "80-x-30-cm",
+          "label": "80 x 30 cm",
+          "price": 751
+        },
+        {
+          "id": "80-x-40-cm",
+          "label": "80 x 40 cm",
+          "price": 1562
+        }
+      ]
+    }
   },
   {
     "id": "freischneider-rs-07",
@@ -1196,7 +2121,22 @@
     "groupLabel": "Für Kompaktlader RS 07",
     "order": 9,
     "image": "/products/accessories/LP0104010298.jpg",
-    "url": "https://rippa-europe.com/products/pallettengabel-rs-07"
+    "url": "https://rippa-europe.com/products/pallettengabel-rs-07",
+    "options": {
+      "name": "Size",
+      "values": [
+        {
+          "id": "not-adjustable",
+          "label": "Not adjustable",
+          "price": 395
+        },
+        {
+          "id": "adjustable",
+          "label": "Adjustable",
+          "price": 455
+        }
+      ]
+    }
   },
   {
     "id": "planierschild-rs-07",
@@ -1262,7 +2202,22 @@
     "groupLabel": "Für Kompaktlader RS 07",
     "order": 9,
     "image": "/products/accessories/LP0104011771.png",
-    "url": "https://rippa-europe.com/products/wurzelfrase-rs-07"
+    "url": "https://rippa-europe.com/products/wurzelfrase-rs-07",
+    "options": {
+      "name": "option",
+      "values": [
+        {
+          "id": "with-electric-side-swivel",
+          "label": "With electric side swivel",
+          "price": 2150
+        },
+        {
+          "id": "without-electric-side-swivel",
+          "label": "Without electric side swivel",
+          "price": 2490
+        }
+      ]
+    }
   },
   {
     "id": "zugkrahn-rs-07",

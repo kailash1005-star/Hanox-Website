@@ -5,16 +5,22 @@
 
 import raw from "../public/products/accessories.json";
 
+/** One selectable size/option of an accessory (e.g. "40 cm" → €134 net). */
+export type AccessoryOptionValue = { id: string; label: string; price: number };
+/** A single option group for an accessory (e.g. name "Größe"). */
+export type AccessoryOptions = { name: string; values: AccessoryOptionValue[] };
+
 export type Accessory = {
   id: string;
   title: string;       // exact source title
   name: string;        // German display name
-  price: number;       // EUR (net)
+  price: number;       // EUR (net) — base/"ab" price (cheapest option)
   group: string;       // machine group id
   groupLabel: string;  // German section heading
   order: number;
   image: string;       // local path under /public
   url: string;         // source product url
+  options?: AccessoryOptions; // size/option variants (when the product has them)
 };
 
 export const ACCESSORIES: Accessory[] = raw as Accessory[];
@@ -26,6 +32,15 @@ const ACCESSORY_BY_ID: Record<string, Accessory> = Object.fromEntries(
 /** Look up an accessory by its id (used for server-authoritative cart pricing). */
 export function getAccessory(id: string): Accessory | undefined {
   return ACCESSORY_BY_ID[id];
+}
+
+/** Resolve a chosen option value of an accessory by its option id. */
+export function getAccessoryOption(
+  acc: Accessory,
+  optionId?: string
+): AccessoryOptionValue | undefined {
+  if (!optionId || !acc.options) return undefined;
+  return acc.options.values.find((v) => v.id === optionId);
 }
 
 /** Machine (product id) -> accessory group id. Order = chooser display order. */

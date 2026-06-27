@@ -81,9 +81,12 @@ export function ProductView({ id }: { id: string }) {
           ) : null}
 
           {/* Generic multi-option variants — only when this product has no dedicated
-              variant config (which already renders the proper price-aware selector). */}
+              variant config (which already renders the proper price-aware selector).
+              Colour ("Farbe") options are hidden: we offer a single colour only. */}
           {!engines
-            ? m.variants.filter((v) => v.values.length > 1).map((v) => <VariantPicker key={v.name} v={v} />)
+            ? m.variants
+                .filter((v) => v.values.length > 1 && !isColourVariant(v.name))
+                .map((v) => <VariantPicker key={v.name} v={v} />)
             : null}
 
           {description ? (
@@ -189,6 +192,11 @@ function EngineSelector({
       </div>
     </div>
   );
+}
+
+/* We sell a single colour, so any colour ("Farbe") variant is hidden. */
+function isColourVariant(name: string): boolean {
+  return /^(farbe|farben|colou?r)$/i.test(name.trim());
 }
 
 /* ---- Variant chips (display + local selection) ---- */

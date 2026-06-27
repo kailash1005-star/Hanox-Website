@@ -16,7 +16,7 @@ export function TopBar() {
   const msgs = [
     "Alle Preise zzgl. MwSt. · Lieferung europaweit zum Pauschalpreis",
     "Lieferung: Innerhalb Deutschlands 2–7 Tage · Innerhalb der EU 2–4 Wochen",
-    "Garantie bei jeder Maschine inklusive · EU-Ersatzteillager",
+    "Gewährleistung bei jeder Maschine inklusive · EU-Ersatzteillager",
   ];
   return (
     <div className="topbar">

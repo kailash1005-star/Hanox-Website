@@ -116,11 +116,41 @@ const R15_ECO_CABINE: EngineConfig = {
   ],
 };
 
+/* RS 04 drive: Kette (€5.490, base) vs Reifen (€4.990) — verified on rippa-europe. */
+const RS04_ANTRIEB: EngineConfig = {
+  label: "Antrieb",
+  options: [
+    { id: "kette", label: "Kette", priceDelta: 0, desc: "Kettenfahrwerk — maximale Traktion und Geländegängigkeit." },
+    { id: "reifen", label: "Reifen", priceDelta: -500, desc: "Radfahrwerk — schneller auf befestigtem Untergrund." }, // 4.990
+  ],
+};
+
+/* RS 07 drive: Kettenfahrwerk (€12.490, base) vs Radfahrwerk (€10.990) — rippa-europe. */
+const RS07_FAHRWERK: EngineConfig = {
+  label: "Fahrwerk",
+  options: [
+    { id: "kettenfahrwerk", label: "Kettenfahrwerk", priceDelta: 0, desc: "Maximale Traktion und Geländegängigkeit." },
+    { id: "radfahrwerk", label: "Radfahrwerk", priceDelta: -1500, desc: "Schneller auf befestigtem Untergrund." }, // 10.990
+  ],
+};
+
+/* R18 PRO cabin: Mit Kabine (€17.903, base) vs Ohne Kabine (€15.403) — rippa-europe. */
+const R18_PRO_KABINE: EngineConfig = {
+  label: "Kabine",
+  options: [
+    { id: "mit-kabine", label: "Mit Kabine", priceDelta: 0, desc: "Geschlossene Kabine — Wetterschutz und mehr Komfort." },
+    { id: "ohne-kabine", label: "Ohne Kabine", priceDelta: -2500, desc: "Offene Fahrerplattform mit Schutzdach (ROPS)." }, // 15.403
+  ],
+};
+
 /** Registry: product id -> variant configuration. Add products here as needed. */
 export const ENGINE_VARIANTS: Record<string, EngineConfig> = {
   "r10-eco": R10_ECO_ENGINES,
   "rd-06": RD06_HYDRAULIK,
   "r15-eco": R15_ECO_CABINE,
+  "rs-04": RS04_ANTRIEB,
+  "rs-07": RS07_FAHRWERK,
+  "r18-pro": R18_PRO_KABINE,
 };
 
 export function engineConfig(productId: string): EngineConfig | undefined {

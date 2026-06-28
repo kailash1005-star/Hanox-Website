@@ -29,6 +29,18 @@ export const MODELS: Model[] = PRODUCTS;
 
 export const byId = (id: string): Model | undefined => getProduct(id);
 
+/**
+ * Price shown on listing/grid cards when it should differ from the product's
+ * detail base price. R15 ECO is advertised at its with-cabin price (€11.499)
+ * on cards, while the detail page keeps Ohne Kabine (€9.999) as the base.
+ */
+export const CARD_PRICE_OVERRIDE: Record<string, number> = {
+  "r15-eco": 11499,
+};
+
+/** The price to display on a listing card for a model (override or base). */
+export const cardPrice = (m: Model): number => CARD_PRICE_OVERRIDE[m.id] ?? m.price;
+
 export const CATEGORIES: Category[] = categoriesData.groups;
 
 export function euro(n: number): string {

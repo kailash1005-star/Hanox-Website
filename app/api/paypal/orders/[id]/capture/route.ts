@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getAccessToken, paypalBase } from "@/lib/paypal";
 import { recordCapture } from "@/lib/orders";
+import { notifyTeamOfPaidOrder } from "@/lib/order-notify";
 
 export const runtime = "nodejs";
 
@@ -60,6 +61,16 @@ export async function POST(_req: Request, { params }: { params: Promise<{ id: st
   } catch (e) {
     // Storage failure must not lose the buyer's money — the webhook reconciles.
     console.error("recordCapture failed (webhook will reconcile):", e);
+  }
+
+  // Tell the team about the paid order (exactly once; never throws).
+  if ((capture?.status ?? data?.status) === "COMPLETED") {
+    await notifyTeamOfPaidOrder(id, {
+      capturedAmount: Number(capture?.amount?.value ?? 0),
+      capturedCurrency: capture?.amount?.currency_code ?? "EUR",
+      payerEmail: payer?.email_address,
+      payerName: [payer?.name?.given_name, payer?.name?.surname].filter(Boolean).join(" ") || undefined,
+    });
   }
 
   return NextResponse.json({

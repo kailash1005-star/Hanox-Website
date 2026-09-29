@@ -78,8 +78,10 @@ export async function POST(req: Request) {
     )
     .join("");
 
-  // Fire-and-forget — never block the visitor's success on email.
-  void sendEmail({
+  // Awaited (not fire-and-forget): on Vercel the function is frozen as soon as
+  // the response is sent, which silently dropped these emails. sendEmail never
+  // throws, so the visitor still always gets success.
+  const team = sendEmail({
     to: ORDER_NOTIFY_TO,
     replyTo: email,
     subject: subjectMap[type],
@@ -90,7 +92,7 @@ export async function POST(req: Request) {
   });
 
   // 3) Confirmation to the customer.
-  void sendEmail({
+  const customer = sendEmail({
     to: email,
     subject: "Wir haben Ihre Anfrage erhalten — Hanox",
     html: `<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#16181b">
@@ -99,6 +101,8 @@ export async function POST(req: Request) {
       <p style="font-weight:700;margin-top:18px">Ihr Hanox-Baumaschinen Team</p>
     </div>`,
   });
+
+  await Promise.all([team, customer]);
 
   return NextResponse.json({ ok: true });
 }

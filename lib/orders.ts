@@ -123,6 +123,8 @@ export type OrderDoc = {
   updatedAt: Date;
   paidAt?: Date;
   refundedAt?: Date;
+  /** Set once the internal "new paid order" email to the team has been sent. */
+  teamNotifiedAt?: Date;
 };
 
 // --- collections + indexes -------------------------------------------------
@@ -401,6 +403,26 @@ export async function markOrderStatus(
     at: new Date(),
     type: eventType,
   });
+}
+
+/**
+ * Atomically claim the right to send the team's "new paid order" email. Only
+ * one caller wins (capture route vs. webhook race), and only once the order is
+ * actually paid. Returns the order doc to the winner, null to everyone else.
+ */
+export async function claimTeamNotification(paypalOrderId: string): Promise<OrderDoc | null> {
+  const { orders } = await collections();
+  return orders.findOneAndUpdate(
+    { _id: paypalOrderId, paidAt: { $exists: true }, teamNotifiedAt: { $exists: false } },
+    { $set: { teamNotifiedAt: new Date() } },
+    { returnDocument: "after" }
+  );
+}
+
+/** Undo a claim when the email failed, so a later webhook delivery can retry it. */
+export async function releaseTeamNotification(paypalOrderId: string): Promise<void> {
+  const { orders } = await collections();
+  await orders.updateOne({ _id: paypalOrderId }, { $unset: { teamNotifiedAt: "" } });
 }
 
 // --- webhook idempotency ---------------------------------------------------

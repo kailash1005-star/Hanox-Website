@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { verifyWebhookSignature } from "@/lib/paypal";
 import { recordCapture, recordRefund, markOrderStatus, recordWebhookEvent } from "@/lib/orders";
+import { notifyTeamOfPaidOrder } from "@/lib/order-notify";
 
 export const runtime = "nodejs";
 
@@ -97,6 +98,12 @@ export async function POST(req: Request) {
             capturedAmount: Number(resource?.amount?.value ?? 0),
             capturedCurrency: resource?.amount?.currency_code ?? "EUR",
             raw: resource,
+          });
+          // Reconciliation path: emails the team if the capture route didn't
+          // (e.g. buyer's browser closed). No-op if already sent; never throws.
+          await notifyTeamOfPaidOrder(orderId, {
+            capturedAmount: Number(resource?.amount?.value ?? 0),
+            capturedCurrency: resource?.amount?.currency_code ?? "EUR",
           });
         } else {
           console.warn("Webhook CAPTURE.COMPLETED without related order_id", resource?.id);

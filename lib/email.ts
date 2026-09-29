@@ -41,6 +41,8 @@ export async function sendEmail(opts: {
         reply_to: opts.replyTo,
       }),
       cache: "no-store",
+      // Never let a slow mail API hang a checkout/form request.
+      signal: AbortSignal.timeout(10_000),
     });
     if (!res.ok) {
       const text = await res.text();
